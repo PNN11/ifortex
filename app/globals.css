@@ -2,32 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background: rgb(var(--color-base-3));
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+@layer base {
+    :root {
+        --color-base-1: 72 217 194;
+        --color-base-2: 67 149 136;
+        --color-base-3: 19 19 19;
+        --color-base-4: 182 182 182;
+        --color-base-5: 241 241 241;
+        --color-base-6: 252 252 252;
+        --color-base-7: 194 194 194;
+        --color-base-8: 238 238 238;
+        --color-base-9: 24 24 24;
+        --color-base-10: 0 255 207;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+        }
+    }
+}
+
+.translate-z-12 {
+    transform: translateZ(3rem);
 }
