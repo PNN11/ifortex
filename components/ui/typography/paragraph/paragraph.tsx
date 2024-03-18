@@ -14,7 +14,7 @@ const variantClasses: Record<ParagraphProps['variant'], string> = {
 
 const Paragraph: FC<ParagraphProps> = ({ variant, className = '', children, ...props }) => {
     return (
-        <p className={`${variantClasses[variant]} ${className}`} {...props}>
+        <p className={`${variantClasses[variant]} ${className} text-base-5`} {...props}>
             {children}
         </p>
     )

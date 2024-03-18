@@ -22,7 +22,7 @@ const menuItems: MenuItem[] = [
 
 const Header: FC = () => {
     return (
-        <header className="pr-17.5 absolute inset-x-0 z-20 flex items-center justify-between p-11.5">
+        <header className="absolute inset-x-0 z-20 flex items-center justify-between p-11.5 pr-17.5">
             <Icons.IFortexLogo />
             <nav className={`${gilroy.className} flex items-center gap-37`}>
                 <ul className="flex items-center gap-8.5">

@@ -5,11 +5,11 @@ import { WithClassName } from '@/types/common'
 import clsx from 'clsx'
 import React, { ComponentProps, FC } from 'react'
 
-type ButtonVariant = 'contained' | 'outlined'
+type ButtonVariant = 'contained' | 'outlined' | 'without-border'
 
 type ButtonSize = 's' | 'm' | 'l'
 
-type ButtonColor = 'primary'
+type ButtonColor = 'primary' | 'secondary'
 
 type ButtonProps = ComponentProps<'button'> & {
     variant?: ButtonVariant
@@ -18,17 +18,22 @@ type ButtonProps = ComponentProps<'button'> & {
     Icon?: FC<WithClassName>
     iconClassName?: string
     withIcon?: boolean
+    rounded?: boolean
 }
 
 const variantClasses: Record<ButtonVariant, Record<ButtonColor, string>> = {
-    contained: { primary: 'bg-base-1 text-base-9' },
-    outlined: { primary: 'border-2 border-base-1 text-base-1' },
+    contained: { primary: 'bg-base-1 text-base-9', secondary: '' },
+    outlined: { primary: 'border-2 border-base-1 text-base-1', secondary: 'border-2 border-base-13 text-base-13' },
+    'without-border': {
+        primary: 'border-b-2 border-b-base-1 text-base-1 !px-0',
+        secondary: 'border-b-2 border-b-base-13 text-base-13 !px-0',
+    },
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
-    l: 'text-button-l tracking-button-l px-10 rounded-21.5 h-24',
-    m: 'text-button-m tracking-button-m px-10 rounded-21.5 h-20',
-    s: 'text-button-s tracking-button-m px-5.5 rounded-22.75 h-11.75',
+    l: 'text-button-l tracking-button-l px-10 h-24',
+    m: 'text-button-m tracking-button-m px-10 h-20',
+    s: 'text-button-s tracking-button-m px-5.5 h-11.75',
 }
 
 const Button: FC<ButtonProps> = ({
@@ -41,6 +46,7 @@ const Button: FC<ButtonProps> = ({
     iconClassName = '',
     withIcon = false,
     color = 'primary',
+    rounded = false,
 }) => {
     return (
         <button
@@ -48,7 +54,8 @@ const Button: FC<ButtonProps> = ({
             className={clsx(
                 `relative inline-flex items-center justify-between gap-6 uppercase ${michroma.className}
              ${variantClasses[variant][color]} ${sizeClasses[size]} ${className}`,
-                { 'pr-5.25': (withIcon && size === 'l') || size === 'm', 'pr-3': withIcon && size === 's' }
+                { 'pr-5.25': withIcon && (size === 'l' || size === 'm'), 'pr-3': withIcon && size === 's' },
+                { 'rounded-21.5': rounded && (size === 'l' || size === 'm'), 'rounded-22.75': rounded && size === 's' }
             )}
         >
             {children}

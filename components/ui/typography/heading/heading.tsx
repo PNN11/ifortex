@@ -18,7 +18,7 @@ const variantClasses: Record<HeadingProps['variant'], string> = {
     h2: 'text-h2',
     h3: 'text-h3',
     h4: 'text-h4',
-    accent: 'text-h1',
+    accent: 'text-accent',
 }
 
 const Heading: FC<HeadingProps> = ({ variant, className = '', children, ...props }) => {

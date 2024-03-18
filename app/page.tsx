@@ -1,51 +1,26 @@
-import Button from '@/components/ui/buttons/defaultButton'
-import Heading from '@/components/ui/typography/heading'
-import Image from 'next/image'
+import { AboutUs } from '@/components/pages/home/aboutUs'
+import Consultation from '@/components/pages/home/consultation'
+import Expertise from '@/components/pages/home/expertise'
+import { FirstSection } from '@/components/pages/home/firstSection'
+import { OurService } from '@/components/pages/home/ourService'
+import Projects from '@/components/pages/home/projects'
+import Team from '@/components/pages/home/team'
 
 export default function Home() {
     return (
-        <main className="">
-            <div className="grid grid-cols-[1fr_11.3125rem]">
-                <div>
-                    <section
-                        id="first-section"
-                        className="bg-base-10 relative flex h-screen flex-col-reverse bg-opacity-[0.01]"
-                    >
-                        <Image
-                            src="/images/home/left-bg.png"
-                            alt="bg"
-                            width={752}
-                            height={936}
-                            className="absolute left-0 h-full w-auto"
-                            quality={100}
-                        />
-                        <Image
-                            src="/images/home/right-bg.png"
-                            alt="bg"
-                            width={752}
-                            height={936}
-                            className="absolute right-0 h-full w-auto"
-                            quality={100}
-                        />
-                        <Heading
-                            variant="h1"
-                            className="relative z-10 pb-18.75 pr-18.75 text-right"
-                            style={{ wordSpacing: '1.25rem' }}
-                        >
-                            <Button size="l" withIcon className="mb-6 rounded-none">
-                                Start project
-                            </Button>{' '}
-                            with <br /> your expert in{' '}
-                            <Button size="l" variant="outlined" className="mb-6 rounded-none">
-                                quality
-                            </Button>
-                            <br />
-                            software solutions
-                        </Heading>
-                    </section>
+        <main className="pb-100">
+            <div className="mb-20 grid w-full grid-cols-[1fr_11.3125rem]">
+                <div className="w-full">
+                    <FirstSection />
+                    <OurService />
+                    <AboutUs />
                 </div>
-                <aside className="border-l border-l-base-1/30"></aside>
+                <aside className="w-45.25 border-l border-l-base-1/30"></aside>
             </div>
+            <Expertise />
+            <Consultation />
+            <Projects />
+            <Team />
         </main>
     )
 }

@@ -1,6 +1,7 @@
 import { michroma } from '@/fonts'
 import type { Metadata } from 'next'
 import './globals.css'
+import 'swiper/css'
 import Header from '@/components/layout/header'
 
 export const metadata: Metadata = {
