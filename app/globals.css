@@ -41,6 +41,8 @@ body {
         --color-base-15: 92 217 197;
         --color-base-16: 140 140 140;
         --color-base-17: 105 105 105;
+        --color-base-18: 165 165 165;
+        --color-base-19: 83 83 83;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -52,3 +54,72 @@ body {
 .translate-z-12 {
     transform: translateZ(3rem);
 }
+
+.accordion {
+    pointer-events: none;
+    will-change: height;
+
+    overflow: hidden;
+
+    height: 0;
+
+    opacity: 0;
+}
+
+.accordion[closing]:not([open]) {
+    opacity: 1;
+
+    animation: colaps var(--duration, 500ms) forwards;
+}
+
+.accordion[open] {
+    pointer-events: all;
+
+    opacity: 1;
+
+    animation: open var(--duration, 500ms) forwards;
+}
+
+@keyframes open {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: var(--h);
+    }
+}
+
+@keyframes colaps {
+    0% {
+        height: var(--h);
+    }
+
+    100% {
+        height: 0;
+    }
+}
+
+.menu-accordion::-webkit-scrollbar {
+    width: 0.125rem;
+    background: transparent;
+    border-radius: 0.125rem;
+}
+
+.menu-accordion::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-base-2));
+    width: 1px;
+    border-radius: 0.0625rem;
+}
+
+/* *::-webkit-scrollbar {
+    width: 0.25rem;
+    background: transparent;
+    border-radius: 0.125rem;
+} */
+
+/* *::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-base-2));
+    width: 1px;
+    border-radius: 0.125rem;
+} */

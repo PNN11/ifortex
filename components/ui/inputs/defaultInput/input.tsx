@@ -1,9 +1,7 @@
 import { Icons } from '@/components/svg'
 import { gilroy } from '@/fonts'
 import { cn } from '@/lib/classNames'
-import { WithClassName } from '@/types/common'
-import clsx from 'clsx'
-import React, { ComponentProps, FC } from 'react'
+import { ComponentProps, FC } from 'react'
 
 type InputSize = 'l' | 'm'
 
@@ -16,8 +14,8 @@ type InputProps = ComponentProps<'input'> & {
 }
 
 const sizeClassName: Record<InputSize, string> = {
-    l: 'text-custom-xl h-20 px-10',
-    m: 'h-11.75 text-alt px-4.75',
+    l: 'text-3xl leading-8.25 h-20 px-10',
+    m: 'h-11.75 text-xl leading-8.25 px-4.75',
 }
 
 const Input: FC<InputProps> = ({
@@ -33,14 +31,13 @@ const Input: FC<InputProps> = ({
     return (
         <div className="relative">
             <input
-                className={clsx(
-                    `border-b-base-16 relative w-full border-b bg-transparent font-light text-base-5 outline-none placeholder:text-base-5`,
+                className={cn(
+                    `relative w-full border-b border-b-base-16 bg-transparent font-light text-base-5 outline-none placeholder:text-base-5`,
                     gilroy.className,
                     sizeClassName[inputSize],
                     { 'pr-26': inputSize === 'l' && withIcon, 'pr-16.5': inputSize === 'm' && withIcon }
                 )}
                 {...props}
-                placeholder="YOU EMAIL"
             />
             {withIcon && (
                 <Icon

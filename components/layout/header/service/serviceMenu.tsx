@@ -5,6 +5,7 @@ import { gilroy } from '@/fonts'
 import { formatNumber } from '@/lib/formatNumber'
 import Link from 'next/link'
 import React, { FC } from 'react'
+import Image from 'next/image'
 
 const services = [
     { href: 'web-development', title: 'Web development' },
@@ -72,12 +73,18 @@ const expertise = [
 const ServiceMenu: FC = () => {
     return (
         <div>
-            <Heading variant="h2" className="mb-15">
-                Service
-            </Heading>
-            <ul className={`${gilroy.className} mb-18.75 flex max-h-44 flex-col flex-wrap gap-5`}>
+            <div className="gap-18 3xl:mb-15.5 hidden flex-col lg:mb-13.5 lg:flex xl:mb-17 2xl:mb-11 2xl:flex-row 2xl:gap-21.5">
+                <Heading variant="h2" className="">
+                    Service
+                </Heading>
+                <Image src="/images/home/review_line.svg" width={468} height={29} alt="line" quality={100} />
+            </div>
+            <ul
+                className={`${gilroy.className} menu-accordion 3xl:max-h-44 mb-22 mt-5.5 flex max-h-96 flex-col gap-x-4.5 gap-y-5 overflow-auto lg:mt-0
+                 lg:max-h-full lg:flex-wrap 2xl:max-h-60 2xl:gap-x-4`}
+            >
                 {services.map(({ href, title }, index) => (
-                    <li key={href} className="flex max-w-100 items-center gap-12">
+                    <li key={href} className="3xl:gap-12 flex max-w-100 items-center gap-12 2xl:gap-9">
                         <Paragraph variant="alt" className="w-7.5 text-base-4">
                             {formatNumber(index + 1, { minimumIntegerDigits: 2 })}
                         </Paragraph>
@@ -89,15 +96,16 @@ const ServiceMenu: FC = () => {
                     </li>
                 ))}
             </ul>
-            <div className="gap-13.5 mb-18.75 flex items-center">
-                <Icons.Lines.Hypotenuse className="text-[#5CD9C5A8]" />
+            <div className="mb-18.75 hidden items-center gap-13.5 2xl:flex">
+                <Icons.Lines.Hypotenuse className="text-base-1/65" />
                 <Heading variant="h3">Expertise</Heading>
+                <Image src="/images/home/review_line.svg" width={468} height={29} alt="line" quality={100} />
             </div>
-            <ul className="gap-x-13.5 gap-y-5.5 flex flex-wrap">
+            <ul className="hidden flex-wrap gap-x-13.5 gap-y-5.5 2xl:flex">
                 {expertise.map(({ description, title }) => (
                     <li key={title} className="grid w-100 grid-flow-col gap-4">
                         <Icons.Lines.ExpertiseVector className="text-base-4" />
-                        <div className="gap-4.5 max-h-26 flex flex-col overflow-hidden">
+                        <div className="flex max-h-26 flex-col gap-4.5 overflow-hidden">
                             <Heading className="text-white" variant="h4">
                                 {title}
                             </Heading>

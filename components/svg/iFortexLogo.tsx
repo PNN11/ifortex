@@ -1,9 +1,8 @@
-import { WithClassName } from '@/types/common'
-import React, { FC } from 'react'
+import { ComponentProps, FC } from 'react'
 
-const IFortexLogo: FC<WithClassName> = ({ className = '' }) => {
+const IFortexLogo: FC<ComponentProps<'svg'>> = props => {
     return (
-        <svg width="224" height="29" viewBox="0 0 224 29" fill="none" xmlns="http://www.w3.org/2000/svg" className="">
+        <svg width="224" height="29" viewBox="0 0 224 29" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             <path
                 d="M207.513 13.7388L223.88 28.4201H218.95L205.084 15.9863L191.69 28.4201H186.76L202.583 13.7388L187.92 0.580078H192.85L204.994 11.4913L216.757 0.580078H221.687L207.513 13.7388Z"
                 fill="white"

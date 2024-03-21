@@ -2,8 +2,7 @@ import { Icons } from '@/components/svg'
 import { michroma } from '@/fonts'
 import { cn } from '@/lib/classNames'
 import { WithClassName } from '@/types/common'
-import clsx from 'clsx'
-import React, { ComponentProps, FC } from 'react'
+import { ComponentProps, FC } from 'react'
 
 type ButtonVariant = 'contained' | 'outlined' | 'without-border'
 
@@ -31,9 +30,9 @@ const variantClasses: Record<ButtonVariant, Record<ButtonColor, string>> = {
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
-    l: 'text-button-l tracking-button-l px-10 h-24',
-    m: 'text-button-m tracking-button-m px-10 h-20',
-    s: 'text-button-s tracking-button-m px-5.5 h-11.75',
+    l: 'text-7xl leading-none tracking-button-l px-10 h-24',
+    m: 'text-6xl leading-none tracking-button-m px-10 h-20',
+    s: 'text-xl leading-none tracking-button-m px-5.5 h-11.75',
 }
 
 const Button: FC<ButtonProps> = ({
@@ -47,16 +46,18 @@ const Button: FC<ButtonProps> = ({
     withIcon = false,
     color = 'primary',
     rounded = false,
+    ...props
 }) => {
     return (
         <button
             type={type}
-            className={clsx(
+            className={cn(
                 `relative inline-flex items-center justify-between gap-6 uppercase ${michroma.className}
              ${variantClasses[variant][color]} ${sizeClasses[size]} ${className}`,
                 { 'pr-5.25': withIcon && (size === 'l' || size === 'm'), 'pr-3': withIcon && size === 's' },
                 { 'rounded-21.5': rounded && (size === 'l' || size === 'm'), 'rounded-22.75': rounded && size === 's' }
             )}
+            {...props}
         >
             {children}
             {withIcon && (

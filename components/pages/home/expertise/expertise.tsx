@@ -12,8 +12,8 @@ import { TExpertise, expertise, expertiseDescription } from './data'
 
 const TechnologyItem: FC<{ title: string }> = ({ title }) => {
     return (
-        <li className="gap-24.5 flex items-center">
-            <span className="bg-base-14 h-2.5 w-2.5" />
+        <li className="flex items-center gap-24.5">
+            <span className="h-2.5 w-2.5 bg-base-14" />
             <Paragraph variant="alt">{title}</Paragraph>
         </li>
     )
@@ -24,7 +24,7 @@ const Expertise: FC = () => {
     const [swiper, setSwiper] = useState<SwiperClass>()
 
     return (
-        <section className="py-21.5 overflow-hidden">
+        <section className="overflow-hidden py-21.5">
             <Container>
                 <div className="mb-16.5 flex items-end gap-9">
                     <Heading variant="h2">expertise</Heading>
@@ -33,9 +33,6 @@ const Expertise: FC = () => {
                 <Swiper
                     slidesPerView="auto"
                     spaceBetween={32}
-                    onSlideChange={swiper => {
-                        console.log(swiper.activeIndex)
-                    }}
                     onSwiper={swiper => setSwiper(swiper)}
                     className="mb-12 !overflow-visible"
                 >
@@ -86,7 +83,7 @@ const Expertise: FC = () => {
                         height={327}
                         alt="background"
                         quality={100}
-                        className="-right-40.75 absolute"
+                        className="absolute -right-40.75"
                     />
                 </div>
                 <div className="flex justify-end pt-5.25">

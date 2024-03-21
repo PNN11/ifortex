@@ -9,8 +9,8 @@ import Image from 'next/image'
 const Consultation: FC = () => {
     return (
         <section className="overflow-hidden">
-            <Container className="pt-21.5 relative">
-                <Icons.Lines.LargeRectangleWithLines className="text-base-15/65 top-30 absolute left-[-45%]" />
+            <Container className="relative pt-21.5">
+                <Icons.Lines.LargeRectangleWithLines className="absolute left-[-45%] top-30 text-base-15/65" />
                 <Heading variant="accent" className="mb-5.25">
                     Get <span className="text-base-1">free</span> consultation
                 </Heading>
@@ -18,7 +18,7 @@ const Consultation: FC = () => {
                     Lorem ipsum dolor sit amet consectetur. Rhoncus proin libero pellentesque elit.{' '}
                 </Paragraph>
                 <form className="max-w-158">
-                    <Input withIcon />
+                    <Input withIcon placeholder="YOUR EMAIL" />
                 </form>
                 <Image
                     src="/images/home/consultation_bg.svg"
@@ -28,7 +28,7 @@ const Consultation: FC = () => {
                     className="absolute right-[-20%] top-3.5"
                 />
             </Container>
-            <div className="bg-consultation-gradient h-68.5" />
+            <div className="h-68.5 bg-consultation-gradient" />
         </section>
     )
 }

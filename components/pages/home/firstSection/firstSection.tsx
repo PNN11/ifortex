@@ -1,3 +1,4 @@
+import { Icons } from '@/components/svg'
 import Button from '@/components/ui/buttons/defaultButton'
 import Heading from '@/components/ui/typography/heading'
 import Image from 'next/image'
@@ -9,6 +10,8 @@ const FirstSection: FC = () => {
             id="first-section"
             className="relative mb-40 flex h-screen flex-col-reverse bg-base-10 bg-opacity-[0.01]"
         >
+            <div className="w-226.5 h-231 absolute -left-16.5 -top-68.5 rounded-full border border-base-1/30" />
+            <Icons.Planet className="left-137.5 absolute top-26" />
             <Image
                 src="/images/home/left-bg.png"
                 alt="bg"
@@ -40,6 +43,7 @@ const FirstSection: FC = () => {
                 <br />
                 software solutions
             </Heading>
+            <div className="bottom-3.625 w-210.5 absolute right-4 h-px bg-base-1/30" />
         </section>
     )
 }

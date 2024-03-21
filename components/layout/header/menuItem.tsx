@@ -9,7 +9,7 @@ export type MenuItemProps = {
     isActive?: (path: string, href: string) => boolean
 }
 
-const defaultIsActiveFunc: MenuItemProps['isActive'] = (path, href) => path.includes(href)
+export const defaultIsActiveFunc: MenuItemProps['isActive'] = (path, href) => path.includes(href)
 
 const MenuItem: FC<MenuItemProps> = ({ href, title, isActive = defaultIsActiveFunc }) => {
     const pathname = usePathname()
