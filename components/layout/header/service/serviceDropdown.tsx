@@ -12,7 +12,7 @@ const ServiceDropdown: FC = () => {
     return (
         <div className="flex cursor-pointer items-center gap-1.5" onClick={() => (isOpen ? close() : open())}>
             <span
-                className={`${pathname.includes('services') ? 'text-base-1' : 'text-base-7'} text-2xl font-light leading-none`}
+                className={`${pathname.includes('service') ? 'text-base-1' : 'text-base-7'} text-2xl font-light leading-none`}
             >
                 Service
             </span>

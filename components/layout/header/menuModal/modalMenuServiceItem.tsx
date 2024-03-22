@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import React, { FC, useEffect, useState } from 'react'
 import ServiceMenu from '../service/serviceMenu'
 import { useWindowSize } from '@/hooks/useWindowSize'
+import Heading from '@/components/ui/typography/heading'
 
 type ModalMenuServiceItemProps = {
     onClick?: () => void
@@ -34,7 +35,7 @@ const ModalMenuServiceItem: FC<ModalMenuServiceItemProps> = ({ onClick, isActive
                     width >= 1024 ? onClick?.() : setOpen(prev => !prev)
                 }}
             >
-                Service
+                <Heading variant="h3">Service</Heading>
             </Button>
             <Accordion open={open}>
                 <ServiceMenu />

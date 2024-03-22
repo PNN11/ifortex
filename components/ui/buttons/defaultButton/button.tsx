@@ -32,7 +32,7 @@ const variantClasses: Record<ButtonVariant, Record<ButtonColor, string>> = {
 const sizeClasses: Record<ButtonSize, string> = {
     l: 'text-7xl leading-none tracking-button-l px-10 h-24',
     m: 'text-6xl leading-none tracking-button-m px-10 h-20',
-    s: 'text-xl leading-none tracking-button-m px-5.5 h-11.75',
+    s: 'text-xl leading-none tracking-button-m px-5.5 h-12',
 }
 
 const Button: FC<ButtonProps> = ({
@@ -52,7 +52,7 @@ const Button: FC<ButtonProps> = ({
         <button
             type={type}
             className={cn(
-                `relative inline-flex items-center justify-between gap-6 uppercase ${michroma.className}
+                `relative inline-flex items-center justify-between gap-6 whitespace-nowrap uppercase ${michroma.className}
              ${variantClasses[variant][color]} ${sizeClasses[size]} ${className}`,
                 { 'pr-5.25': withIcon && (size === 'l' || size === 'm'), 'pr-3': withIcon && size === 's' },
                 { 'rounded-21.5': rounded && (size === 'l' || size === 'm'), 'rounded-22.75': rounded && size === 's' }

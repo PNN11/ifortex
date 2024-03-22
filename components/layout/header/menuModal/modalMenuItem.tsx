@@ -3,6 +3,7 @@ import { MenuItemProps, defaultIsActiveFunc } from '../menuItem'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Button from '@/components/ui/buttons/defaultButton'
+import Heading from '@/components/ui/typography/heading'
 
 const ModalMenuItem: FC<MenuItemProps> = ({ href, title, isActive = defaultIsActiveFunc }) => {
     const pathname = usePathname()
@@ -16,7 +17,7 @@ const ModalMenuItem: FC<MenuItemProps> = ({ href, title, isActive = defaultIsAct
                 color="secondary"
                 className={`w-full ${isActive?.(pathname, href) ? 'text-base-1' : 'text-base-13'}`}
             >
-                {title}
+                <Heading variant="h3">{title}</Heading>
             </Button>
         </Link>
     )

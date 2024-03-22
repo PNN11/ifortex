@@ -1,18 +1,20 @@
 'use client'
 import { Icons } from '@/components/svg'
-import React, { FC } from 'react'
-import ServiceDropdown from './service/serviceDropdown'
 import { gilroy } from '@/fonts'
-import MenuItem, { MenuItemProps } from './menuItem'
-import { menuItems } from './data'
-import MenuModal from './menuModal'
 import { useModal } from '@/hooks/useModal'
+import { FC } from 'react'
+import { menuItems } from './data'
+import MenuItem from './menuItem'
+import MenuModal from './menuModal'
 
 const Header: FC = () => {
     const [isOpen, open, close] = useModal()
     return (
-        <header id="header" className="absolute inset-x-0 z-20 flex items-center justify-between p-11.5 pr-17.5">
-            <Icons.IFortexLogo />
+        <header
+            id="header"
+            className="absolute inset-x-0 z-20 flex items-center justify-between px-6 py-5.5 sm:px-7.5 md:py-8 lg:px-11 lg:py-9 xl:px-11.5 xl:py-10 2xl:py-11.5"
+        >
+            <Icons.IFortexLogo className="h-5.5 sm:h-6 md:h-7.25" />
             <nav className={`${gilroy.className} flex items-center gap-37`}>
                 <ul className="hidden items-center gap-8.5 xl:flex">
                     {menuItems.map(item => (

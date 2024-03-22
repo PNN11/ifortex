@@ -73,22 +73,22 @@ const expertise = [
 const ServiceMenu: FC = () => {
     return (
         <div>
-            <div className="gap-18 3xl:mb-15.5 hidden flex-col lg:mb-13.5 lg:flex xl:mb-17 2xl:mb-11 2xl:flex-row 2xl:gap-21.5">
+            <div className="hidden flex-col gap-18 lg:mb-13.5 lg:flex xl:mb-17 2xl:mb-11 2xl:flex-row 2xl:gap-21.5 3xl:mb-15.5">
                 <Heading variant="h2" className="">
                     Service
                 </Heading>
                 <Image src="/images/home/review_line.svg" width={468} height={29} alt="line" quality={100} />
             </div>
             <ul
-                className={`${gilroy.className} menu-accordion 3xl:max-h-44 mb-22 mt-5.5 flex max-h-96 flex-col gap-x-4.5 gap-y-5 overflow-auto lg:mt-0
-                 lg:max-h-full lg:flex-wrap 2xl:max-h-60 2xl:gap-x-4`}
+                className={`${gilroy.className} menu-accordion mb-22 mt-5.5 flex max-h-96 flex-col gap-x-4.5 gap-y-5 overflow-auto lg:mt-0 lg:max-h-full
+                 lg:flex-wrap 2xl:max-h-60 2xl:gap-x-4 3xl:max-h-44`}
             >
                 {services.map(({ href, title }, index) => (
-                    <li key={href} className="3xl:gap-12 flex max-w-100 items-center gap-12 2xl:gap-9">
+                    <li key={href} className="flex max-w-100 items-center gap-12 2xl:gap-9 3xl:gap-12">
                         <Paragraph variant="alt" className="w-7.5 text-base-4">
                             {formatNumber(index + 1, { minimumIntegerDigits: 2 })}
                         </Paragraph>
-                        <Link href={href}>
+                        <Link href={`/service/${href}`}>
                             <Paragraph variant="p2" className="leading-snug tracking-[0.0625rem] text-base-6">
                                 {title}
                             </Paragraph>

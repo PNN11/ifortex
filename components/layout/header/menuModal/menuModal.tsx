@@ -25,6 +25,7 @@ const modalMenuItems = menuItems.map(item =>
 const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
     const [activeSubmenu, setActiveSubmenu] = useState<string>('')
     const ref = useRef<HTMLDivElement>(null)
+    const { width } = useWindowSize()
 
     const ActiveSubMenuComponent = subMenusMap.get(activeSubmenu)
 
@@ -38,10 +39,10 @@ const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
                         <Icons.Lines.Hypotenuse className="text-base-1/65" />
                         <Heading variant="h3">Menu</Heading>
                     </div>
-                    <div className="xl:pl-31.75 lg:pl-10.5">
-                        <ul className="3xl:mb-18 lg:mb-47.75 mb-20 flex flex-col gap-7 md:mb-37">
+                    <div className="lg:pl-10.5 xl:pl-31.75">
+                        <ul className="mb-20 flex flex-col gap-7 md:mb-37 lg:mb-47.75 3xl:mb-18">
                             {modalMenuItems.map(item => (
-                                <li key={item.title} className="2xl:w-129.5 lg:w-109.25">
+                                <li key={item.title} className="lg:w-109.25 2xl:w-129.5">
                                     {item.type === 'link' ? (
                                         <ModalMenuItem href={item.href} title={item.title} isActive={item.isActive} />
                                     ) : (
@@ -58,13 +59,18 @@ const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
                             ))}
                         </ul>
                         <Link href="/contact">
-                            <Button variant="contained" size="m" withIcon className="w-full">
+                            <Button
+                                variant="contained"
+                                size={`${width >= 720 ? 'm' : 's'}`}
+                                withIcon
+                                className="w-full"
+                            >
                                 Contact us
                             </Button>
                         </Link>
                     </div>
                 </div>
-                <div className="3xl:pl-31.75 xl:pl-26.75 hidden pl-21.5 pr-2.5 pt-11.25 lg:block 2xl:pl-22">
+                <div className="hidden pl-21.5 pr-2.5 pt-11.25 lg:block xl:pl-26.75 2xl:pl-22 3xl:pl-31.75">
                     {activeSubmenu && ActiveSubMenuComponent && <ActiveSubMenuComponent />}
                 </div>
             </div>

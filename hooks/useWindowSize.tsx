@@ -1,4 +1,5 @@
 import { useLayoutEffect, useState } from 'react'
+import { useDebouncedCallback } from 'use-debounce'
 
 type Size = {
     width: number
@@ -11,21 +12,21 @@ export const useWindowSize = (): Size => {
         height: 0,
     })
 
-    useLayoutEffect(() => {
-        const handleResize = (): void => {
-            const newWindowSize = {
-                width: window.innerWidth,
-                height: window.innerHeight,
-            }
-
-            setWindowSize(newWindowSize)
+    const handleResize = useDebouncedCallback(() => {
+        const newWindowSize = {
+            width: window.innerWidth,
+            height: window.innerHeight,
         }
 
+        setWindowSize(newWindowSize)
+    }, 100)
+
+    useLayoutEffect(() => {
         window.addEventListener('resize', handleResize)
         handleResize()
 
         return () => window.removeEventListener('resize', handleResize)
-    }, [])
+    }, [handleResize])
 
     return windowSize
 }
