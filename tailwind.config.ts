@@ -40,6 +40,7 @@ export const config: Config = {
         extend: {
             backgroundImage: {
                 'consultation-gradient': 'linear-gradient(0deg, rgba(28, 237, 204, 0.13) 0%, rgba(52, 52, 52, 0) 100%)',
+                'cases-gradient': 'linear-gradient(0deg, rgba(28, 237, 204, 0.13) 0%, rgba(52, 52, 52, 0) 100%)',
             },
             spacing: {
                 1.5: '0.375rem', // 6px
@@ -103,6 +104,7 @@ export const config: Config = {
                 38.5: '9.625rem', // 154px
                 40.5: '10.125rem', // 162px
                 40.75: '10.1875rem', // 163px
+                42: '10.5rem', // 168px
                 42.125: '10.5313rem', // 168.5px
                 45: '11.25rem', // 180px
                 45.25: '11.3125rem', // 181px
@@ -112,7 +114,9 @@ export const config: Config = {
                 49: '12.25rem', // 196px
                 50: '12.5rem', // 200px
                 53.75: '13.4375rem', // 215px
+                61.25: '15.3125rem', // 245px
                 62.5: '15.625rem', // 250px
+                65: '16.25rem', // 260px
                 65.5: '16.375rem', // 262px
                 68.5: '17.125rem', // 274px
                 70: '17.5rem', // 280px
@@ -121,6 +125,7 @@ export const config: Config = {
                 80: '20rem', // 320px
                 85: '21.25rem', // 340px
                 88: '22rem', // 352px
+                91.25: '22.8125rem', // 365px
                 96.5: '24.125rem', // 386px
                 99: '24.75rem', // 396px
                 100: '25rem', // 400px
@@ -146,9 +151,11 @@ export const config: Config = {
                 169.5: '42.375rem', // 678px
                 175.75: '43.9375rem', // 703px
                 187.5: '46.875rem', // 750px
+                205.25: '51.3125rem', // 821px
                 209.5: '52.375rem', // 838px
                 210.5: '52.625rem', // 842px
                 226.5: '56.625rem', // 906px
+                227.75: '56.9375rem', // 911px
                 231: '57.75rem', // 924px
                 237.5: '59.375rem', // 950px
                 248.25: '62.0625rem', // 993px
