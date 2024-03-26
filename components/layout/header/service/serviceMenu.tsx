@@ -81,7 +81,7 @@ const ServiceMenu: FC = () => {
             </div>
             <ul
                 className={`${gilroy.className} menu-accordion mb-22 mt-5.5 flex max-h-96 flex-col gap-x-4.5 gap-y-5 overflow-auto lg:mt-0 lg:max-h-full
-                 lg:flex-wrap 2xl:max-h-60 2xl:gap-x-4 3xl:max-h-44`}
+                 lg:flex-wrap 2xl:max-h-60 2xl:gap-x-4 3xl:max-h-48`}
             >
                 {services.map(({ href, title }, index) => (
                     <li key={href} className="flex max-w-100 items-center gap-12 2xl:gap-9 3xl:gap-12">

@@ -17,7 +17,7 @@ export default function Home() {
                     <OurService />
                     <AboutUs />
                 </div>
-                <aside className="w-32.25 hidden flex-col 2xl:flex 3xl:w-45.25">
+                <aside className="hidden w-32.25 flex-col 2xl:flex 3xl:w-45.25">
                     <div className="relative flex h-screen flex-col">
                         <div className="grow border-l border-l-base-1/30" />
                         <div className="my-3.625 ml-4 h-px bg-base-1/30" />
@@ -26,12 +26,12 @@ export default function Home() {
                     <div className="grow border-l border-l-base-1/30" />
                 </aside>
             </div>
-            {/* <Expertise />
+            <Expertise />
             <Consultation />
             <Projects />
             <Team />
             <Reviews />
-            <Partners /> */}
+            <Partners />
         </main>
     )
 }

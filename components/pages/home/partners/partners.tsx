@@ -22,13 +22,13 @@ const Partners: FC = () => {
     return (
         <section className="overflow-hidden py-21.5">
             <Container>
-                <div className="mb-15 flex items-center justify-between gap-7">
+                <div className="mb-15 flex flex-col justify-between gap-6 lg:flex-row lg:items-center lg:gap-7">
                     <Heading variant="h2" className="leading-12.7">
                         our
                         <br />
                         <span className="text-base-1">partners</span>
                     </Heading>
-                    <div className="max-w-125 h-px w-full bg-base-12/30" />
+                    <div className="h-px w-full bg-base-12/30 lg:max-w-125" />
                     <Button size="s" variant="outlined" withIcon>
                         become a client
                     </Button>

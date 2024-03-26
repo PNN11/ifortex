@@ -4,6 +4,7 @@ import { ComponentProps, FC } from 'react'
 
 type HeadingProps = ComponentProps<'h1'> & {
     variant: 'h1' | 'h2' | 'h3' | 'h4' | 'accent'
+    tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
 }
 
 const variantTags = {
@@ -22,8 +23,9 @@ const variantClasses: Record<HeadingProps['variant'], string> = {
     accent: 'text-6xl leading-14.4 lg:text-6.5xl lg:leading-16.2 2xl:text-9xl 2xl:leading-24.3',
 }
 
-const Heading: FC<HeadingProps> = ({ variant, className = '', children, ...props }) => {
-    const Element = variantTags[variant]
+const Heading: FC<HeadingProps> = ({ variant, className = '', children, tag, ...props }) => {
+    const Element = tag ?? variantTags[variant]
+
     return (
         <Element
             {...props}

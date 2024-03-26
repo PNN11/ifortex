@@ -10,6 +10,7 @@ import Button from '@/components/ui/buttons/defaultButton'
 import Link from 'next/link'
 import ServiceMenu from '../service/serviceMenu'
 import { useWindowSize } from '@/hooks/useWindowSize'
+import { ScreenWidths } from '@/types/common'
 
 type MenuModalProps = {
     isOpen: boolean
@@ -61,7 +62,7 @@ const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
                         <Link href="/contact">
                             <Button
                                 variant="contained"
-                                size={`${width >= 720 ? 'm' : 's'}`}
+                                size={`${width >= ScreenWidths.M ? 'm' : 's'}`}
                                 withIcon
                                 className="w-full"
                             >

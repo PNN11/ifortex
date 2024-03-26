@@ -64,6 +64,7 @@ export const config: Config = {
                 11.5: '2.875rem', // 46px
                 11.75: '2.9375rem', // 47px
                 12.5: '3.125rem', // 50px
+                12.75: '3.1875rem', // 51px
                 13.5: '3.375rem', // 54px
                 13.75: '3.4375rem', // 55px
                 14.5: '3.625rem', // 58px
@@ -86,6 +87,7 @@ export const config: Config = {
                 25.75: '6.4375rem', // 103px
                 26: '6.5rem', // 104px
                 26.75: '6.6875rem', // 107px
+                27.5: '6.875rem', // 110px
                 30: '7.5rem', // 120px
                 31: '7.75rem', // 124px
                 31.75: '7.9375rem', // 127px
@@ -107,12 +109,18 @@ export const config: Config = {
                 46.75: '11.6875rem', // 187px
                 47.5: '11.875rem', // 190px
                 47.75: '11.9375rem', // 191px
+                49: '12.25rem', // 196px
+                50: '12.5rem', // 200px
                 53.75: '13.4375rem', // 215px
+                62.5: '15.625rem', // 250px
                 65.5: '16.375rem', // 262px
                 68.5: '17.125rem', // 274px
                 70: '17.5rem', // 280px
+                72: '18rem', // 288px
                 78.375: '19.5938rem', // 313.5px
+                80: '20rem', // 320px
                 85: '21.25rem', // 340px
+                88: '22rem', // 352px
                 96.5: '24.125rem', // 386px
                 99: '24.75rem', // 396px
                 100: '25rem', // 400px
@@ -122,11 +130,14 @@ export const config: Config = {
                 105.5: '26.375rem', // 422px
                 109.25: '27.3125rem', // 437px
                 112: '28rem', // 448px
+                114.5: '28.625rem', // 458px
                 115.5: '28.875rem', // 462px
+                117: '29.25rem', // 468px
                 125: '31.25rem', // 500px
                 129.5: '32.375rem', // 518px
                 137.5: '34.375rem', // 550px
                 145.5: '36.375rem', // 582px
+                146.75: '36.6875rem', // 587px
                 150: '37.5rem', // 600px
                 153.75: '38.4375rem', // 615px
                 158: '39.5rem', // 632px
@@ -139,7 +150,9 @@ export const config: Config = {
                 210.5: '52.625rem', // 842px
                 226.5: '56.625rem', // 906px
                 231: '57.75rem', // 924px
+                237.5: '59.375rem', // 950px
                 248.25: '62.0625rem', // 993px
+                250: '62.5rem', // 1000px
                 273.75: '68.4375rem', // 1095px
                 318.75: '79.6875rem', // 1275px
                 341.75: '85.4375rem', // 1367px
@@ -168,6 +181,7 @@ export const config: Config = {
                 'base-17': 'rgb(var(--color-base-17) / <alpha-value>)',
                 'base-18': 'rgb(var(--color-base-18) / <alpha-value>)',
                 'base-19': 'rgb(var(--color-base-19) / <alpha-value>)',
+                'base-20': 'rgb(var(--color-base-20) / <alpha-value>)',
             },
             fontSize: {
                 xl: '1.25rem', // 20px
@@ -196,6 +210,7 @@ export const config: Config = {
                 22.75: '5.6875rem', // 91px
             },
             gridTemplateColumns: {
+                'review-sm': '1.875rem minmax(1rem,52.6875rem) 1.875rem',
                 review: '5rem minmax(1rem,52.6875rem) 5rem',
                 footer: 'max-content minmax(max-content,1fr)',
             },

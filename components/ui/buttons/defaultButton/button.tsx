@@ -52,7 +52,7 @@ const Button: FC<ButtonProps> = ({
         <button
             type={type}
             className={cn(
-                `relative inline-flex items-center justify-between gap-6 whitespace-nowrap uppercase ${michroma.className}
+                `relative inline-flex items-center justify-between gap-4 whitespace-nowrap uppercase sm:gap-6 ${michroma.className}
              ${variantClasses[variant][color]} ${sizeClasses[size]} ${className}`,
                 { 'pr-5.25': withIcon && (size === 'l' || size === 'm'), 'pr-3': withIcon && size === 's' },
                 { 'rounded-21.5': rounded && (size === 'l' || size === 'm'), 'rounded-22.75': rounded && size === 's' }
