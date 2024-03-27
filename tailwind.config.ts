@@ -22,6 +22,26 @@ const rotateY = plugin(function ({ addUtilities }) {
     })
 })
 
+const rotateX = plugin(function ({ addUtilities }) {
+    addUtilities({
+        '.rotate-x-20': {
+            transform: 'rotateX(20deg)',
+        },
+        '.rotate-x-40': {
+            transform: 'rotateX(40deg)',
+        },
+        '.rotate-x-60': {
+            transform: 'rotateX(60deg)',
+        },
+        '.rotate-x-80': {
+            transform: 'rotateX(80deg)',
+        },
+        '.rotate-x-180': {
+            transform: 'rotateX(180deg)',
+        },
+    })
+})
+
 export const config: Config = {
     content: [
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -41,8 +61,10 @@ export const config: Config = {
             backgroundImage: {
                 'consultation-gradient': 'linear-gradient(0deg, rgba(28, 237, 204, 0.13) 0%, rgba(52, 52, 52, 0) 100%)',
                 'cases-gradient': 'linear-gradient(0deg, rgba(28, 237, 204, 0.13) 0%, rgba(52, 52, 52, 0) 100%)',
+                'grad-1': 'linear-gradient(128.35deg, rgba(72, 217, 194, 0.4) 16.88%, rgba(52, 52, 52, 0) 85.99%)',
             },
             spacing: {
+                0.75: '0.1875rem', // 3px
                 1.5: '0.375rem', // 6px
                 2.375: '0.5938rem', // 9.5px
                 3.25: '0.8125rem', // 13px
@@ -51,6 +73,7 @@ export const config: Config = {
                 4.75: '1.1875rem', // 19px
                 5.25: '1.3125rem', // 21px
                 5.5: '1.375rem', // 22px
+                5.75: '1.4375rem', // 23px
                 6.5: '1.625rem', // 26px
                 6.625: '1.6563rem', // 26.5px
                 6.75: '1.6875rem', // 27px
@@ -66,30 +89,38 @@ export const config: Config = {
                 11.75: '2.9375rem', // 47px
                 12.5: '3.125rem', // 50px
                 12.75: '3.1875rem', // 51px
+                13: '3.25rem', // 52px
                 13.5: '3.375rem', // 54px
                 13.75: '3.4375rem', // 55px
                 14.5: '3.625rem', // 58px
                 15: '3.75rem', // 60px
                 15.5: '3.875rem', // 62px
+                15.75: '3.9375rem', // 63px
                 16.5: '4.125rem', // 66px
                 17: '4.25rem', // 68px
                 17.5: '4.375rem', // 70px
                 18: '4.5rem', // 72px
+                18.5: '4.625rem', // 74px
                 18.75: '4.6875rem', // 75px
                 19.5: '4.875rem', // 78px
                 20.25: '5.0625rem', // 81px
+                20.5: '5.125rem', // 82px
                 21: '5.25rem', // 84px
                 21.5: '5.375rem', // 86px
                 22: '5.5rem', // 88px
                 23: '5.75rem', // 92px
+                23.25: '5.8125rem', // 93px
                 23.75: '5.9375rem', // 95px
                 24.5: '6.125rem', // 98px
+                25: '6.25rem', // 100px
                 25.25: '6.3125rem', // 101px
                 25.75: '6.4375rem', // 103px
                 26: '6.5rem', // 104px
                 26.75: '6.6875rem', // 107px
+                27.25: '6.8125rem', // 109px
                 27.5: '6.875rem', // 110px
                 30: '7.5rem', // 120px
+                30.25: '7.5625rem', // 121px
                 31: '7.75rem', // 124px
                 31.75: '7.9375rem', // 127px
                 32.25: '8.0625rem', // 129px
@@ -112,6 +143,7 @@ export const config: Config = {
                 47.5: '11.875rem', // 190px
                 47.75: '11.9375rem', // 191px
                 49: '12.25rem', // 196px
+                49.5: '12.375rem', // 198px
                 50: '12.5rem', // 200px
                 53.75: '13.4375rem', // 215px
                 61.25: '15.3125rem', // 245px
@@ -121,10 +153,13 @@ export const config: Config = {
                 68.5: '17.125rem', // 274px
                 70: '17.5rem', // 280px
                 72: '18rem', // 288px
+                76.5: '19.125rem', // 306px
                 78.375: '19.5938rem', // 313.5px
                 80: '20rem', // 320px
                 85: '21.25rem', // 340px
+                86.5: '21.625rem', // 346px
                 88: '22rem', // 352px
+                88.5: '22.125rem', // 354px
                 91.25: '22.8125rem', // 365px
                 96.5: '24.125rem', // 386px
                 99: '24.75rem', // 396px
@@ -138,14 +173,18 @@ export const config: Config = {
                 114.5: '28.625rem', // 458px
                 115.5: '28.875rem', // 462px
                 117: '29.25rem', // 468px
+                120: '30rem', // 480px
                 125: '31.25rem', // 500px
                 129.5: '32.375rem', // 518px
+                130: '32.5rem', // 520px
+                133: '33.25rem', // 532px
                 137.5: '34.375rem', // 550px
                 145.5: '36.375rem', // 582px
                 146.75: '36.6875rem', // 587px
                 150: '37.5rem', // 600px
                 153.75: '38.4375rem', // 615px
                 158: '39.5rem', // 632px
+                160: '40rem', // 640px
                 162: '40.5rem', // 648px
                 165: '41.25rem', // 660px
                 169.5: '42.375rem', // 678px
@@ -210,6 +249,7 @@ export const config: Config = {
                 alt: '0.09rem', // 1.44px
                 'button-l': '0.0625rem', // 1px
                 'button-m': '-0.0625rem', // -1px
+                'button-sm': '-0.0425rem', // -0.68px
             },
             borderRadius: {
                 19: '4.75rem', // 76px
@@ -242,6 +282,6 @@ export const config: Config = {
             },
         },
     },
-    plugins: [rotateY],
+    plugins: [rotateY, rotateX],
 }
 export default config

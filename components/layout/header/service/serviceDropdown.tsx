@@ -17,7 +17,7 @@ const ServiceDropdown: FC = () => {
                 Service
             </span>
             <Icons.ChevronDown className="h-6 w-6 text-base-7" />
-            <ServiceModal isOpen={isOpen} onClose={close} />
+            {isOpen && <ServiceModal isOpen={isOpen} onClose={close} />}
         </div>
     )
 }

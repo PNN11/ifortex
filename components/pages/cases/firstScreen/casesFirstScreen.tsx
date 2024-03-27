@@ -6,9 +6,9 @@ import React, { FC } from 'react'
 
 const CasesFirstScreen: FC = () => {
     return (
-        <section className="relative bg-base-3">
+        <section className="relative border-t border-t-base-2 bg-base-3 xl:border-none">
             <Container>
-                <div className="2xl:max-w-227.75 lg:max-w-205.25 md:pt-65 2xl:pt-91.25 md:pb-42 2xl:pb-61.25 mx-auto pb-5 pt-28 sm:pb-9.5 md:text-center lg:pb-40">
+                <div className="mx-auto pb-5 pt-10 sm:pb-9.5 md:pb-42 md:pt-42 md:text-center lg:max-w-205.25 lg:pb-40 2xl:max-w-227.75 2xl:pb-61.25 2xl:pt-61.25">
                     <Heading variant="h1" className="mb-8 sm:mb-12 lg:mb-16.5">
                         we standing out your project ideas
                     </Heading>
@@ -36,7 +36,7 @@ const CasesFirstScreen: FC = () => {
                 className="absolute z-10 hidden lg:right-5.5 lg:top-85 lg:block 2xl:right-[9.3125rem]
                  2xl:top-[22.6875rem] 3xl:right-[12.625rem]"
             />
-            <div className="bg-cases-gradient absolute bottom-0 h-100 w-full" />
+            <div className="absolute bottom-0 h-100 w-full bg-cases-gradient" />
         </section>
     )
 }

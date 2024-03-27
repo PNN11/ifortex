@@ -7,6 +7,8 @@ import Link from 'next/link'
 import React, { FC } from 'react'
 import Image from 'next/image'
 
+export type ServiceLink = (typeof services)[number]['href']
+
 const services = [
     { href: 'web-development', title: 'Web development' },
     { href: 'mobile-development', title: 'Mobile development' },
@@ -35,7 +37,7 @@ const services = [
     { href: 'devops', title: 'DevOps' },
     { href: 'machine-learning', title: 'Machine learning' },
     { href: 'data-science', title: 'Data science' },
-]
+] as const
 
 const expertise = [
     {

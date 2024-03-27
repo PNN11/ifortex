@@ -12,7 +12,7 @@ const Header: FC = () => {
     return (
         <header
             id="header"
-            className="absolute inset-x-0 z-20 flex items-center justify-between px-6 py-5.5 sm:px-7.5 md:py-8 lg:px-11 lg:py-9 xl:px-11.5 xl:py-10 2xl:py-11.5"
+            className="z-20 flex h-fit items-center justify-between px-6 py-5.5 sm:px-7.5 md:py-8 lg:px-11 lg:py-9 xl:px-11.5 xl:py-10 2xl:py-11.5"
         >
             <Icons.IFortexLogo className="h-5.5 sm:h-6 md:h-7.25" />
             <nav className={`${gilroy.className} flex items-center gap-37`}>

@@ -1,6 +1,6 @@
 import { ModalOverlay } from '@/components/modals/overlay'
 import useClickOutside from '@/hooks/useClickOutside'
-import { FC, useRef, useState } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import { menuItems } from '../data'
 import ModalMenuItem from './modalMenuItem'
 import ModalMenuServiceItem from './modalMenuServiceItem'
@@ -11,6 +11,9 @@ import Link from 'next/link'
 import ServiceMenu from '../service/serviceMenu'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { ScreenWidths } from '@/types/common'
+import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
+import useCallbackAfterRouteChange from '@/hooks/useCallbackAfterRouteChange'
 
 type MenuModalProps = {
     isOpen: boolean
@@ -26,9 +29,12 @@ const modalMenuItems = menuItems.map(item =>
 const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
     const [activeSubmenu, setActiveSubmenu] = useState<string>('')
     const ref = useRef<HTMLDivElement>(null)
+
     const { width } = useWindowSize()
 
     const ActiveSubMenuComponent = subMenusMap.get(activeSubmenu)
+
+    useCallbackAfterRouteChange(onClose)
 
     useClickOutside({ ref, callback: onClose, enabled: isOpen })
 

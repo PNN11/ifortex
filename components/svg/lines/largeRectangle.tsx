@@ -95,7 +95,7 @@ const LargeRectangleWithLines: FC<ComponentProps<'svg'>> = props => {
             </g>
             <defs>
                 <clipPath id="clip0_202_2609">
-                    <rect width="819" height="30" fill="white" transform="translate(-231)" />
+                    <rect width="819" height="30" fill="white" />
                 </clipPath>
             </defs>
         </svg>
