@@ -6,7 +6,7 @@ import { ComponentProps, FC } from 'react'
 
 type ButtonVariant = 'contained' | 'outlined' | 'without-border'
 
-type ButtonSize = 's' | 'm' | 'l' | 'sm'
+type ButtonSize = 's' | 'm' | 'l' | 'sm' | 'md'
 
 type ButtonColor = 'primary' | 'secondary'
 
@@ -34,6 +34,7 @@ const sizeClasses: Record<ButtonSize, string> = {
     m: 'text-6xl leading-none tracking-button-m px-10 h-20',
     s: 'text-xl leading-none tracking-button-m px-5.5 h-12',
     sm: 'text-1xl leading-none tracking-button-sm px-6.75 h-13.5',
+    md: 'text-4.5xl leading-none tracking-button-md px-9 h-18',
 }
 
 const Button: FC<ButtonProps> = ({
@@ -59,6 +60,7 @@ const Button: FC<ButtonProps> = ({
                     'pr-5.25': withIcon && (size === 'l' || size === 'm'),
                     'pr-3': withIcon && size === 's',
                     'pr-3.5': withIcon && size === 'sm',
+                    'pr-4.75': withIcon && size === 'md',
                 },
                 { 'rounded-21.5': rounded && (size === 'l' || size === 'm'), 'rounded-22.75': rounded && size === 's' }
             )}
@@ -72,6 +74,7 @@ const Button: FC<ButtonProps> = ({
                             'h-15 w-15': size === 'l' || size === 'm',
                             'h-7 w-7': size === 's',
                             'h-10 w-10': size === 'sm',
+                            'h-13.5 w-13.5': size === 'md',
                         },
 
                         iconClassName

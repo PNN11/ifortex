@@ -138,3 +138,8 @@ body {
     width: 1px;
     border-radius: 0.125rem;
 } */
+
+.provided-service-clip {
+    -webkit-clip-path: polygon(27px 0, 100% 0, 100% calc(100% - 27px), calc(100% - 27px) 100%, 0 100%, 0 27px);
+    clip-path: polygon(27px 0, 100% 0, 100% calc(100% - 27px), calc(100% - 27px) 100%, 0 100%, 0 27px);
+}

@@ -5,6 +5,7 @@ import RectangleWithLines from './rectangleWithLines'
 import LargeRectangleWithLines from './largeRectangle'
 import ProjectLine from './projectLine'
 import ReviewLine from './reviewLine'
+import VerticalRectangleWithLines from './verticalRectangleWithLines'
 
 const Lines = {
     Hypotenuse,
@@ -14,6 +15,7 @@ const Lines = {
     LargeRectangleWithLines,
     ProjectLine,
     ReviewLine,
+    VerticalRectangleWithLines,
 }
 
 export default Lines

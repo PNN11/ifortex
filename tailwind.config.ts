@@ -62,6 +62,9 @@ export const config: Config = {
                 'consultation-gradient': 'linear-gradient(0deg, rgba(28, 237, 204, 0.13) 0%, rgba(52, 52, 52, 0) 100%)',
                 'cases-gradient': 'linear-gradient(0deg, rgba(28, 237, 204, 0.13) 0%, rgba(52, 52, 52, 0) 100%)',
                 'grad-1': 'linear-gradient(128.35deg, rgba(72, 217, 194, 0.4) 16.88%, rgba(52, 52, 52, 0) 85.99%)',
+                'provided-service-gradient':
+                    'linear-gradient(0deg, rgba(239, 239, 239, 0.13) 46.01%, rgba(52, 52, 52, 0) 90.49%)',
+                'grad-2': 'linear-gradient(0deg, rgba(28, 237, 204, 0.13) 0%, rgba(52, 52, 52, 0) 100%)',
             },
             spacing: {
                 0.75: '0.1875rem', // 3px
@@ -83,6 +86,8 @@ export const config: Config = {
                 8.25: '2.0625rem', // 33px
                 8.5: '2.125rem', // 34px
                 9.5: '2.375rem', // 38px
+                9.75: '2.4375rem', // 39px
+                10.25: '2.5625rem', // 41px
                 10.5: '2.625rem', // 42px
                 11.25: '2.8125rem', // 45px
                 11.5: '2.875rem', // 46px
@@ -183,12 +188,17 @@ export const config: Config = {
                 146.75: '36.6875rem', // 587px
                 150: '37.5rem', // 600px
                 153.75: '38.4375rem', // 615px
+                155: '38.75rem', // 620px
+                156.25: '39.0625rem', // 625px
                 158: '39.5rem', // 632px
                 160: '40rem', // 640px
                 162: '40.5rem', // 648px
                 165: '41.25rem', // 660px
+                165.5: '41.375rem', // 662px
                 169.5: '42.375rem', // 678px
                 175.75: '43.9375rem', // 703px
+                183.75: '45.9375rem', // 735px
+                184: '46rem', // 736px
                 187.5: '46.875rem', // 750px
                 205.25: '51.3125rem', // 821px
                 209.5: '52.375rem', // 838px
@@ -196,6 +206,7 @@ export const config: Config = {
                 226.5: '56.625rem', // 906px
                 227.75: '56.9375rem', // 911px
                 231: '57.75rem', // 924px
+                232: '58rem', // 928px
                 237.5: '59.375rem', // 950px
                 248.25: '62.0625rem', // 993px
                 250: '62.5rem', // 1000px
@@ -235,6 +246,7 @@ export const config: Config = {
                 '2xl': '1.5rem', // 24px
                 '3xl': '1.625rem', // 26px
                 '4xl': '1.75rem', // 28px
+                '4.5xl': '1.8rem', // 28.8px
                 '5xl': '1.875rem', // 30px
                 '6xl': '2rem', // 32px
                 '6.5xl': '2.25rem', // 36px
@@ -250,6 +262,7 @@ export const config: Config = {
                 'button-l': '0.0625rem', // 1px
                 'button-m': '-0.0625rem', // -1px
                 'button-sm': '-0.0425rem', // -0.68px
+                'button-md': '-0.0563rem', // -0.9px
             },
             borderRadius: {
                 19: '4.75rem', // 76px

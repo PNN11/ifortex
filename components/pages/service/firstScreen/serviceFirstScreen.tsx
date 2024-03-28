@@ -8,13 +8,11 @@ import Paragraph from '@/components/ui/typography/paragraph'
 import Button from '@/components/ui/buttons/defaultButton/button'
 import { ScreenWidths } from '@/types/common'
 import { useWindowSize } from '@/hooks/useWindowSize'
+import { ServicePageContent } from '@/types/servicePage'
 
 type ServiceFirstScreenProps = {
     service: string
-    title: string
-    description: string
-    actionButton: { title: string }
-}
+} & ServicePageContent['firstScreen']
 
 const getButtonSize = (width: number) => {
     if (width < ScreenWidths.L) return 's'
@@ -25,9 +23,9 @@ const getButtonSize = (width: number) => {
 const ServiceFirstScreen: FC<ServiceFirstScreenProps> = ({ service, actionButton, description, title }) => {
     const { width } = useWindowSize()
     return (
-        <section className="md:py-13 lg:py-20.5 2xl:py-18.5 overflow-hidden border-y border-y-base-2 py-10 sm:py-12">
+        <section className="overflow-hidden border-y border-y-base-2 py-10 sm:py-12 md:py-13 lg:py-20.5 2xl:py-18.5">
             <Container>
-                <div className="pt-76.5 md:pt-120 relative lg:pt-0">
+                <div className="relative pt-76.5 md:pt-120 lg:pt-0">
                     <Image
                         src="/images/service/service_bg.svg"
                         width={539}
@@ -51,7 +49,7 @@ const ServiceFirstScreen: FC<ServiceFirstScreenProps> = ({ service, actionButton
                                 {service}
                             </Heading>
                         </div>
-                        <div className="2xl:gap-15.75 relative z-10 flex flex-col gap-8">
+                        <div className="relative z-10 flex flex-col gap-8 2xl:gap-15.75">
                             <Heading variant="h1">{title}</Heading>
                             <Paragraph variant="p2">{description}</Paragraph>
                             <Button
