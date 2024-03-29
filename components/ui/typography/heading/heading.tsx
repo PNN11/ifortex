@@ -16,7 +16,7 @@ const variantTags = {
 } as const
 
 const variantClasses: Record<HeadingProps['variant'], string> = {
-    h1: 'text-6.5xl leading-10.35 lg:leading-13.8 lg:text-8.5xl 2xl:text-9xl 2xl:leading-15.5',
+    h1: 'text-6.5xl leading-10.35 lg:text-8.5xl lg:leading-13.8 2xl:text-9xl 2xl:leading-15.5',
     h2: 'text-6xl leading-9.2 lg:text-6.5xl lg:leading-10.35 2xl:text-8xl 2xl:leading-11.5',
     h3: 'text-3xl leading-9.1 lg:text-5xl lg:leading-13.5 2xl:text-6xl 2xl:leading-14.4',
     h4: 'text-2xl leading-6.9 lg:text-3xl lg:leading-7.475 2xl:text-4xl 2xl:leading-8.05',

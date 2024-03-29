@@ -9,6 +9,7 @@ import { SwiperSlide, Swiper, SwiperClass } from 'swiper/react'
 import Paragraph from '@/components/ui/typography/paragraph'
 import { formatNumber } from '@/lib/formatNumber'
 import { TExpertise, expertise, expertiseDescription } from './data'
+import ExpertiseItem from './expertiseItem'
 
 const TechnologyItem: FC<{ title: string }> = ({ title }) => {
     return (
@@ -53,20 +54,7 @@ const Expertise: FC = () => {
                                 setActiveItem(item)
                             }}
                         >
-                            <div className="flex w-fit items-center gap-8">
-                                <Icons.Lines.RectangleWithLines
-                                    className={`${activeItem === item ? 'text-base-1' : 'text-base-6'}`}
-                                />
-                                <div className="flex items-center gap-5.25">
-                                    <Paragraph variant="alt">
-                                        {formatNumber(index + 1, { minimumIntegerDigits: 2 })}
-                                    </Paragraph>
-                                    <Heading variant="h4" className="whitespace-nowrap">
-                                        {item}
-                                    </Heading>
-                                </div>
-                                <Icons.Plus className={`text-base-13 ${activeItem === item ? 'rotate-45' : ''}`} />
-                            </div>
+                            <ExpertiseItem isActive={activeItem === item} title={item} expertiseNumber={index + 1} />
                         </SwiperSlide>
                     ))}
                     {new Array(2).fill(null).map((item, index) => (

@@ -2,7 +2,7 @@ import { StaticImageData } from 'next/image'
 
 export type ServicePageContent = {
     firstScreen: {
-        title: JSX.Element
+        title: JSX.Element | string
         description: string
         actionButton: {
             title: string

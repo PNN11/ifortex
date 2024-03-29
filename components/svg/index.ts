@@ -11,6 +11,10 @@ import Behance from './socials/behance'
 import MailIcon from './socials/mail'
 import Planet from './planet'
 import Cross from './lines/cross'
+import Warning from './warning'
+import MapPin from './mapPin'
+import UserSearch from './userSearch'
+import DocumentLayoutLeft from './documentLayoutLeft'
 
 export const Icons = {
     IFortexLogo,
@@ -26,4 +30,8 @@ export const Icons = {
     MailIcon,
     Planet,
     Cross,
+    Warning,
+    MapPin,
+    UserSearch,
+    DocumentLayoutLeft,
 }
