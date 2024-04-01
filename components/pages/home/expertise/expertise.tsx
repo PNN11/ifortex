@@ -1,24 +1,13 @@
 'use client'
-import { FC, useState } from 'react'
-import Image from 'next/image'
-import Container from '@/components/ui/wrappers/container'
-import { Icons } from '@/components/svg'
 import Heading from '@/components/ui/typography/heading'
+import Container from '@/components/ui/wrappers/container'
+import Image from 'next/image'
+import { FC, useState } from 'react'
 
-import { SwiperSlide, Swiper, SwiperClass } from 'swiper/react'
-import Paragraph from '@/components/ui/typography/paragraph'
-import { formatNumber } from '@/lib/formatNumber'
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { TExpertise, expertise, expertiseDescription } from './data'
+import ExpertiseInfo from './expertiseInfo'
 import ExpertiseItem from './expertiseItem'
-
-const TechnologyItem: FC<{ title: string }> = ({ title }) => {
-    return (
-        <li className="flex items-center gap-13.5 sm:gap-24.5">
-            <span className="h-2.5 w-2.5 bg-base-14" />
-            <Paragraph variant="alt">{title}</Paragraph>
-        </li>
-    )
-}
 
 const Expertise: FC = () => {
     const [activeItem, setActiveItem] = useState<TExpertise>(expertise[0])
@@ -61,35 +50,11 @@ const Expertise: FC = () => {
                         <SwiperSlide className="!w-146.75" key={index} />
                     ))}
                 </Swiper>
-                <div className="relative mb-16.5 flex flex-col gap-5.5 py-7.5 lg:flex-row lg:items-center lg:gap-8.5 xl:gap-11">
-                    <div className="flex items-start gap-8.5 xl:gap-11">
-                        <Image
-                            src="/images/home/expertise_vector_2.svg"
-                            width={66}
-                            height={267}
-                            alt="vector"
-                            quality={100}
-                            className="hidden w-8.5 sm:block lg:w-16.5"
-                        />
-                        <Paragraph className="lg:max-w-102.5" variant="p1">
-                            {expertiseDescription[activeItem].description}
-                        </Paragraph>
-                    </div>
-                    <ul className="flex flex-col gap-5">
-                        <TechnologyItem title="Our team has extensive" />
-                        {expertiseDescription[activeItem].technologies.map(tech => (
-                            <TechnologyItem key={tech} title={tech} />
-                        ))}
-                    </ul>
-                    <Image
-                        src="/images/home/expertise_bg.svg"
-                        width={444}
-                        height={327}
-                        alt="background"
-                        quality={100}
-                        className="absolute left-[74%] top-23 hidden lg:left-[78%] lg:block xl:top-auto"
-                    />
-                </div>
+
+                <ExpertiseInfo
+                    description={expertiseDescription[activeItem].description}
+                    listItems={expertiseDescription[activeItem].technologies}
+                />
                 <div className="flex justify-end pt-5.25">
                     <Image src="/images/home/expertise_vector.svg" width={468} height={29} alt="vector" quality={100} />
                 </div>

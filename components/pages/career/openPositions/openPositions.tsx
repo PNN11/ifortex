@@ -3,9 +3,8 @@ import Heading from '@/components/ui/typography/heading'
 import Container from '@/components/ui/wrappers/container'
 import SectionWrapper from '@/components/ui/wrappers/sectionWrapper'
 import Image from 'next/image'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import PositionsList from './positionsList'
-import IconWithLinesWrapper from '@/components/ui/wrappers/iconWithLinesWrapper'
 import Socials from './socials'
 
 const openPositions = [
@@ -18,7 +17,7 @@ const OpenPositions: FC = () => {
     return (
         <SectionWrapper variant="m" className="overflow-hidden">
             <Container size="l">
-                <div className="2xl:mb-19.25 mb-17.5 flex flex-wrap items-center gap-x-13.5 gap-y-4 lg:mb-20.5">
+                <div className="mb-17.5 flex flex-wrap items-center gap-x-13.5 gap-y-4 lg:mb-20.5 2xl:mb-19.25">
                     <Heading variant="h2" className="text-base-1">
                         2
                     </Heading>

@@ -5,6 +5,7 @@ import { Icons } from '@/components/svg'
 import Heading from '../typography/heading'
 import Paragraph from '../typography/paragraph'
 import { cn } from '@/lib/classNames'
+import SectionGradient from '../sectionGradient'
 
 type ConsultationWrapperProps = {
     children: ReactNode
@@ -40,7 +41,7 @@ const ConsultationWrapper: FC<ConsultationWrapperProps> = ({ children, descripti
                     className={cn('absolute left-[73%] top-3.5 hidden max-w-max md:block lg:left-[53%]', classes?.bg)}
                 />
             </Container>
-            <div className="h-50 bg-consultation-gradient lg:h-62.5" />
+            <SectionGradient />
         </section>
     )
 }

@@ -8,6 +8,7 @@ import ReviewLine from './reviewLine'
 import VerticalRectangleWithLines from './verticalRectangleWithLines'
 import CareerRectangleWithLines from './careerRectangleWithLines'
 import ExtraLargeRectangleWithLines from './extraLargeRectangleWithLines'
+import ContactsLine from './contactsLine'
 
 const Lines = {
     Hypotenuse,
@@ -20,6 +21,7 @@ const Lines = {
     VerticalRectangleWithLines,
     CareerRectangleWithLines,
     ExtraLargeRectangleWithLines,
+    ContactsLine,
 }
 
 export default Lines

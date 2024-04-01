@@ -1,3 +1,9 @@
+import ContactsFirstScreen from '@/components/pages/contacts/firstScreen/contactsFirstScreen'
+
 export default function Home() {
-    return <main className=""></main>
+    return (
+        <main>
+            <ContactsFirstScreen />
+        </main>
+    )
 }

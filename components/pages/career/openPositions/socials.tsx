@@ -12,16 +12,16 @@ const Socials: FC = () => {
             className="grid grid-cols-1 gap-6 lg:grid-cols-[26rem,calc(100%-49.875rem),20.875rem] lg:items-center
              3xl:grid-cols-[26rem,calc(100%-57.625rem),20.875rem] 3xl:gap-21.5"
         >
-            <Heading variant="h2" className="w-104 whitespace-nowrap">
+            <Heading variant="h2" className="md:w-104">
                 Stay with us <br /> on socials
             </Heading>
             <IconWithLinesWrapper
                 Icon={Icons.Lines.ExtraLargeRectangleWithLines}
                 iconProps={{ className: 'text-base-1' }}
-                className="h-3.75 lg::w-[calc(100%-49.875rem)] w-full lg:h-7.5 3xl:w-[calc(100%-57.625rem)]"
+                className="h-3.75 w-full lg:h-7.5"
             />
-            <Button size="s" variant="outlined" withIcon className="lg:w-83.5 w-full">
-                <div className="gap-4.25 flex items-center">
+            <Button size="s" variant="outlined" withIcon className="w-full lg:w-83.5">
+                <div className="flex items-center gap-4.25">
                     <Icons.Linkedin className="text-base-1" />
                     <span>Linkedin</span>
                 </div>

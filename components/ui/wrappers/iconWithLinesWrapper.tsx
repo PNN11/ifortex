@@ -11,7 +11,7 @@ type IconWithLinesWrapperProps = {
 }
 
 const IconWithLinesWrapper: FC<IconWithLinesWrapperProps> = ({ Icon, children, className = '', iconProps }) => {
-    const { ref, height, width } = useResizeObserver()
+    const { ref, height = 0, width = 0 } = useResizeObserver()
 
     return (
         <div ref={ref} className={cn('relative', className)}>

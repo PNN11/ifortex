@@ -15,6 +15,7 @@ import Warning from './warning'
 import MapPin from './mapPin'
 import UserSearch from './userSearch'
 import DocumentLayoutLeft from './documentLayoutLeft'
+import BelarusMap from './belarusMap'
 
 export const Icons = {
     IFortexLogo,
@@ -34,4 +35,5 @@ export const Icons = {
     MapPin,
     UserSearch,
     DocumentLayoutLeft,
+    BelarusMap,
 }

@@ -20,7 +20,7 @@ const FirstSection: FC = () => {
             id="first-section"
             className="relative mb-40 flex h-[100dvh] flex-col-reverse overflow-hidden bg-base-10 bg-opacity-[0.01]"
         >
-            <div className="absolute -left-16.5 -top-68.5 hidden h-231 w-226.5 rounded-full border border-base-1/30 md:block" />
+            <div className="absolute -left-16.5 -top-68.5 hidden h-231 w-226.5 rounded-full border border-base-15/30 md:block" />
             <Icons.Planet className="absolute left-112 top-40.5 hidden md:block 3xl:left-137.5" />
             <Image
                 src="/images/home/left-bg.png"
