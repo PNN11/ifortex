@@ -15,7 +15,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ image, tags, title, href }) => {
             <ul className="flex flex-wrap gap-x-6.5">
                 {tags.map(tag => (
                     <li key={tag}>
-                        <Paragraph variant="tag" className="!text-base-4">
+                        <Paragraph variant="tag" className="text-base-4 hover:text-base-5">
                             .{tag}
                         </Paragraph>
                     </li>

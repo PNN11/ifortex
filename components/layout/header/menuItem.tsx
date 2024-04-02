@@ -15,7 +15,7 @@ const MenuItem: FC<MenuItemProps> = ({ href, title, isActive = defaultIsActiveFu
     const pathname = usePathname()
     return (
         <Link
-            className={`${isActive(pathname, href) ? 'text-base-1' : 'text-base-7'} inline-block text-2xl font-light leading-none tracking-[0.044375rem]`}
+            className={`${isActive(pathname, href) ? 'text-base-1' : 'text-base-7'} inline-block text-2xl font-light leading-none tracking-[0.044375rem] hover:text-base-2`}
             href={href}
         >
             {title}

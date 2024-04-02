@@ -17,7 +17,7 @@ const ProjectCategoryItem: FC<{
     category: ProjectCategory
 }> = ({ isActive, onClick, category }) => (
     <button type="button" onClick={() => onClick(category)}>
-        <Paragraph variant="alt" className={`uppercase ${isActive ? '!text-base-1' : 'text-base-17'}`}>
+        <Paragraph variant="alt" className={`uppercase hover:text-base-4 ${isActive ? 'text-base-1' : 'text-base-17'}`}>
             {category}
         </Paragraph>
     </button>

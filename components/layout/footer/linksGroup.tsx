@@ -18,7 +18,7 @@ const LinksGroup: FC<LinksGroupProps> = ({ links, title, className = '' }) => {
                 {links.map(({ href, title }) => (
                     <li key={title}>
                         <Link href={href}>
-                            <Paragraph variant="alt" className="font-medium !text-base-19">
+                            <Paragraph variant="alt" className="font-medium text-base-19 hover:text-base-5">
                                 {title}
                             </Paragraph>
                         </Link>
