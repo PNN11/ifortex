@@ -1,11 +1,11 @@
 import { Icons } from '@/components/svg'
-import Paragraph from '@/components/ui/typography/paragraph'
-import Link from 'next/link'
-import React, { FC } from 'react'
-import LinksGroup from './linksGroup'
 import Input from '@/components/ui/inputs/defaultInput/input'
-import { services, companyMenu, socials } from './data'
+import Paragraph from '@/components/ui/typography/paragraph'
+import { FC } from 'react'
 import ContactInfo from './contactInfo'
+import { companyMenu, services } from './data'
+import LinksGroup from './linksGroup'
+import SocialIcons from './socialIcons'
 
 const Footer: FC = () => {
     return (
@@ -34,17 +34,9 @@ const Footer: FC = () => {
                                 Subscribe for newsletters
                             </Paragraph>
                             <form className="mb-9.5">
-                                <Input inputSize="m" withIcon placeholder="YOUR EMAIL" iconClassName="text-base-1" />
+                                <Input inputSize="s" withIcon placeholder="YOUR EMAIL" iconClassName="text-base-1" />
                             </form>
-                            <ul className="flex items-center gap-4.75">
-                                {socials.map(({ Icon, href }) => (
-                                    <li key={href}>
-                                        <Link href={href} target="_blank">
-                                            <Icon className="text-base-1" />
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
+                            <SocialIcons />
                         </div>
                     </div>
                     <div className="flex flex-wrap gap-x-8 gap-y-6 md:gap-x-17.5">

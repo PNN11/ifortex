@@ -5,7 +5,7 @@ import { ComponentProps, FC } from 'react'
 
 type InputSize = 'l' | 'm' | 's'
 
-type InputProps = ComponentProps<'input'> & {
+type TextAreaProps = ComponentProps<'textarea'> & {
     inputSize?: InputSize
     withIcon?: boolean
     Icon?: FC<ComponentProps<'svg'>>
@@ -13,9 +13,9 @@ type InputProps = ComponentProps<'input'> & {
     onIconClick?: () => void
 }
 
-const Input: FC<InputProps> = ({
+const TextArea: FC<TextAreaProps> = ({
     className = '',
-    width,
+
     inputSize = 'l',
     withIcon = false,
     Icon = Icons.Arrows.ArrowUpRight,
@@ -25,15 +25,15 @@ const Input: FC<InputProps> = ({
 }) => {
     return (
         <div className="relative">
-            <input
+            <textarea
                 className={cn(
-                    `relative w-full border-b border-b-base-16 bg-transparent font-light leading-8.25 text-base-5 outline-none placeholder:text-base-5`,
+                    `relative w-full resize-none border-b border-b-base-16 bg-transparent font-light leading-8.25 text-base-5 outline-none placeholder:text-base-5`,
                     gilroy.className,
 
                     {
-                        'h-20 px-10 text-3xl': inputSize === 'l',
-                        'px-5,5 h-15 text-1xl': inputSize === 'm',
-                        'h-11.75 px-4.75 text-xl': inputSize === 's',
+                        'h-59.25 px-10 text-3xl': inputSize === 'l',
+                        'px-5,5 h-50 text-1xl': inputSize === 'm',
+                        'h-36 px-4.75 text-xl': inputSize === 's',
                     },
                     {
                         'pr-26': inputSize === 'l' && withIcon,
@@ -60,4 +60,4 @@ const Input: FC<InputProps> = ({
     )
 }
 
-export default Input
+export default TextArea
