@@ -10,6 +10,9 @@ import React, { FC } from 'react'
 import { HorizontalLine } from '../common'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { ScreenWidths } from '@/types/common'
+import Image from 'next/image'
+import SidebarImage from '@/public/images/home/homepage_sidebar_image.svg'
+import { MouseParallax } from 'react-just-parallax'
 
 const ourServices = [
     'Web development',
@@ -27,10 +30,17 @@ const OurService: FC = () => {
     const { width } = useWindowSize()
 
     return (
-        <section className="2xl:w-2xl-screen-home-section 3xl:w-3xl-screen-home-section w-full overflow-hidden pb-1">
+        <section className="relative w-full overflow-hidden pb-1 2xl:w-2xl-screen-home-section 2xl:overflow-visible 3xl:w-3xl-screen-home-section">
+            <Image
+                src={SidebarImage}
+                alt=""
+                className="-right-25.5 absolute hidden 2xl:block"
+                data-aos="fade-zoom-in"
+                data-aos-offset="300"
+            />
             <Container className="mb-40">
-                <div className="gap-25.75 relative flex flex-col justify-between lg:flex-row">
-                    <div className="gap-8.25 relative flex flex-col items-start py-9 sm:gap-11 lg:gap-25.25">
+                <div className="relative flex flex-col justify-between gap-25.75 lg:flex-row">
+                    <div className="relative flex flex-col items-start gap-8.25 py-9 sm:gap-11 lg:gap-25.25">
                         <h5 className={`text-4xl font-light text-white ${gilroy.className}`}>Explore our service:</h5>
                         <Heading variant="accent" className="lowercase">
                             .full-cycle web development
@@ -57,10 +67,12 @@ const OurService: FC = () => {
                             </li>
                         ))}
                     </ul>
-                    <Icons.Lines.CircleWithLines
-                        className="lg:left-150 md:left-153.75 absolute left-1/2 top-102.5 hidden
-                        text-base-11 md:block lg:top-80 xl:top-72 2xl:left-162 2xl:top-60"
-                    />
+                    <MouseParallax isAbsolutelyPositioned strength={0.25}>
+                        <Icons.Lines.CircleWithLines
+                            className="absolute left-1/2 top-102.5 hidden text-base-11 md:left-153.75
+                        md:block lg:left-150 lg:top-80 xl:top-72 2xl:left-162 2xl:top-60"
+                        />
+                    </MouseParallax>
                 </div>
             </Container>
             <HorizontalLine />

@@ -6,12 +6,13 @@ import Link from 'next/link'
 import { FC } from 'react'
 import ExploreCaseButton from './exploreCaseButton'
 import { Project } from './types'
+import ConditionalLink from '@/components/ui/conditionalLink'
 
 type ProjectCardProps = Project
 
 const ProjectCard: FC<ProjectCardProps> = ({ image, tags, title, href }) => {
     return (
-        <div className="flex flex-col gap-3">
+        <ConditionalLink href={href} condition={!!href} className="group flex cursor-pointer flex-col gap-3">
             <ul className="flex flex-wrap gap-x-6.5">
                 {tags.map(tag => (
                     <li key={tag}>
@@ -25,16 +26,22 @@ const ProjectCard: FC<ProjectCardProps> = ({ image, tags, title, href }) => {
                 <Heading variant="h3">{title}</Heading>
                 <Icons.Lines.ProjectLine className="absolute right-0 top-15 rotate-y-180 lg:left-0 lg:right-auto lg:top-17.5 xl:left-auto xl:right-0 xl:top-15" />
             </div>
-            <Image src={image} width={607} height={320} alt={title} quality={100} className="w-full" />
-            <div className={`flex pb-2.5 pt-10 ${href ? 'relative justify-end' : 'justify-center'}`}>
-                <Icons.Lines.ProjectLine className={`${href ? 'absolute left-0' : ''}`} />
-                {href && (
-                    <Link href={href}>
-                        <ExploreCaseButton>explore case</ExploreCaseButton>
-                    </Link>
-                )}
+            <Image
+                src={image}
+                width={607}
+                height={320}
+                alt={title}
+                quality={100}
+                className="w-full transition-all duration-300 group-hover:-translate-y-3"
+            />
+            <div
+                className={`flex h-20.25 items-end justify-center pb-2.5 group-hover:relative group-hover:justify-end`}
+            >
+                <Icons.Lines.ProjectLine className={`group-hover:absolute group-hover:left-0`} />
+
+                <ExploreCaseButton className="hidden group-hover:flex">explore case</ExploreCaseButton>
             </div>
-        </div>
+        </ConditionalLink>
     )
 }
 

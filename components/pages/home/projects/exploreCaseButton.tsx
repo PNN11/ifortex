@@ -5,11 +5,12 @@ import { FC, ReactNode } from 'react'
 
 type ExploreCaseButtonProps = {
     children: ReactNode
+    className?: string
 }
 
-const ExploreCaseButton: FC<ExploreCaseButtonProps> = ({ children }) => {
+const ExploreCaseButton: FC<ExploreCaseButtonProps> = ({ children, className = '' }) => {
     return (
-        <div className="flex items-center">
+        <div className={cn('flex items-center', className)}>
             <Icons.Lines.Hypotenuse className="mr-7 h-5 w-5 rotate-90 text-base-4" />
             <button
                 className={cn(
@@ -19,7 +20,7 @@ const ExploreCaseButton: FC<ExploreCaseButtonProps> = ({ children }) => {
             >
                 {children}
             </button>
-            <div className="w-12.75 flex h-12 items-center justify-center bg-base-5">
+            <div className="flex h-12 w-12.75 items-center justify-center bg-base-5">
                 <Icons.Arrows.ArrowUpRight className="h-7 w-7 text-base-3" />
             </div>
         </div>

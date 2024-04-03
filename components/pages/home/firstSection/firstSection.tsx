@@ -6,6 +6,7 @@ import { useWindowSize } from '@/hooks/useWindowSize'
 import { ScreenWidths } from '@/types/common'
 import Image from 'next/image'
 import { FC } from 'react'
+import { MouseParallax } from 'react-just-parallax'
 
 const getButtonSize = (width: number) => {
     if (width < ScreenWidths.M) return 's'
@@ -20,8 +21,12 @@ const FirstSection: FC = () => {
             id="first-section"
             className="relative mb-40 flex h-[100dvh] flex-col-reverse overflow-hidden bg-base-10 bg-opacity-[0.01]"
         >
-            <div className="absolute -left-16.5 -top-68.5 hidden h-231 w-226.5 rounded-full border border-base-15/30 md:block" />
-            <Icons.Planet className="absolute left-112 top-40.5 hidden md:block 3xl:left-137.5" />
+            <MouseParallax strength={0.2} isAbsolutelyPositioned>
+                <div className="absolute -left-16.5 -top-68.5 hidden h-231 w-226.5 rounded-full border border-base-15/30 md:block" />
+            </MouseParallax>
+            <MouseParallax strength={0.3} isAbsolutelyPositioned>
+                <Icons.Planet className="absolute left-112 top-40.5 hidden md:block 3xl:left-137.5" />
+            </MouseParallax>
             <Image
                 src="/images/home/left-bg.png"
                 alt="bg"
@@ -61,7 +66,7 @@ const FirstSection: FC = () => {
                     software solutions
                 </span>
             </Heading>
-            <div className="absolute bottom-3.625 h-px w-full bg-base-1/30 2xl:right-4 2xl:w-210.5" />
+            <div className="absolute bottom-3.625 h-px w-full bg-base-15/30 2xl:right-4 2xl:w-210.5" />
         </section>
     )
 }

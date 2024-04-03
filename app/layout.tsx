@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'aos/dist/aos.css'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 

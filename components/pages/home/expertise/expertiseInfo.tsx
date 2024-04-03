@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Paragraph from '@/components/ui/typography/paragraph'
 import { cn } from '@/lib/classNames'
@@ -19,8 +19,15 @@ type ExpertiseInfoProps = {
 }
 
 const ExpertiseInfo: FC<ExpertiseInfoProps> = ({ description, listItems, classes }) => {
+    const ref = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        ref.current?.animate({ opacity: [0, 1] }, 500)
+    }, [listItems])
+
     return (
         <div
+            ref={ref}
             className={cn(
                 'relative mb-16.5 flex flex-col gap-5.5 py-7.5 md:pb-19.25 lg:flex-row lg:items-start lg:gap-8.5 lg:pb-0 xl:gap-11',
                 classes?.wrapper

@@ -127,6 +127,7 @@ export const config: Config = {
                 24.5: '6.125rem', // 98px
                 25: '6.25rem', // 100px
                 25.25: '6.3125rem', // 101px
+                25.5: '6.375rem', // 102px
                 25.75: '6.4375rem', // 103px
                 26: '6.5rem', // 104px
                 26.75: '6.6875rem', // 107px
@@ -165,6 +166,7 @@ export const config: Config = {
                 53.75: '13.4375rem', // 215px
                 54.75: '13.6875rem', // 219px
                 55: '13.75rem', // 220px
+                58: '14.5rem', // 232px
                 58.25: '14.5625rem', // 233px
                 58.75: '14.6875rem', // 235px
                 59.25: '14.8125rem', // 237px
@@ -329,6 +331,15 @@ export const config: Config = {
                 15.5: '3.875rem', // 62px
                 16.2: '4.05rem', // 64.8px
                 24.3: '6.075rem', // 97.2px
+            },
+            animation: {
+                'expertise-fade-in': 'fadeIn 600ms',
+            },
+            keyframes: {
+                fadeIn: {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
             },
         },
     },

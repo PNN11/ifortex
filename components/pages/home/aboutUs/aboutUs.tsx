@@ -1,17 +1,30 @@
-import React, { FC } from 'react'
-import Image from 'next/image'
-import Container from '@/components/ui/wrappers/container'
+'use client'
 import Heading from '@/components/ui/typography/heading'
 import Paragraph from '@/components/ui/typography/paragraph'
+import Container from '@/components/ui/wrappers/container'
+import MouseParallaxWrapper from '@/components/ui/wrappers/mouseParallaxWrapper'
+import Image from 'next/image'
+import { FC, useRef } from 'react'
 import { HorizontalLine } from '../common'
 import { technologies } from './data'
+import { useGSAP } from '@gsap/react'
+import { gsap } from 'gsap'
 
 const AboutUs: FC = () => {
+    const bgRef = useRef<HTMLImageElement>(null)
+
+    useGSAP(() => {
+        gsap.to(bgRef.current, {
+            scrollTrigger: { trigger: bgRef.current, scrub: 1, start: '0 85%', end: '100% 0%' },
+            translateX: '15%',
+        })
+    })
+
     return (
-        <section className="2xl:w-2xl-screen-home-section 3xl:w-3xl-screen-home-section w-full overflow-hidden">
+        <section className="relative w-full overflow-hidden 2xl:w-2xl-screen-home-section 2xl:overflow-visible 3xl:w-3xl-screen-home-section">
             <Container className="mb-14">
                 <div className="relative flex items-center">
-                    <div className="lg:gap-53.75 sm:py-12.5 pb-100.5 sm:pb-105.5 flex flex-col items-start gap-10 py-10 md:py-15 lg:flex-row xl:gap-47.75 xl:py-18.75 2xl:gap-34 2xl:py-20">
+                    <div className="flex flex-col items-start gap-10 py-10 pb-100.5 sm:py-12.5 sm:pb-105.5 md:py-15 lg:flex-row lg:gap-53.75 xl:gap-47.75 xl:py-18.75 2xl:gap-34 2xl:py-20">
                         <Heading variant="h2">about us</Heading>
                         <Paragraph variant="p1" className="max-w-115.5 lg:max-w-103">
                             At iFortex, we understand that building a website or app can be a daunting task. That`s why
@@ -21,23 +34,26 @@ const AboutUs: FC = () => {
                         </Paragraph>
                     </div>
                     <Image
+                        ref={bgRef}
                         src="/images/home/about_us_bg.svg"
                         alt="bg"
                         width={520}
                         height={395}
-                        className="sm:bottom-12.5 absolute bottom-10 left-7.5 h-[20.875rem] w-[27.5rem] md:bottom-auto md:left-[70%] lg:left-[85%]
+                        className="absolute bottom-10 left-7.5 h-[20.875rem] w-[27.5rem] sm:bottom-12.5 md:bottom-auto md:left-[70%] lg:left-[85%]
                          xl:left-[67%] 2xl:left-[60%] 2xl:h-[24.6875] 2xl:w-[32.5rem]"
                     />
-                    <Image
-                        src="/images/home/about_us_planets.svg"
-                        alt="bg"
-                        width={210}
-                        height={296}
-                        className="absolute hidden md:left-[70%] md:block lg:left-[93%] xl:left-[68%] 2xl:left-[84%] 3xl:left-full"
-                    />
+                    <MouseParallaxWrapper isAbsolutelyPositioned strength={0.15}>
+                        <Image
+                            src="/images/home/about_us_planets.svg"
+                            alt="bg"
+                            width={210}
+                            height={296}
+                            className="absolute hidden md:left-[70%] md:block lg:left-[93%] xl:left-[68%] 2xl:left-[84%] 3xl:left-full"
+                        />
+                    </MouseParallaxWrapper>
                 </div>
                 <div
-                    className="xl:gap-33 lg:gap-38.5 sm:py-12.5 flex flex-col items-start justify-between gap-10 py-10 md:py-15 lg:flex-row
+                    className="flex flex-col items-start justify-between gap-10 py-10 sm:py-12.5 md:py-15 lg:flex-row lg:gap-38.5 xl:gap-33
                  xl:py-20 2xl:gap-17.5 2xl:pb-37 2xl:pt-30"
                 >
                     <Heading variant="h2" className="whitespace-nowrap">
@@ -51,9 +67,20 @@ const AboutUs: FC = () => {
                     </Paragraph>
                 </div>
             </Container>
-            <HorizontalLine />
+            <HorizontalLine className="relative">
+                <div className="hidden 2xl:block" data-aos="fade-zoom-in" data-aos-offset="300" data-aos-duration="500">
+                    <Image
+                        src="/images/home/homepage_sidebar_image_2.svg"
+                        width={82}
+                        height={360}
+                        alt=""
+                        className="absolute -right-px -top-31.75"
+                    />
+                    <div className="absolute -right-0.75 -top-0.5 h-1 w-1 bg-base-14" />
+                </div>
+            </HorizontalLine>
             <Container className="hidden-scroll overflow-auto">
-                <div className="min-w-165 flex justify-between py-5.5 lg:px-15">
+                <div className="flex min-w-165 justify-between py-5.5 lg:px-15">
                     {technologies.map(({ group, list }) => (
                         <div key={group} className="">
                             <Paragraph variant="alt" className="mb-7.75 font-medium">
@@ -70,6 +97,16 @@ const AboutUs: FC = () => {
                     ))}
                 </div>
             </Container>
+            <Image
+                src="/images/home/homepage_sidebar_image_3.svg"
+                width={101}
+                height={360}
+                alt=""
+                className="-bottom-58 absolute -right-0.75 hidden 2xl:block"
+                data-aos="fade-zoom-in"
+                data-aos-offset="300"
+                data-aos-duration="400"
+            />
         </section>
     )
 }
