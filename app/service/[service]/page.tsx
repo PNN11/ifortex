@@ -8,6 +8,7 @@ import TechStack from '@/components/pages/service/techStack'
 import OurWorkflow from '@/components/pages/service/workflow/ourWorkflow'
 import StartProject from '@/components/pages/service/startProject'
 import { serviceMock } from './mock'
+import ContactFormSection from '@/components/pages/contacts/contactForm/contactFormSection'
 
 export default function Home({ params }: { params: { service: ServiceLink } }) {
     const data = serviceMock[params.service]
@@ -22,6 +23,7 @@ export default function Home({ params }: { params: { service: ServiceLink } }) {
             <Projects />
             <Reviews />
             <Partners />
+            <ContactFormSection containerSize="m" />
         </main>
     )
 }

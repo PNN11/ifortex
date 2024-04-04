@@ -2,7 +2,7 @@
 import Heading from '@/components/ui/typography/heading'
 import Container from '@/components/ui/wrappers/container'
 import SectionWrapper from '@/components/ui/wrappers/sectionWrapper'
-import React, { FC, useState } from 'react'
+import React, { FC, useRef, useState } from 'react'
 import { techStackData } from './data'
 import Image from 'next/image'
 import Tab from '@/components/ui/tab'
@@ -10,6 +10,8 @@ import { useWindowSize } from '@/hooks/useWindowSize'
 import { ScreenWidths } from '@/types/common'
 import ExpertiseInfo from '../../home/expertise/expertiseInfo'
 import MarginWrapper from '@/components/ui/wrappers/marginWrapper'
+import { useGSAP } from '@gsap/react'
+import { gsap } from 'gsap'
 
 type EmploymentModels = (typeof employmentModels)[number]['value']
 
@@ -53,6 +55,20 @@ const CareerTechStack: FC = () => {
     const [activeModel, setActiveModel] = useState<EmploymentModels>(employmentModels[0].value)
     const { width } = useWindowSize()
 
+    const ref = useRef<HTMLUListElement>(null)
+
+    useGSAP(() => {
+        gsap.to(ref.current, {
+            scrollTrigger: {
+                trigger: ref.current,
+                start: 'top 100%',
+                end: 'bottom 00%',
+                scrub: 1,
+            },
+            x: '-25rem',
+        })
+    })
+
     return (
         <SectionWrapper variant="m" className="overflow-hidden">
             <Container size="l">
@@ -60,7 +76,7 @@ const CareerTechStack: FC = () => {
                     <Heading variant="h2" className="mb-8 md:mb-12 xl:mb-15">
                         Tech stack
                     </Heading>
-                    <ul className="flex gap-16 md:gap-21">
+                    <ul ref={ref} className="flex gap-16 md:gap-21">
                         {techStackData.map(({ image, name }) => (
                             <li key={name}>
                                 <Image src={image} alt="" className="max-w-max" />

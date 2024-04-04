@@ -24,7 +24,7 @@ const PositionsList: FC<PositionsListProps> = ({ positions }) => {
         <>
             {positions?.length ? (
                 <div>
-                    <ul className="hidden-scroll lg:mb-19.25 mb-11 flex overflow-auto sm:mb-13.75 md:mb-16.5">
+                    <ul className="hidden-scroll mb-11 flex overflow-auto sm:mb-13.75 md:mb-16.5 lg:mb-19.25">
                         {categories.map(category => (
                             <li key={category}>
                                 <button onClick={() => setActiveCategory(category)} type="button">
@@ -52,7 +52,7 @@ const PositionsList: FC<PositionsListProps> = ({ positions }) => {
                     className="h-98.25 lg:h-85"
                 >
                     <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-7.75 bg-base-3 px-3 py-2 md:flex-row">
-                        <Icons.Warning className="text-base-17" />
+                        <Icons.Warning className="animate-icons-pulse text-base-17" />
                         <p
                             className={cn(
                                 'whitespace-nowrap text-1xl font-medium tracking-button-l text-base-17 sm:text-4xl',
@@ -61,7 +61,7 @@ const PositionsList: FC<PositionsListProps> = ({ positions }) => {
                         >
                             No open positions yet
                         </p>
-                        <Icons.Warning className="hidden text-base-17 md:block" />
+                        <Icons.Warning className="animate-icons-pulse hidden text-base-17 md:block" />
                     </div>
                 </IconWithLinesWrapper>
             )}

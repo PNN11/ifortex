@@ -1,8 +1,11 @@
+'use client'
 import Container from '@/components/ui/wrappers/container'
 import SectionWrapper from '@/components/ui/wrappers/sectionWrapper'
-import React, { FC } from 'react'
+import React, { FC, useRef } from 'react'
 import TeamDescription from '@/components/pages/home/team/teamDescription'
 import TeamImage from '@/components/pages/home/team/teamImage'
+import { useGSAP } from '@gsap/react'
+import { gsap } from 'gsap'
 
 const teamImages = [
     '/images/home/team_image_1.png',
@@ -24,6 +27,20 @@ const teamImages = [
 ]
 
 const CareerOurTeam: FC = () => {
+    const ref = useRef<HTMLDivElement>(null)
+
+    useGSAP(() => {
+        gsap.to(ref.current, {
+            scrollTrigger: {
+                trigger: ref.current,
+                start: 'top 100%',
+                end: 'bottom 0%',
+                scrub: 1,
+            },
+            x: '-35.125rem',
+        })
+    })
+
     return (
         <SectionWrapper variant="s" className="overflow-hidden">
             <Container size="l">
@@ -35,10 +52,17 @@ const CareerOurTeam: FC = () => {
                     </div>
                 </div>
             </Container>
-            <div className="hidden-scroll flex items-start gap-14 overflow-auto">
-                {teamImages.map((image, i) => (
-                    <TeamImage src={image} alt="" key={`${image}${i}`} order={i % 2 ? 'image-top' : 'image-bottom'} />
-                ))}
+            <div className="overflow-hidden">
+                <div ref={ref} className="flex items-start gap-14 overflow-visible">
+                    {teamImages.map((image, i) => (
+                        <TeamImage
+                            src={image}
+                            alt=""
+                            key={`${image}${i}`}
+                            order={i % 2 ? 'image-top' : 'image-bottom'}
+                        />
+                    ))}
+                </div>
             </div>
         </SectionWrapper>
     )

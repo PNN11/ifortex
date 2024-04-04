@@ -138,6 +138,7 @@ export const config: Config = {
                 30.25: '7.5625rem', // 121px
                 30.75: '7.6875rem', // 123px
                 31: '7.75rem', // 124px
+                31.25: '7.8125rem', // 125px
                 31.75: '7.9375rem', // 127px
                 32.25: '8.0625rem', // 129px
                 32.75: '8.1875rem', // 131px
@@ -334,11 +335,31 @@ export const config: Config = {
             },
             animation: {
                 'expertise-fade-in': 'fadeIn 600ms',
+                'fade-up-service-lines': 'fadeUpServiceLines 600ms',
+                marquee: 'marquee 20s linear infinite',
+                'icons-pulse': 'iconsPulse 1.5s linear infinite',
             },
             keyframes: {
                 fadeIn: {
                     '0%': { opacity: '0' },
                     '100%': { opacity: '1' },
+                },
+                fadeUpServiceLines: {
+                    '0%': { opacity: '0', transform: 'translateY(10rem)' },
+                    '100%': { opacity: '1', transform: 'translateY(-50%)' },
+                },
+                marquee: {
+                    from: {
+                        transform: 'translateX(0)',
+                    },
+                    to: {
+                        transform: 'translateX(calc(-100% - 1.25rem))',
+                    },
+                },
+                iconsPulse: {
+                    '0%': { opacity: '0' },
+                    '50%': { opacity: '1' },
+                    '100%': { opacity: '0' },
                 },
             },
         },

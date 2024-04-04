@@ -31,7 +31,7 @@ const ServiceFirstScreen: FC<ServiceFirstScreenProps> = ({ service, actionButton
                         width={539}
                         height={396}
                         alt=""
-                        className="absolute left-0 top-0 max-w-max lg:left-auto lg:right-[-10.625rem] lg:top-1/2 lg:-translate-y-1/2 xl:left-0"
+                        className="animate-fade-up-service-lines absolute left-0 top-0 max-w-max lg:left-auto lg:right-[-10.625rem] lg:top-1/2 lg:-translate-y-1/2 xl:left-0"
                     />
                     <div className="mr-auto lg:max-w-[45.625rem] xl:ml-auto xl:mr-0">
                         <Image

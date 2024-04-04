@@ -3,15 +3,16 @@ import Heading from '@/components/ui/typography/heading'
 import Paragraph from '@/components/ui/typography/paragraph'
 import { cn } from '@/lib/classNames'
 import { formatNumber } from '@/lib/formatNumber'
-import React, { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 type WorkflowStageItemProps = {
     title: string
     description: string
     stageNumber: number
+    children?: ReactNode
 }
 
-const WorkflowStageItem: FC<WorkflowStageItemProps> = ({ description, stageNumber, title }) => {
+const WorkflowStageItem: FC<WorkflowStageItemProps> = ({ description, stageNumber, title, children }) => {
     return (
         <div className="relative grid grid-cols-[1.875rem,2.0625rem,1fr] gap-4 sm:grid-cols-[1.875rem,2.0625rem,1fr,2rem] sm:gap-6 md:gap-8">
             <Paragraph className="text-base-4" variant="alt">
@@ -34,6 +35,7 @@ const WorkflowStageItem: FC<WorkflowStageItemProps> = ({ description, stageNumbe
             <div className="hidden sm:block">
                 <Icons.Plus className={`rotate-45 text-base-13`} />
             </div>
+            {children}
         </div>
     )
 }
