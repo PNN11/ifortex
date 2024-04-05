@@ -21,7 +21,10 @@ const AboutUs: FC = () => {
     })
 
     return (
-        <section className="relative w-full overflow-hidden 2xl:w-2xl-screen-home-section 2xl:overflow-visible 3xl:w-3xl-screen-home-section">
+        <section
+            id="about-us"
+            className="relative w-full overflow-hidden 2xl:w-2xl-screen-home-section 2xl:overflow-visible 3xl:w-3xl-screen-home-section"
+        >
             <Container className="mb-14">
                 <div className="relative flex items-center">
                     <div className="flex flex-col items-start gap-10 py-10 pb-100.5 sm:py-12.5 sm:pb-105.5 md:py-15 lg:flex-row lg:gap-53.75 xl:gap-47.75 xl:py-18.75 2xl:gap-34 2xl:py-20">
@@ -102,7 +105,7 @@ const AboutUs: FC = () => {
                 width={101}
                 height={360}
                 alt=""
-                className="-bottom-58 absolute -right-0.75 hidden 2xl:block"
+                className="absolute -bottom-58 -right-0.75 hidden 2xl:block"
                 data-aos="fade-zoom-in"
                 data-aos-offset="300"
                 data-aos-duration="400"

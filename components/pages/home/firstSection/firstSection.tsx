@@ -5,7 +5,7 @@ import Heading from '@/components/ui/typography/heading'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { ScreenWidths } from '@/types/common'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { MouseParallax } from 'react-just-parallax'
 
 const getButtonSize = (width: number) => {
@@ -16,17 +16,51 @@ const getButtonSize = (width: number) => {
 
 const FirstSection: FC = () => {
     const { width } = useWindowSize()
+
+    const [topPosition, setTopPosition] = useState(0)
+
+    useEffect(() => {
+        const callback: IntersectionObserverCallback = entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTopPosition(entry.boundingClientRect.top + window.scrollY)
+                }
+            })
+        }
+
+        const observer = new IntersectionObserver(callback, { threshold: 0.55 })
+
+        const firstSection = document.getElementById('first-section')
+        const ourService = document.getElementById('our-service')
+        const aboutUs = document.getElementById('about-us')
+
+        firstSection && observer.observe(firstSection)
+        ourService && observer.observe(ourService)
+        aboutUs && observer.observe(aboutUs)
+
+        return () => {
+            observer.disconnect()
+        }
+    }, [])
+
     return (
         <section
             id="first-section"
-            className="relative mb-40 flex h-[100dvh] flex-col-reverse overflow-hidden bg-base-10 bg-opacity-[0.01]"
+            className="relative mb-40 flex h-[100dvh] flex-col-reverse bg-base-10 bg-opacity-[0.01]"
         >
-            <MouseParallax strength={0.2} isAbsolutelyPositioned>
-                <div className="absolute -left-16.5 -top-68.5 hidden h-231 w-226.5 rounded-full border border-base-15/30 md:block" />
+            <MouseParallax strength={0.1} isAbsolutelyPositioned shouldPause={false}>
+                <div
+                    style={{ top: -274 + topPosition }}
+                    className="absolute -left-16.5 -top-68.5 hidden h-231 w-226.5 rounded-full border border-base-15/30 transition-all duration-700 md:block"
+                />
             </MouseParallax>
-            <MouseParallax strength={0.3} isAbsolutelyPositioned>
-                <Icons.Planet className="absolute left-112 top-40.5 hidden md:block 3xl:left-137.5" />
+            <MouseParallax strength={0.3} isAbsolutelyPositioned shouldPause={false}>
+                <Icons.Planet
+                    style={{ top: 162 + topPosition }}
+                    className="absolute left-112 top-40.5 hidden transition-all duration-700 md:block 3xl:left-137.5"
+                />
             </MouseParallax>
+
             <Image
                 src="/images/home/left-bg.png"
                 alt="bg"
@@ -49,7 +83,13 @@ const FirstSection: FC = () => {
                  xl:pl-0 xl:pr-11 xl:text-right 2xl:pb-18.75 2xl:pr-46.75 3xl:pr-18.75"
                 style={{ wordSpacing: '1.25rem' }}
             >
-                <Button size={getButtonSize(width)} withIcon className="mb-2 w-full rounded-none md:mb-6 lg:w-auto">
+                <Button
+                    size={getButtonSize(width)}
+                    withIcon
+                    iconClassName="text-base-9"
+                    className="relative mb-2 w-full rounded-none bg-transparent transition-all before:absolute before:inset-y-0 before:right-0 before:z-[-1] before:w-full
+                     before:bg-base-1 before:transition-all before:duration-300 hover:text-white hover:before:w-12 before:hover:bg-white md:mb-6 md:hover:before:w-25 lg:w-auto"
+                >
                     Start project
                 </Button>{' '}
                 <span>

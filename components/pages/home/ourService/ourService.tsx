@@ -30,11 +30,14 @@ const OurService: FC = () => {
     const { width } = useWindowSize()
 
     return (
-        <section className="relative w-full overflow-hidden pb-1 2xl:w-2xl-screen-home-section 2xl:overflow-visible 3xl:w-3xl-screen-home-section">
+        <section
+            id="our-service"
+            className="relative w-full overflow-hidden pb-1 2xl:w-2xl-screen-home-section 2xl:overflow-visible 3xl:w-3xl-screen-home-section"
+        >
             <Image
                 src={SidebarImage}
                 alt=""
-                className="-right-25.5 absolute hidden 2xl:block"
+                className="absolute -right-25.5 hidden 2xl:block"
                 data-aos="fade-zoom-in"
                 data-aos-offset="300"
             />
@@ -67,7 +70,7 @@ const OurService: FC = () => {
                             </li>
                         ))}
                     </ul>
-                    <MouseParallax isAbsolutelyPositioned strength={0.25}>
+                    <MouseParallax isAbsolutelyPositioned strength={0.35}>
                         <Icons.Lines.CircleWithLines
                             className="absolute left-1/2 top-102.5 hidden text-base-11 md:left-153.75
                         md:block lg:left-150 lg:top-80 xl:top-72 2xl:left-162 2xl:top-60"

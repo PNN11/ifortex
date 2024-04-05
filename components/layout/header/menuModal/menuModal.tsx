@@ -20,6 +20,8 @@ type MenuModalProps = {
     onClose: () => void
 }
 
+const SUBMENU_ANIMATION_DURATION = 350
+
 const subMenusMap = new Map<string, FC>([['service', ServiceMenu]])
 
 const modalMenuItems = menuItems.map(item =>
@@ -29,10 +31,28 @@ const modalMenuItems = menuItems.map(item =>
 const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
     const [activeSubmenu, setActiveSubmenu] = useState<string>('')
     const ref = useRef<HTMLDivElement>(null)
+    const submenuRef = useRef<HTMLDivElement>(null)
 
     const { width } = useWindowSize()
 
     const ActiveSubMenuComponent = subMenusMap.get(activeSubmenu)
+
+    const handleOpenSubmenu = (submenu: string) => {
+        setActiveSubmenu(submenu)
+        submenuRef.current?.animate([{ opacity: 0 }, { opacity: 1 }], {
+            duration: SUBMENU_ANIMATION_DURATION,
+            fill: 'forwards',
+        })
+    }
+
+    const handleCloseSubmenu = () => {
+        const animation = submenuRef.current?.animate([{ opacity: 1 }, { opacity: 0 }], {
+            duration: SUBMENU_ANIMATION_DURATION,
+            fill: 'forwards',
+        })
+
+        animation?.addEventListener('finish', () => setActiveSubmenu(''))
+    }
 
     useCallbackAfterRouteChange(onClose)
 
@@ -56,8 +76,8 @@ const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
                                         <item.Component
                                             onClick={() => {
                                                 activeSubmenu === item.title.toLowerCase()
-                                                    ? setActiveSubmenu('')
-                                                    : setActiveSubmenu(item.title.toLowerCase())
+                                                    ? handleCloseSubmenu()
+                                                    : handleOpenSubmenu(item.title.toLowerCase())
                                             }}
                                             isActiveSubmenu={activeSubmenu === item.title.toLowerCase()}
                                         />
@@ -78,7 +98,7 @@ const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
                     </div>
                 </div>
                 <div className="hidden pl-21.5 pr-2.5 pt-11.25 lg:block xl:pl-26.75 2xl:pl-22 3xl:pl-31.75">
-                    {activeSubmenu && ActiveSubMenuComponent && <ActiveSubMenuComponent />}
+                    <div ref={submenuRef}>{activeSubmenu && ActiveSubMenuComponent && <ActiveSubMenuComponent />}</div>
                 </div>
             </div>
         </ModalOverlay>

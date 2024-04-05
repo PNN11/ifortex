@@ -74,7 +74,7 @@ const expertise = [
 
 const ServiceMenu: FC = () => {
     return (
-        <div className="animate-expertise-fade-in">
+        <div>
             <div className="hidden flex-col gap-18 lg:mb-13.5 lg:flex xl:mb-17 2xl:mb-11 2xl:flex-row 2xl:gap-21.5 3xl:mb-15.5">
                 <Heading variant="h2" className="">
                     Service

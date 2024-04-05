@@ -1,10 +1,10 @@
-import { FC, MutableRefObject, SetStateAction, useCallback, useEffect, useRef, useState } from 'react'
+import { FC, MutableRefObject, SetStateAction, useEffect, useRef, useState } from 'react'
 
 import ReactDOM from 'react-dom'
 
 import useAddOrRemoveBodyOverflow from '@/hooks/useAddOrRemoveBodyOverflow'
+import { cn } from '@/lib/classNames'
 import { WithClassName } from '@/types/common'
-import { twMerge } from 'tailwind-merge'
 
 type PropsType = WithClassName<{
     isOpen: boolean
@@ -20,16 +20,18 @@ export const ModalOverlay: FC<PropsType> = ({ children, onClose, isOpen, classNa
 
     const ref = useRef() as MutableRefObject<HTMLDivElement>
 
-    const handleClick = useCallback(
-        (e: any) => {
-            e.stopPropagation()
+    const handleClick = (e: any) => {
+        e.stopPropagation()
 
-            if (e.target === ref.current) {
-                onClose?.call(null)
-            }
-        },
-        [onClose]
-    )
+        if (e.target === ref.current) {
+            const animation = ref.current?.animate([{ opacity: 1 }, { opacity: 0 }], {
+                duration: 500,
+                fill: 'forwards',
+            })
+
+            animation?.addEventListener('finish', () => onClose?.())
+        }
+    }
 
     useAddOrRemoveBodyOverflow(isOpen)
 
@@ -42,8 +44,8 @@ export const ModalOverlay: FC<PropsType> = ({ children, onClose, isOpen, classNa
                     id="modal"
                     ref={ref}
                     onClick={handleClick}
-                    className={twMerge(
-                        'translate-z-12 fixed inset-0 z-10 flex items-center justify-center overflow-y-auto bg-base-3/65 p-4',
+                    className={cn(
+                        'translate-z-12 fixed inset-0 z-10 flex animate-expertise-fade-in items-center justify-center overflow-y-auto bg-base-3/65 p-4',
                         className
                     )}
                 >
