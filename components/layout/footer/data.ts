@@ -19,7 +19,7 @@ export const services = [
 ]
 
 export const companyMenu = [
-    { href: 'contacts', title: 'Contacts' },
+    { href: 'contact', title: 'Contacts' },
     { href: 'cases', title: 'Cases' },
     { href: 'career', title: 'Career' },
 ]

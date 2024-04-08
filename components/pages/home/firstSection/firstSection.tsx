@@ -7,6 +7,9 @@ import { ScreenWidths } from '@/types/common'
 import Image from 'next/image'
 import { FC, useEffect, useState } from 'react'
 import { MouseParallax } from 'react-just-parallax'
+import { useDebouncedCallback } from 'use-debounce'
+import HomePageAnimatedButton from './button'
+import HomePageQualityButton from './qualityButton'
 
 const getButtonSize = (width: number) => {
     if (width < ScreenWidths.M) return 's'
@@ -19,35 +22,43 @@ const FirstSection: FC = () => {
 
     const [topPosition, setTopPosition] = useState(0)
 
+    const debouncedSetTopPosition = useDebouncedCallback(setTopPosition, 30)
+
     useEffect(() => {
-        const callback: IntersectionObserverCallback = entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setTopPosition(entry.boundingClientRect.top + window.scrollY)
-                }
-            })
-        }
-
-        const observer = new IntersectionObserver(callback, { threshold: 0.55 })
-
+        const threshold = window.innerHeight * 0.5
         const firstSection = document.getElementById('first-section')
         const ourService = document.getElementById('our-service')
         const aboutUs = document.getElementById('about-us')
 
-        firstSection && observer.observe(firstSection)
-        ourService && observer.observe(ourService)
-        aboutUs && observer.observe(aboutUs)
+        const firstSectionScrollPosition = firstSection?.getBoundingClientRect().top ?? 0 + window.scrollY
+        const ourServiceScrollPosition = ourService?.getBoundingClientRect().top ?? 0 + window.scrollY
+        const aboutUsScrollPosition = aboutUs?.getBoundingClientRect().top ?? 0 + window.scrollY
+
+        const handler = () => {
+            const scroll = window.scrollY
+
+            if (scroll >= firstSectionScrollPosition && scroll < ourServiceScrollPosition - threshold) {
+                debouncedSetTopPosition(firstSectionScrollPosition)
+                return
+            }
+            if (scroll >= ourServiceScrollPosition - threshold && scroll < aboutUsScrollPosition - threshold) {
+                debouncedSetTopPosition(ourServiceScrollPosition)
+                return
+            }
+            if (scroll >= aboutUsScrollPosition - threshold) {
+                debouncedSetTopPosition(aboutUsScrollPosition)
+            }
+        }
+
+        window.addEventListener('scroll', handler)
 
         return () => {
-            observer.disconnect()
+            window.removeEventListener('scroll', handler)
         }
-    }, [])
+    }, [debouncedSetTopPosition])
 
     return (
-        <section
-            id="first-section"
-            className="relative mb-40 flex h-[100dvh] flex-col-reverse bg-base-10 bg-opacity-[0.01]"
-        >
+        <section id="first-section" className="relative flex h-[100dvh] flex-col-reverse bg-base-10 bg-opacity-[0.01]">
             <MouseParallax strength={0.1} isAbsolutelyPositioned shouldPause={false}>
                 <div
                     style={{ top: -274 + topPosition }}
@@ -83,25 +94,13 @@ const FirstSection: FC = () => {
                  xl:pl-0 xl:pr-11 xl:text-right 2xl:pb-18.75 2xl:pr-46.75 3xl:pr-18.75"
                 style={{ wordSpacing: '1.25rem' }}
             >
-                <Button
-                    size={getButtonSize(width)}
-                    withIcon
-                    iconClassName="text-base-9"
-                    className="relative mb-2 w-full rounded-none bg-transparent transition-all before:absolute before:inset-y-0 before:right-0 before:z-[-1] before:w-full
-                     before:bg-base-1 before:transition-all before:duration-300 hover:text-white hover:before:w-12 before:hover:bg-white md:mb-6 md:hover:before:w-25 lg:w-auto"
-                >
-                    Start project
-                </Button>{' '}
+                <HomePageAnimatedButton className="mb-2">start project</HomePageAnimatedButton>{' '}
                 <span>
                     <span className="hidden md:inline">with</span> <br className="hidden lg:block" /> your expert in{' '}
                     <span className="md:hidden">quality</span>
-                    <Button
-                        size={getButtonSize(width)}
-                        variant="outlined"
-                        className="hidden md:my-6 md:inline-block lg:mt-0"
-                    >
+                    <HomePageQualityButton className="hidden md:my-6 md:inline-block lg:mt-0">
                         quality
-                    </Button>{' '}
+                    </HomePageQualityButton>{' '}
                     <br className="hidden lg:block" />
                     software solutions
                 </span>

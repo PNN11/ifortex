@@ -41,7 +41,7 @@ const OurService: FC = () => {
                 data-aos="fade-zoom-in"
                 data-aos-offset="300"
             />
-            <Container className="mb-40">
+            <Container className="py-10 sm:py-12.5 md:py-15 lg:py-25 xl:py-30 2xl:py-40">
                 <div className="relative flex flex-col justify-between gap-25.75 lg:flex-row">
                     <div className="relative flex flex-col items-start gap-8.25 py-9 sm:gap-11 lg:gap-25.25">
                         <h5 className={`text-4xl font-light text-white ${gilroy.className}`}>Explore our service:</h5>

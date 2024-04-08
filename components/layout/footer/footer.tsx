@@ -26,7 +26,7 @@ const Footer: FC = () => {
                 <div className="xl:pl-22 xl:pr-11.5 2xl:px-36.25">
                     <div className="mb-12 flex w-full max-w-175.75 flex-col-reverse gap-12 xl:mb-18.75 xl:max-w-248.25 xl:flex-row xl:justify-between 2xl:max-w-273.75">
                         <div className="flex flex-col gap-16 lg:flex-row lg:gap-34.75 xl:gap-24.5">
-                            <LinksGroup title="Service" links={services} />
+                            <LinksGroup basePath="service" title="Service" links={services} />
                             <LinksGroup title="Company" links={companyMenu} />
                         </div>
                         <div className="w-full xl:w-85 2xl:w-99">

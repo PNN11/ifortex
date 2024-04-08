@@ -16,6 +16,6 @@ export const menuItems: MenuItemType[] = [
     { type: 'dropdown', title: 'Service', Component: ServiceDropdown },
     { href: '/contact', title: 'Contact', type: 'link' },
     { href: '/cases', title: 'Cases', type: 'link' },
-    { href: '/blog', title: 'Blog', type: 'link' },
+
     { href: '/career', title: 'Career', type: 'link' },
 ]

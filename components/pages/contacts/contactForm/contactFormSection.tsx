@@ -17,7 +17,7 @@ type ContactFormSectionProps = {
 const ContactFormSection: FC<ContactFormSectionProps> = ({ containerSize = 'l' }) => {
     return (
         <SectionWrapper variant="m" className="relative overflow-hidden">
-            <Container size={containerSize}>
+            <Container size={containerSize} className="relative z-10">
                 <div className="relative grid grid-cols-1 gap-4.5 lg:grid-cols-2 xl:gap-5">
                     <div className="relative pb-42 md:max-w-79 lg:max-w-145.5 lg:pb-0">
                         <Heading variant="h1" tag="h3" className="mb-11.5">
