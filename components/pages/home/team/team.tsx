@@ -10,9 +10,11 @@ import Link from 'next/link'
 import { FC } from 'react'
 import TeamImage from './teamImage'
 import TeamDescription from './teamDescription'
+import { useTranslation } from 'react-i18next'
 
 const Team: FC = () => {
     const { width } = useWindowSize()
+    const { t } = useTranslation()
 
     return (
         <section className="overflow-hidden py-21.5">
@@ -39,7 +41,7 @@ const Team: FC = () => {
                                 color="secondary"
                                 className="w-full"
                             >
-                                explore careers
+                                {t('team.explore-careers')}
                             </Button>
                         </Link>
                     </div>

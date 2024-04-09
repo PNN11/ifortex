@@ -9,9 +9,11 @@ import { HorizontalLine } from '../common'
 import { technologies } from './data'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
+import { useTranslation } from 'react-i18next'
 
 const AboutUs: FC = () => {
     const bgRef = useRef<HTMLImageElement>(null)
+    const { t } = useTranslation()
 
     useGSAP(() => {
         gsap.to(bgRef.current, {
@@ -28,12 +30,9 @@ const AboutUs: FC = () => {
             <Container className="mb-14">
                 <div className="relative flex items-center">
                     <div className="flex flex-col items-start gap-10 py-10 pb-100.5 sm:py-12.5 sm:pb-105.5 md:py-15 lg:flex-row lg:gap-53.75 xl:gap-47.75 xl:py-18.75 2xl:gap-34 2xl:py-20">
-                        <Heading variant="h2">about us</Heading>
+                        <Heading variant="h2">{t('about-us.title')}</Heading>
                         <Paragraph variant="p1" className="max-w-115.5 lg:max-w-103">
-                            At iFortex, we understand that building a website or app can be a daunting task. That`s why
-                            we take a personalized approach to every project, working closely with our clients to ensure
-                            their needs and goals are met. With our comprehensive services, you can focus on growing
-                            your business while we handle the technical details.
+                            {t('about-us.description')}
                         </Paragraph>
                     </div>
                     <Image
@@ -60,13 +59,10 @@ const AboutUs: FC = () => {
                  xl:py-20 2xl:gap-17.5 2xl:pb-37 2xl:pt-30"
                 >
                     <Heading variant="h2" className="whitespace-nowrap">
-                        Tech stack
+                        {t('about-us.tech-stack-title')}
                     </Heading>
                     <Paragraph variant="p1" className="">
-                        Lorem ipsum dolor sit amet consectetur. Rhoncus proin libero pellentesque elit. Tincidunt
-                        feugiat sit fermentum sit faucibus in cras. Vel non purus nisl risus sit sagittis commodo etiam.
-                        Aliquam elementum convallis nascetur egestas molestie non blandit pulvinar odio. Tellus donec
-                        netus integer lectus donec ut. Blandit parturient laoreet eu.
+                        {t('about-us.tech-stack-description')}
                     </Paragraph>
                 </div>
             </Container>

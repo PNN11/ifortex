@@ -8,10 +8,12 @@ import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { TExpertise, expertise, expertiseDescription } from './data'
 import ExpertiseInfo from './expertiseInfo'
 import ExpertiseItem from './expertiseItem'
+import { useTranslation } from 'react-i18next'
 
 const Expertise: FC = () => {
     const [activeItem, setActiveItem] = useState<TExpertise>(expertise[0])
     const [swiper, setSwiper] = useState<SwiperClass>()
+    const { t } = useTranslation()
 
     return (
         <section className="overflow-hidden py-21.5">
@@ -43,7 +45,11 @@ const Expertise: FC = () => {
                                 setActiveItem(item)
                             }}
                         >
-                            <ExpertiseItem isActive={activeItem === item} title={item} expertiseNumber={index + 1} />
+                            <ExpertiseItem
+                                isActive={activeItem === item}
+                                title={t(`expertise.expertises.${item}`)}
+                                expertiseNumber={index + 1}
+                            />
                         </SwiperSlide>
                     ))}
                     {new Array(2).fill(null).map((item, index) => (
@@ -52,7 +58,7 @@ const Expertise: FC = () => {
                 </Swiper>
 
                 <ExpertiseInfo
-                    description={expertiseDescription[activeItem].description}
+                    description={t(expertiseDescription[activeItem].description)}
                     listItems={expertiseDescription[activeItem].technologies}
                 />
                 <div className="flex justify-end pt-5.25">

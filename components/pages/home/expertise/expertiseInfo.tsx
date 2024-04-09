@@ -2,6 +2,7 @@ import React, { FC, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Paragraph from '@/components/ui/typography/paragraph'
 import { cn } from '@/lib/classNames'
+import { useTranslation } from 'react-i18next'
 
 const TechnologyItem: FC<{ title: string }> = ({ title }) => {
     return (
@@ -20,6 +21,7 @@ type ExpertiseInfoProps = {
 
 const ExpertiseInfo: FC<ExpertiseInfoProps> = ({ description, listItems, classes }) => {
     const ref = useRef<HTMLDivElement>(null)
+    const { t } = useTranslation()
 
     useEffect(() => {
         ref.current?.animate({ opacity: [0, 1] }, 500)
@@ -47,7 +49,7 @@ const ExpertiseInfo: FC<ExpertiseInfoProps> = ({ description, listItems, classes
                 </Paragraph>
             </div>
             <ul className={cn('flex flex-col gap-5', classes?.list)}>
-                <TechnologyItem title="Our team has extensive" />
+                <TechnologyItem title={t('expertise.our-team-has-extensive')} />
                 {listItems.map(item => (
                     <TechnologyItem key={item} title={item} />
                 ))}

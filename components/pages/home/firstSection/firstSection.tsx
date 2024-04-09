@@ -1,24 +1,16 @@
 'use client'
 import { Icons } from '@/components/svg'
-import Button from '@/components/ui/buttons/defaultButton'
 import Heading from '@/components/ui/typography/heading'
-import { useWindowSize } from '@/hooks/useWindowSize'
-import { ScreenWidths } from '@/types/common'
 import Image from 'next/image'
 import { FC, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { MouseParallax } from 'react-just-parallax'
 import { useDebouncedCallback } from 'use-debounce'
 import HomePageAnimatedButton from './button'
 import HomePageQualityButton from './qualityButton'
 
-const getButtonSize = (width: number) => {
-    if (width < ScreenWidths.M) return 's'
-    if (width >= ScreenWidths.M && width < ScreenWidths['2XL']) return 'm'
-    return 'l'
-}
-
 const FirstSection: FC = () => {
-    const { width } = useWindowSize()
+    const { t } = useTranslation()
 
     const [topPosition, setTopPosition] = useState(0)
 
@@ -94,15 +86,16 @@ const FirstSection: FC = () => {
                  xl:pl-0 xl:pr-11 xl:text-right 2xl:pb-18.75 2xl:pr-46.75 3xl:pr-18.75"
                 style={{ wordSpacing: '1.25rem' }}
             >
-                <HomePageAnimatedButton className="mb-2">start project</HomePageAnimatedButton>{' '}
+                <HomePageAnimatedButton className="mb-2">{t('first_section.start_project')}</HomePageAnimatedButton>{' '}
                 <span>
-                    <span className="hidden md:inline">with</span> <br className="hidden lg:block" /> your expert in{' '}
-                    <span className="md:hidden">quality</span>
+                    <span className="hidden md:inline">{t('first_section.with')}</span>{' '}
+                    <br className="hidden lg:block" /> {t('first_section.your_expert_in')}{' '}
+                    <span className="md:hidden">{t('first_section.quality')}</span>
                     <HomePageQualityButton className="hidden md:my-6 md:inline-block lg:mt-0">
-                        quality
+                        {t('first_section.quality')}
                     </HomePageQualityButton>{' '}
                     <br className="hidden lg:block" />
-                    software solutions
+                    {t('first_section.software_solutions')}
                 </span>
             </Heading>
             <div className="absolute bottom-3.625 h-px w-full bg-base-15/30 2xl:right-4 2xl:w-210.5" />

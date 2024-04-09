@@ -1,10 +1,10 @@
 import { ServiceLink } from '@/components/layout/header/service/serviceMenu'
-import Tech1 from '../../../public/images/service/tech_1.png'
-import Tech2 from '../../../public/images/service/tech_2.png'
-import Tech3 from '../../../public/images/service/tech_3.png'
-import Tech4 from '../../../public/images/service/tech_4.png'
-import Tech5 from '../../../public/images/service/tech_5.png'
-import Tech6 from '../../../public/images/service/tech_6.png'
+import Tech1 from '../../../../public/images/service/tech_1.png'
+import Tech2 from '../../../../public/images/service/tech_2.png'
+import Tech3 from '../../../../public/images/service/tech_3.png'
+import Tech4 from '../../../../public/images/service/tech_4.png'
+import Tech5 from '../../../../public/images/service/tech_5.png'
+import Tech6 from '../../../../public/images/service/tech_6.png'
 import { ServicePageContent } from '@/types/servicePage'
 
 const mockData = {

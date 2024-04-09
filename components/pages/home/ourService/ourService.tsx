@@ -13,21 +13,23 @@ import { ScreenWidths } from '@/types/common'
 import Image from 'next/image'
 import SidebarImage from '@/public/images/home/homepage_sidebar_image.svg'
 import { MouseParallax } from 'react-just-parallax'
+import { useTranslation } from 'react-i18next'
 
 const ourServices = [
-    'Web development',
-    'Mobile development',
-    'AI development',
-    'Software Testing & QA',
-    'UI/UX design',
-    'DevOps',
-    'Machine learning',
-    'WEB 3.0',
-    'Lowcode development',
+    'our-service.services.web-development',
+    'our-service.services.mobile-development',
+    'our-service.services.ai-development',
+    'our-service.services.software-testing',
+    'our-service.services.ui-ux-design',
+    'our-service.services.devops',
+    'our-service.services.machine-learning',
+    'our-service.services.web3',
+    'our-service.services.lowcode-development',
 ]
 
 const OurService: FC = () => {
     const { width } = useWindowSize()
+    const { t } = useTranslation()
 
     return (
         <section
@@ -44,13 +46,13 @@ const OurService: FC = () => {
             <Container className="py-10 sm:py-12.5 md:py-15 lg:py-25 xl:py-30 2xl:py-40">
                 <div className="relative flex flex-col justify-between gap-25.75 lg:flex-row">
                     <div className="relative flex flex-col items-start gap-8.25 py-9 sm:gap-11 lg:gap-25.25">
-                        <h5 className={`text-4xl font-light text-white ${gilroy.className}`}>Explore our service:</h5>
+                        <h5 className={`text-4xl font-light text-white ${gilroy.className}`}>
+                            {t('our-service.explore-our-service')}:
+                        </h5>
                         <Heading variant="accent" className="lowercase">
-                            .full-cycle web development
-                            <br />
-                            .mobile development
-                            <br />
-                            .saas solutions
+                            .{t('our-service.full-cycle')}
+                            <br />.{t('our-service.mobile')}
+                            <br />.{t('our-service.saas')}
                         </Heading>
                         <Button
                             size={`${width >= ScreenWidths.M ? 'm' : 's'}`}
@@ -58,14 +60,14 @@ const OurService: FC = () => {
                             withIcon
                             className="w-full lg:w-auto"
                         >
-                            start project
+                            {t('our-service.start-project')}
                         </Button>
                     </div>
                     <ul className="flex min-w-60 flex-row flex-wrap items-end gap-6 gap-x-10.5 lg:flex-col lg:flex-nowrap lg:justify-between lg:gap-y-10.5">
                         {ourServices.map(item => (
                             <li key={item}>
                                 <Paragraph variant="alt" className="font-medium">
-                                    {item}
+                                    {t(item)}
                                 </Paragraph>
                             </li>
                         ))}

@@ -3,38 +3,50 @@ import { Icons } from '@/components/svg'
 import Heading from '@/components/ui/typography/heading'
 import Paragraph from '@/components/ui/typography/paragraph'
 import Container from '@/components/ui/wrappers/container'
-import { useWindowSize } from '@/hooks/useWindowSize'
 import Image from 'next/image'
-import React, { FC } from 'react'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 const reviews = [
     {
-        review: 'Lorem ipsum dolor sit amet consectetur. Sed qwer turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi.',
-        author: { image: '/images/home/review_avatar.png', name: 'Name Soname', position: 'Company position' },
+        review: 'reviews.items.0.text',
+        author: {
+            image: '/images/home/review_avatar.png',
+            name: 'reviews.items.0.name',
+            position: 'reviews.items.0.position',
+        },
     },
     {
-        review: 'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sadt. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi.',
-        author: { image: '/images/home/review_avatar.png', name: 'Name', position: 'position' },
+        review: 'reviews.items.1.text',
+        author: {
+            image: '/images/home/review_avatar.png',
+            name: 'reviews.items.1.name',
+            position: 'reviews.items.1.position',
+        },
     },
     {
-        review: 'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi.',
-        author: { image: '/images/home/review_avatar.png', name: 'Soname', position: 'Company' },
+        review: 'reviews.items.2.text',
+        author: {
+            image: '/images/home/review_avatar.png',
+            name: 'reviews.items.2.name',
+            position: 'reviews.items.2.position',
+        },
     },
 ]
 
 const Reviews: FC = () => {
-    const { width } = useWindowSize()
+    const { t } = useTranslation()
 
     return (
         <section className="py-21.5">
             <Container>
                 <div className="grid grid-cols-1 items-center justify-between md:grid-cols-review">
-                    <Icons.Lines.ReviewLine className="text-base-20 hidden w-7.5 md:block md:w-auto" />
+                    <Icons.Lines.ReviewLine className="hidden w-7.5 text-base-20 md:block md:w-auto" />
                     <div className="px-3 sm:px-6 md:px-8.25 lg:px-14">
                         <Heading variant="h2" className="mb-12 md:mb-17">
-                            reviews
+                            {t('reviews.title')}
                         </Heading>
                         <Swiper
                             slidesPerView={1}
@@ -47,7 +59,7 @@ const Reviews: FC = () => {
                             {reviews.map(({ author, review }) => (
                                 <SwiperSlide key={`${review}${author.name}`}>
                                     <Paragraph variant="p1" className="mb-23.75">
-                                        {review}
+                                        {t(review)}
                                     </Paragraph>
                                     <Image
                                         src="/images/home/review_line.svg"
@@ -60,8 +72,8 @@ const Reviews: FC = () => {
                                     <div className="flex flex-col gap-7 md:flex-row md:items-center md:gap-11.25">
                                         <Image src={author.image} width={86} height={86} alt={author.name} />
                                         <div>
-                                            <Heading variant="h4">{author.name}</Heading>
-                                            <Paragraph variant="tag">{author.position}</Paragraph>
+                                            <Heading variant="h4">{t(author.name)}</Heading>
+                                            <Paragraph variant="tag">{t(author.position)}</Paragraph>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -72,10 +84,10 @@ const Reviews: FC = () => {
                                 <Icons.Arrows.ArrowRight className="prev-review-slide cursor-pointer" />
                                 <Icons.Arrows.ArrowRight className="next-review-slide rotate-180 cursor-pointer" />
                             </div>
-                            <Icons.Lines.LargeRectangleWithLines className="left-49 absolute text-base-15/65" />
+                            <Icons.Lines.LargeRectangleWithLines className="absolute left-49 text-base-15/65" />
                         </div>
                     </div>
-                    <Icons.Lines.ReviewLine className="text-base-20 hidden w-7.5 rotate-y-180 md:block md:w-auto" />
+                    <Icons.Lines.ReviewLine className="hidden w-7.5 text-base-20 rotate-y-180 md:block md:w-auto" />
                 </div>
             </Container>
         </section>

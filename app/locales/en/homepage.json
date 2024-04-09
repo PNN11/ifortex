@@ -1,0 +1,92 @@
+{
+    "title": "Homepage",
+    "first_section": {
+        "start_project": "Start project",
+        "with": "with",
+        "your_expert_in": "your expert in",
+        "quality": "quality",
+        "software_solutions": "software solutions"
+    },
+    "our-service": {
+        "explore-our-service": "Explore our service:",
+        "full-cycle": "full-cycle web development",
+        "mobile": "mobile development",
+        "saas": "saas solutions",
+        "start-project": "Start project",
+        "services": {
+            "web-development": "Web development",
+            "mobile-development": "Mobile development",
+            "ai-development": "AI development",
+            "software-testing": "Software Testing & QA",
+            "ui-ux-design": "UI/UX design",
+            "devops": "DevOps",
+            "machine-learning": "Machine learning",
+            "web3": "WEB 3.0",
+            "lowcode-development": "Lowcode development"
+        }
+    },
+    "about-us": {
+        "title": "About us",
+        "description": "At iFortex, we understand that building a website or app can be a daunting task. That`s why we take a personalized approach to every project, working closely with our clients to ensure their needs and goals are met. With our comprehensive services, you can focus on growing your business while we handle the technical details.",
+        "tech-stack-title": "Tech stack",
+        "tech-stack-description": "Lorem ipsum dolor sit amet consectetur. Rhoncus proin libero pellentesque elit. Tincidunt feugiat sit fermentum sit faucibus in cras. Vel non purus nisl risus sit sagittis commodo etiam. Aliquam elementum convallis nascetur egestas molestie non blandit pulvinar odio. Tellus donec netus integer lectus donec ut. Blandit parturient laoreet eu."
+    },
+    "expertise": {
+        "title": "Expertise",
+        "expertises": {
+            "websites": "websites",
+            "fintech": "fintech",
+            "apps": "apps",
+            "e-commerce": "e-commerce",
+            "hospitability": "hospitability",
+            "edtech": "edtech"
+        },
+        "description": {
+            "websites": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "fintech": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "apps": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "e-commerce": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "hospitability": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "edtech": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry."
+        },
+        "our-team-has-extensive": "Our team has extensive"
+    },
+    "consultation": {
+        "get": "get",
+        "free": "free",
+        "consultation": "Consultation",
+        "description": "Lorem ipsum dolor sit amet consectetur. Rhoncus proin libero pellentesque elit.",
+        "input-placeholder": "YOUR EMAIL"
+    },
+    "team": {
+        "explore-careers": "Explore careers",
+        "meet-the-team": "Meet the team",
+        "of-the-bests": "of the bests",
+        "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi."
+    },
+    "reviews": {
+        "title": "Reviews",
+        "items": [
+            {
+                "text": "Lorem ipsum dolor sit amet consectetur. Sed qwer turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi.",
+                "name": "Name Soname",
+                "position": "Company position"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet consectetur. Sed qwer turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi.",
+                "name": "Soname",
+                "position": "position"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet consectetur. Sed qwer turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi.",
+                "name": "Name",
+                "position": "Company"
+            }
+        ]
+    },
+    "our-partners": {
+        "our": "Our",
+        "partners": "partners",
+        "become-a-client": "Become a client"
+    }
+}
