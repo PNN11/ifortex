@@ -10,55 +10,58 @@ import ProjectCard from './projectCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { ScreenWidths } from '@/types/common'
+import { useTranslation } from 'react-i18next'
 
 const ProjectCategoryItem: FC<{
     isActive: boolean
     onClick: (value: ProjectCategory) => void
     category: ProjectCategory
-}> = ({ isActive, onClick, category }) => (
+    title: string
+}> = ({ isActive, onClick, category, title }) => (
     <button type="button" onClick={() => onClick(category)}>
         <Paragraph variant="alt" className={`uppercase hover:text-base-4 ${isActive ? 'text-base-1' : 'text-base-17'}`}>
-            {category}
+            {title}
         </Paragraph>
     </button>
 )
 
 const Projects: FC = () => {
-    const [activeCategory, setActiveCategory] = useState<ProjectCategory>(projectCategories[0])
+    const [activeCategory, setActiveCategory] = useState<ProjectCategory>(projectCategories[0].value)
     const [projects] = useState(projectsMock[activeCategory])
     const { width } = useWindowSize()
+    const { t } = useTranslation()
+
     return (
         <section className="py-21.5">
             <Container>
                 <div className="mb-21.5 flex flex-col items-start justify-between gap-5.5 sm:gap-8.25 lg:flex-row">
                     <Heading variant="h2" className="whitespace-nowrap">
-                        Projects
+                        {t('homepage:projects.title')}
                     </Heading>
                     <Paragraph variant="p1" className="lg:max-w-114.5 xl:max-w-209.5">
-                        At iFortex, we understand that building a website or app can be a daunting task. That`s why we
-                        take a personalized approach to every project, working closely with our clients to ensure their
-                        needs and goals are met. With our comprehensive services, you can focus on growing your business
-                        while we handle the technical details.
+                        {t('homepage:projects.description')}
                     </Paragraph>
                 </div>
                 <ul className="mb-16 hidden flex-wrap gap-x-13.75 gap-y-2.5 md:flex">
                     {projectCategories.map(category => (
-                        <li key={category}>
+                        <li key={category.value}>
                             <ProjectCategoryItem
-                                category={category}
-                                isActive={activeCategory === category}
+                                category={category.value}
+                                isActive={activeCategory === category.value}
                                 onClick={setActiveCategory}
+                                title={t(category.title)}
                             />
                         </li>
                     ))}
                 </ul>
                 <Swiper slidesPerView="auto" className="mb-10 md:!hidden" spaceBetween={55}>
                     {projectCategories.map(category => (
-                        <SwiperSlide key={category} className="!w-fit">
+                        <SwiperSlide key={category.value} className="!w-fit">
                             <ProjectCategoryItem
-                                category={category}
-                                isActive={activeCategory === category}
+                                category={category.value}
+                                isActive={activeCategory === category.value}
                                 onClick={setActiveCategory}
+                                title={t(category.title)}
                             />
                         </SwiperSlide>
                     ))}
@@ -77,7 +80,7 @@ const Projects: FC = () => {
                                 withIcon
                                 className="w-full"
                             >
-                                More projects
+                                {t('homepage:projects.more-projects')}
                             </Button>
                         </Link>
                     </li>

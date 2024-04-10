@@ -7,6 +7,7 @@ import { FC, useState } from 'react'
 import CategoryTag from './categoryBadge'
 import { Position } from './openPositions.types'
 import PositionListItem from './positionListItem'
+import { useTranslation } from 'react-i18next'
 
 type PositionsListProps = {
     positions: Position[]
@@ -17,6 +18,7 @@ const getPositionsByCategory = (positions: Position[], category: string) =>
 
 const PositionsList: FC<PositionsListProps> = ({ positions }) => {
     const [activeCategory, setActiveCategory] = useState('all')
+    const { t } = useTranslation()
 
     const categories = Array.from(new Set(['all', ...positions.map(item => item.category)]))
 
@@ -59,9 +61,9 @@ const PositionsList: FC<PositionsListProps> = ({ positions }) => {
                                 gilroy.className
                             )}
                         >
-                            No open positions yet
+                            {t('open-positions.no-open-positions')}
                         </p>
-                        <Icons.Warning className="animate-icons-pulse hidden text-base-17 md:block" />
+                        <Icons.Warning className="hidden animate-icons-pulse text-base-17 md:block" />
                     </div>
                 </IconWithLinesWrapper>
             )}

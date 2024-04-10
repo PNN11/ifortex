@@ -11,27 +11,27 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 const reviews = [
     {
-        review: 'reviews.items.0.text',
+        review: 'homepage:reviews.items.0.text',
         author: {
             image: '/images/home/review_avatar.png',
-            name: 'reviews.items.0.name',
-            position: 'reviews.items.0.position',
+            name: 'homepage:reviews.items.0.name',
+            position: 'homepage:reviews.items.0.position',
         },
     },
     {
-        review: 'reviews.items.1.text',
+        review: 'homepage:reviews.items.1.text',
         author: {
             image: '/images/home/review_avatar.png',
-            name: 'reviews.items.1.name',
-            position: 'reviews.items.1.position',
+            name: 'homepage:reviews.items.1.name',
+            position: 'homepage:reviews.items.1.position',
         },
     },
     {
-        review: 'reviews.items.2.text',
+        review: 'homepage:reviews.items.2.text',
         author: {
             image: '/images/home/review_avatar.png',
-            name: 'reviews.items.2.name',
-            position: 'reviews.items.2.position',
+            name: 'homepage:reviews.items.2.name',
+            position: 'homepage:reviews.items.2.position',
         },
     },
 ]
@@ -46,7 +46,7 @@ const Reviews: FC = () => {
                     <Icons.Lines.ReviewLine className="hidden w-7.5 text-base-20 md:block md:w-auto" />
                     <div className="px-3 sm:px-6 md:px-8.25 lg:px-14">
                         <Heading variant="h2" className="mb-12 md:mb-17">
-                            {t('reviews.title')}
+                            {t('homepage:reviews.title')}
                         </Heading>
                         <Swiper
                             slidesPerView={1}

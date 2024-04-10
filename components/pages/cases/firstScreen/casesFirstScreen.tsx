@@ -1,24 +1,23 @@
+'use client'
 import Heading from '@/components/ui/typography/heading'
 import Paragraph from '@/components/ui/typography/paragraph'
 import Container from '@/components/ui/wrappers/container'
 import MouseParallaxWrapper from '@/components/ui/wrappers/mouseParallaxWrapper'
 import Image from 'next/image'
 import React, { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const CasesFirstScreen: FC = () => {
+    const { t } = useTranslation()
+
     return (
         <section className="relative overflow-hidden border-t border-t-base-2 bg-base-3 xl:border-none">
             <Container>
                 <div className="mx-auto pb-5 pt-10 sm:pb-9.5 md:pb-42 md:pt-42 md:text-center lg:max-w-205.25 lg:pb-40 2xl:max-w-227.75 2xl:pb-61.25 2xl:pt-61.25">
                     <Heading variant="h1" className="mb-8 sm:mb-12 lg:mb-16.5">
-                        we standing out your project ideas
+                        {t('first-screen.title')}
                     </Heading>
-                    <Paragraph variant="p1">
-                        Lorem ipsum dolor sit amet consectetur. Nibh amet amet viverra urna eget mattis. Vel auctor sem
-                        penatibus sit elit vel convallis. Tortor scelerisque magnis porta viverra sed leo a in. Purus
-                        sapien risus netus adipiscing vitae placerat. Blandit risus interdum dui consequat euismod risus
-                        sit egestas dictum. A lectus praesent ut.
-                    </Paragraph>
+                    <Paragraph variant="p1">{t('first-screen.description')}</Paragraph>
                 </div>
             </Container>
             <MouseParallaxWrapper isAbsolutelyPositioned strength={0.15}>

@@ -1,3 +1,4 @@
+'use client'
 import Heading from '@/components/ui/typography/heading'
 import Paragraph from '@/components/ui/typography/paragraph'
 import Container from '@/components/ui/wrappers/container'
@@ -9,52 +10,52 @@ import Vector1 from '@/public/images/career/careers_vector_1.svg'
 import Vector2 from '@/public/images/career/careers_vector_2.svg'
 import Image from 'next/image'
 import SmallRectangle from '@/components/ui/smallRectangle'
+import { useTranslation } from 'react-i18next'
 
 const privileges = [
     {
-        title: 'title',
-        description:
-            'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies',
+        title: 'work-with-us.privileges.0.title',
+        description: 'work-with-us.privileges.0.description',
     },
     {
-        title: 'title',
-        description:
-            'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies',
+        title: 'work-with-us.privileges.1.title',
+        description: 'work-with-us.privileges.1.description',
     },
     {
-        title: 'title',
-        description:
-            'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies',
+        title: 'work-with-us.privileges.2.title',
+        description: 'work-with-us.privileges.2.description',
     },
     {
-        title: 'title',
-        description:
-            'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies',
+        title: 'work-with-us.privileges.3.title',
+        description: 'work-with-us.privileges.3.description',
     },
     {
-        title: 'title',
-        description:
-            'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies',
+        title: 'work-with-us.privileges.4.title',
+        description: 'work-with-us.privileges.4.description',
     },
 ]
 
 const WorkWithUs: FC = () => {
+    const { t } = useTranslation()
+
     return (
         <SectionWrapper variant="m" className="relative">
             <Container size="l">
                 <Heading variant="h2" className="mb-12 md:mb-13.5 lg:mb-22 lg:ml-28 lg:max-w-104 xl:ml-0">
-                    Why work with us
+                    {t('work-with-us.title')}
                 </Heading>
                 <div className="grid grid-cols-1 gap-14.5 xl:grid-cols-2 xl:gap-34 3xl:gap-54.75">
                     <Paragraph variant="p2" className="lg:pl-28 xl:pl-0">
-                        Transform the financial world with innovative digital solutions. Our team has extensive
-                        experience in creating custom web and mobile applications for FinTech companies, from payments
-                        to wealth management. Let us help you revolutionize the financial industry.
+                        {t('work-with-us.description')}
                     </Paragraph>
                     <ul className="flex flex-col gap-8 md:gap-14 lg:pl-19.5 xl:pl-0">
                         {privileges.map(({ description, title }, index) => (
                             <li key={`${title}${index}`}>
-                                <WorkflowStageItem description={description} stageNumber={index + 1} title={title}>
+                                <WorkflowStageItem
+                                    description={t(description)}
+                                    stageNumber={index + 1}
+                                    title={t(title)}
+                                >
                                     <SmallRectangle
                                         data-aos="fade-in"
                                         data-aos-duration="300"
@@ -74,7 +75,7 @@ const WorkWithUs: FC = () => {
             />
             <div className="absolute -left-76.5 hidden h-231 w-226.5 rounded-full border border-base-15/30 2xl:top-88 2xl:block 3xl:top-58.75" />
             <div
-                className="w-31.25 absolute -left-6.75 top-98.25 hidden h-20 lg:block xl:left-[calc(50%-5.1rem)] xl:top-2.5 2xl:top-7.25 3xl:top-12.5"
+                className="absolute -left-6.75 top-98.25 hidden h-20 w-31.25 lg:block xl:left-[calc(50%-5.1rem)] xl:top-2.5 2xl:top-7.25 3xl:top-12.5"
                 data-aos="fade-in"
                 data-aos-offset="300"
             >

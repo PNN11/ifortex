@@ -1,3 +1,4 @@
+'use client'
 import { Icons } from '@/components/svg'
 import Heading from '@/components/ui/typography/heading'
 import Container from '@/components/ui/wrappers/container'
@@ -6,14 +7,28 @@ import Image from 'next/image'
 import { FC } from 'react'
 import PositionsList from './positionsList'
 import Socials from './socials'
+import { useTranslation } from 'react-i18next'
 
 const openPositions = [
-    { title: 'Frontend developer', location: 'remote', grade: 'junior+', category: 'frontend' },
+    {
+        title: 'Frontend developer',
+        location: 'open-positions.positions.0.location',
+        grade: 'open-positions.positions.0.grade',
+        category: 'frontend',
+    },
 
-    { title: '.NET developer', location: 'remote', grade: 'trainee', employment: 'full time', category: '.net' },
+    {
+        title: '.NET developer',
+        location: 'open-positions.positions.1.location',
+        grade: 'open-positions.positions.1.grade',
+        employment: 'open-positions.positions.1.employment',
+        category: '.net',
+    },
 ]
 
 const OpenPositions: FC = () => {
+    const { t } = useTranslation()
+
     return (
         <SectionWrapper variant="m" className="overflow-hidden">
             <Container size="l">
@@ -23,7 +38,7 @@ const OpenPositions: FC = () => {
                     </Heading>
                     <Icons.Lines.Hypotenuse className="text-base-1/65" />
                     <Heading variant="h2" className="relative">
-                        open positions
+                        {t('open-positions.title')}
                         <Image
                             src="/images/long_line.svg"
                             width={437}

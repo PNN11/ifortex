@@ -19,7 +19,7 @@ const Expertise: FC = () => {
         <section className="overflow-hidden py-21.5">
             <Container>
                 <div className="relative mb-26 md:mb-16.5">
-                    <Heading variant="h2">expertise</Heading>
+                    <Heading variant="h2">{t('expertise.title')}</Heading>
                     <div className="absolute top-17.5 w-117 md:left-72 md:top-3.5 lg:left-80 xl:left-88">
                         <Image
                             src="/images/home/expertise_vector.svg"
@@ -59,7 +59,10 @@ const Expertise: FC = () => {
 
                 <ExpertiseInfo
                     description={t(expertiseDescription[activeItem].description)}
-                    listItems={expertiseDescription[activeItem].technologies}
+                    listItems={[
+                        t('expertise.our-team-has-extensive'),
+                        ...expertiseDescription[activeItem].technologies,
+                    ]}
                 />
                 <div className="flex justify-end pt-5.25">
                     <Image src="/images/home/expertise_vector.svg" width={468} height={29} alt="vector" quality={100} />

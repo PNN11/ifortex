@@ -5,6 +5,7 @@ import TextArea from '@/components/ui/inputs/defaultTextArea'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { ScreenWidths } from '@/types/common'
 import React, { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const getSize = (width: number) => {
     if (width < ScreenWidths.M) return 's'
@@ -14,16 +15,21 @@ const getSize = (width: number) => {
 
 const ContactForm: FC = () => {
     const { width } = useWindowSize()
+    const { t } = useTranslation()
 
     return (
         <form>
             <div className="mb-16 flex flex-col gap-3 md:mb-32 md:gap-7">
-                <Input inputSize={getSize(width)} name="name" placeholder="YOUR NAME" />
-                <Input inputSize={getSize(width)} name="email" placeholder="EMAIL" />
-                <TextArea inputSize={getSize(width)} name="projectDescription" placeholder="TELL US ABOUT PROJECT" />
+                <Input inputSize={getSize(width)} name="name" placeholder={t('contacts:form.name')} />
+                <Input inputSize={getSize(width)} name="email" placeholder={t('contacts:form.email')} />
+                <TextArea
+                    inputSize={getSize(width)}
+                    name="projectDescription"
+                    placeholder={t('contacts:form.message')}
+                />
             </div>
             <Button size={getSize(width)} className="w-full" withIcon>
-                send
+                {t('contacts:form.send')}
             </Button>
         </form>
     )

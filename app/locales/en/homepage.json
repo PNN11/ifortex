@@ -58,6 +58,25 @@
         "description": "Lorem ipsum dolor sit amet consectetur. Rhoncus proin libero pellentesque elit.",
         "input-placeholder": "YOUR EMAIL"
     },
+    "projects": {
+        "title": "Projects",
+        "description": "At iFortex, we understand that building a website or app can be a daunting task. That`s why we take a personalized approach to every project, working closely with our clients to ensure their needs and goals are met. With our comprehensive services, you can focus on growing your business while we handle the technical details.",
+        "categories": {
+            "all": "all",
+            "ai-tech": "ai tech",
+            "web": "web",
+            "apps": "apps",
+            "fintech-development": "fintech development",
+            "logistics-software": "logistics software",
+            "healthcare": "healthcare",
+            "e-commerce-projects": "e-commerce projects",
+            "travel": "travel",
+            "edtech-platforms": "edtech platforms",
+            "real-estate": "real estate",
+            "saas-platform-developing": "saas platform developing"
+        },
+        "more-projects": "More projects"
+    },
     "team": {
         "explore-careers": "Explore careers",
         "meet-the-team": "Meet the team",

@@ -1,33 +1,30 @@
-import Button from '@/components/ui/buttons/defaultButton/button'
-import Input from '@/components/ui/inputs/defaultInput/input'
-import TextArea from '@/components/ui/inputs/defaultTextArea/textArea'
+'use client'
 import Heading from '@/components/ui/typography/heading'
 import Paragraph from '@/components/ui/typography/paragraph'
 import Container from '@/components/ui/wrappers/container'
-import SectionWrapper from '@/components/ui/wrappers/sectionWrapper'
-import React, { ComponentProps, FC } from 'react'
-import ContactForm from './form'
-import Image from 'next/image'
 import MouseParallaxWrapper from '@/components/ui/wrappers/mouseParallaxWrapper'
+import SectionWrapper from '@/components/ui/wrappers/sectionWrapper'
+import Image from 'next/image'
+import { ComponentProps, FC } from 'react'
+import { useTranslation } from 'react-i18next'
+import ContactForm from './form'
 
 type ContactFormSectionProps = {
     containerSize?: ComponentProps<typeof Container>['size']
 }
 
 const ContactFormSection: FC<ContactFormSectionProps> = ({ containerSize = 'l' }) => {
+    const { t } = useTranslation()
+
     return (
         <SectionWrapper variant="m" className="relative overflow-hidden">
             <Container size={containerSize} className="relative z-10">
                 <div className="relative grid grid-cols-1 gap-4.5 lg:grid-cols-2 xl:gap-5">
                     <div className="relative pb-42 md:max-w-79 lg:max-w-145.5 lg:pb-0">
                         <Heading variant="h1" tag="h3" className="mb-11.5">
-                            Done is better than perfect
+                            {t('contacts:title')}
                         </Heading>
-                        <Paragraph variant="p1">
-                            Ready to take your business to the next level with a custom website or app? We`d love to
-                            hear from you! Fill out the form on this page or use the information below to get in touch
-                            with us
-                        </Paragraph>
+                        <Paragraph variant="p1">{t('contacts:description')}</Paragraph>
                         <Image
                             src="/images/contact/contact_us_bg.svg"
                             alt="bg"

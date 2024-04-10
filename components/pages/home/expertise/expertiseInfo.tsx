@@ -49,7 +49,6 @@ const ExpertiseInfo: FC<ExpertiseInfoProps> = ({ description, listItems, classes
                 </Paragraph>
             </div>
             <ul className={cn('flex flex-col gap-5', classes?.list)}>
-                <TechnologyItem title={t('expertise.our-team-has-extensive')} />
                 {listItems.map(item => (
                     <TechnologyItem key={item} title={item} />
                 ))}

@@ -1,20 +1,20 @@
 import { Project } from './types'
 
-export type ProjectCategory = (typeof projectCategories)[number]
+export type ProjectCategory = (typeof projectCategories)[number]['value']
 
 export const projectCategories = [
-    'all',
-    'ai tech',
-    'web',
-    'apps',
-    'fintech development',
-    'logistics software',
-    'healthcare',
-    'e-commerce projects',
-    'travel',
-    'edtech platforms',
-    'real estate',
-    'saas platform developing',
+    { value: 'all', title: 'homepage:projects.categories.all' },
+    { value: 'ai tech', title: 'homepage:projects.categories.ai-tech' },
+    { value: 'web', title: 'homepage:projects.categories.web' },
+    { value: 'apps', title: 'homepage:projects.categories.apps' },
+    { value: 'fintech development', title: 'homepage:projects.categories.fintech-development' },
+    { value: 'logistics software', title: 'homepage:projects.categories.logistics-software' },
+    { value: 'healthcare', title: 'homepage:projects.categories.healthcare' },
+    { value: 'e-commerce projects', title: 'homepage:projects.categories.e-commerce-projects' },
+    { value: 'travel', title: 'homepage:projects.categories.travel' },
+    { value: 'edtech platforms', title: 'homepage:projects.categories.edtech-platforms' },
+    { value: 'real estate', title: 'homepage:projects.categories.real-estate' },
+    { value: 'saas platform developing', title: 'homepage:projects.categories.saas-platform-developing' },
 ] as const
 
 export const projectsMock: Record<ProjectCategory, Project[]> = {

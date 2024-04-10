@@ -6,8 +6,10 @@ import ContactInfo from './contactInfo'
 import { companyMenu, services } from './data'
 import LinksGroup from './linksGroup'
 import SocialIcons from './socialIcons'
+import initTranslations from '@/app/i18n'
 
-const Footer: FC = () => {
+const Footer: FC<{ locale: string }> = async ({ locale }) => {
+    const { t } = await initTranslations(locale, ['common', 'contacts'])
     return (
         <footer className="self-end px-6 pb-16 pt-10 sm:px-7.5 lg:px-11 xl:px-0">
             <div className="grid grid-cols-1 justify-between gap-8 md:grid-cols-[minmax(max-content,36.4%),1fr] lg:grid-cols-[42%,1fr] xl:grid-cols-footer xl:gap-0">

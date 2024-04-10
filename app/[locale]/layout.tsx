@@ -31,7 +31,7 @@ export default function RootLayout({
                 <div className="grid min-h-screen grid-cols-1">
                     <Header />
                     {children}
-                    <Footer />
+                    <Footer locale={locale} />
                 </div>
                 <div id="modals" />
             </body>

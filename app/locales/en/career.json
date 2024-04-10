@@ -1,0 +1,84 @@
+{
+    "first-screen": {
+        "build-career": "Build career",
+        "with": "with"
+    },
+    "open-positions": {
+        "title": "Open positions",
+        "no-open-positions": "No open positions yet",
+        "stay-with-us": "Stay with us",
+        "on-socials": "on socials",
+        "positions": [
+            { "title": "Frontend developer", "location": "remote", "grade": "junior+" },
+            {
+                "title": ".NET developer",
+                "location": "remote",
+                "grade": "trainee",
+                "employment": "full time"
+            }
+        ]
+    },
+    "work-with-us": {
+        "title": "Why work with us",
+        "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+        "privileges": [
+            {
+                "title": "title",
+                "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies"
+            },
+            {
+                "title": "title",
+                "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies"
+            },
+            {
+                "title": "title",
+                "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies"
+            },
+            {
+                "title": "title",
+                "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies"
+            },
+            {
+                "title": "title",
+                "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies"
+            }
+        ]
+    },
+    "tech-stack": {
+        "title": "Tech stack",
+        "employment-models": "Employment models",
+        "employment-contract": "Employment contract",
+        "b2b-with-extras": "b2b with extras",
+        "b2b": "b2b",
+        "freelance": "freelance",
+        "freelance-items": [
+            "list item 1",
+            "list item 2",
+            "list item 3",
+            "list item 4",
+            "list item 5",
+            "list item 6"
+        ],
+        "employment-contract-items": [
+            "list item 1",
+            "list item 2",
+            "list item 3",
+            "list item 4",
+            "list item 5",
+            "list item 6"
+        ],
+        "b2b-with-extras-items": [
+            "list item 1",
+            "list item 2",
+            "list item 3",
+            "list item 4",
+            "list item 5",
+            "list item 6"
+        ],
+        "b2b-items": ["list item 1", "list item 2", "list item 3", "list item 4", "list item 5", "list item 6"],
+        "employment-contract-description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+        "b2b-with-extras-description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+        "b2b-description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+        "freelance-description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry."
+    }
+}

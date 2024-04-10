@@ -7,10 +7,10 @@ import WorkWithUs from '@/components/pages/career/workWithUs'
 import TranslationsProvider from '@/components/providers/locales'
 
 export default async function Home({ params: { locale } }: { params: { locale: string } }) {
-    const { resources } = await initTranslations(locale, ['homepage'])
+    const { resources } = await initTranslations(locale, ['career', 'homepage'])
 
     return (
-        <TranslationsProvider locale={locale} namespaces={['homepage']} resources={resources}>
+        <TranslationsProvider locale={locale} namespaces={['career', 'homepage']} resources={resources}>
             <main>
                 <CareerFirstScreen />
                 <OpenPositions />

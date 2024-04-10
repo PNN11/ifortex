@@ -12,36 +12,33 @@ import ExpertiseInfo from '../../home/expertise/expertiseInfo'
 import MarginWrapper from '@/components/ui/wrappers/marginWrapper'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
+import { useTranslation } from 'react-i18next'
 
 type EmploymentModels = (typeof employmentModels)[number]['value']
 
 const employmentModels = [
-    { title: 'employment contract', value: 'employmentContract' },
-    { title: 'b2b with extras', value: 'b2bWithExtras' },
-    { title: 'b2b', value: 'b2b' },
-    { title: 'freelance', value: 'freelance' },
+    { title: 'tech-stack.employment-contract', value: 'employmentContract' },
+    { title: 'tech-stack.b2b-with-extras', value: 'b2bWithExtras' },
+    { title: 'tech-stack.b2b', value: 'b2b' },
+    { title: 'tech-stack.freelance', value: 'freelance' },
 ] as const
 
-const modelsData: Record<EmploymentModels, { description: string; listItems: string[] }> = {
+const modelsData: Record<EmploymentModels, { description: string; listItems: string }> = {
     employmentContract: {
-        description:
-            'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.',
-        listItems: ['list item 1', 'list item 2', 'list item 3', 'list item 4', 'list item 5', 'list item 6'],
+        description: 'tech-stack.employment-contract-description',
+        listItems: 'tech-stack.employment-contract-items',
     },
     b2bWithExtras: {
-        description:
-            'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.',
-        listItems: ['list item 1', 'list item 2', 'list item 3', 'list item 4', 'list item 5', 'list item 6'],
+        description: 'tech-stack.b2b-with-extras-description',
+        listItems: 'tech-stack.b2b-with-extras-items',
     },
     b2b: {
-        description:
-            'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.',
-        listItems: ['list item 1', 'list item 2', 'list item 3', 'list item 4', 'list item 5', 'list item 6'],
+        description: 'tech-stack.b2b-description',
+        listItems: 'tech-stack.b2b-items',
     },
     freelance: {
-        description:
-            'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.',
-        listItems: ['list item 1', 'list item 2', 'list item 3', 'list item 4', 'list item 5', 'list item 6'],
+        description: 'tech-stack.freelance-description',
+        listItems: 'tech-stack.freelance-items',
     },
 }
 
@@ -54,9 +51,14 @@ const getTabSize = (width: number) => {
 const CareerTechStack: FC = () => {
     const [activeModel, setActiveModel] = useState<EmploymentModels>(employmentModels[0].value)
     const { width } = useWindowSize()
+    const { t } = useTranslation()
 
     const ref = useRef<HTMLUListElement>(null)
 
+    const listItems = [
+        t('homepage:expertise.our-team-has-extensive'),
+        ...(t(modelsData[activeModel].listItems, { returnObjects: true }) as string[]),
+    ]
     useGSAP(() => {
         gsap.to(ref.current, {
             scrollTrigger: {
@@ -74,7 +76,7 @@ const CareerTechStack: FC = () => {
             <Container size="l">
                 <MarginWrapper>
                     <Heading variant="h2" className="mb-8 md:mb-12 xl:mb-15">
-                        Tech stack
+                        {t('tech-stack.title')}
                     </Heading>
                     <ul ref={ref} className="flex gap-16 md:gap-21">
                         {techStackData.map(({ image, name }) => (
@@ -85,20 +87,20 @@ const CareerTechStack: FC = () => {
                     </ul>
                 </MarginWrapper>
                 <Heading variant="h2" className="mb-8 md:mb-12">
-                    Employment models
+                    {t('tech-stack.employment-models')}
                 </Heading>
                 <ul className="mb-8 flex flex-wrap items-center md:mb-17">
                     {employmentModels.map(({ title, value }) => (
                         <li key={title} onClick={() => setActiveModel(value)}>
                             <Tab isActive={activeModel === value} size={getTabSize(width)}>
-                                {title}
+                                {t(title)}
                             </Tab>
                         </li>
                     ))}
                 </ul>
                 <ExpertiseInfo
-                    description={modelsData[activeModel].description}
-                    listItems={modelsData[activeModel].listItems}
+                    description={t(modelsData[activeModel].description)}
+                    listItems={listItems}
                     classes={{
                         description: 'xl:max-w-114.5 2xl:max-w-135',
                         descriptionWrapper: '2xl:gap-19.25',

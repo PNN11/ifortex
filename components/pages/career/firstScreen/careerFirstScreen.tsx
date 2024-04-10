@@ -7,12 +7,15 @@ import ExpertiseItem from '../../home/expertise/expertiseItem'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import InfiniteSlider from '@/components/ui/infiniteSlider'
+import { useTranslation } from 'react-i18next'
 
 const ExpertiseSlide: FC<{ title: string }> = ({ title }) => {
     return <ExpertiseItem title={title} classes={{ icon: 'rotate-45' }} />
 }
 
 const CareerFirstScreen: FC = () => {
+    const { t } = useTranslation()
+
     return (
         <section className="overflow-hidden">
             <Container size="l">
@@ -27,7 +30,7 @@ const CareerFirstScreen: FC = () => {
                          -translate-y-1/2 animate-fade-up-service-lines lg:right-[80%] xl:right-[72%] 2xl:right-[70%]"
                     />
                     <Heading variant="h1" className="text-center">
-                        Build career <br /> with iFORTEX
+                        {t('first-screen.build-career')} <br /> {t('first-screen.with')} iFORTEX
                     </Heading>
                     <Image
                         src="/images/home/expertise_bg.svg"
@@ -43,7 +46,7 @@ const CareerFirstScreen: FC = () => {
 
             <div className="py-7.5 lg:py-9.5 2xl:py-12">
                 <InfiniteSlider
-                    data={expertise.map(item => ({ title: item }))}
+                    data={expertise.map(item => ({ title: t(`homepage:expertise.expertises.${item}`) }))}
                     Component={ExpertiseSlide}
                     keyForComponent={({ title }, i) => `${title}${i}`}
                     classes={{ itemsContainer: 'gap-8', wrapper: 'gap-8' }}

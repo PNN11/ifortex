@@ -1,0 +1,17 @@
+{
+    "contact": "Contact",
+    "us": "Us",
+    "want-to": "Want to",
+    "start-a-project": "Start a project",
+    "description": "Our team is available to answer any questions and provide a quote for your project. We look forward to helping you bring your digital vision to life",
+    "city": "Minsk, Belarus",
+    "street": "Internacionalnaya {{number}}A",
+    "form": {
+        "name": "YOU NAME",
+        "email": "EMAIL",
+        "message": "TELL US ABOUT PROJECT",
+        "send": "Send",
+        "title": "Done is better than perfect",
+        "description": "Ready to take your business to the next level with a custom website or app? We`d love to hear from you! Fill out the form on this page or use the information below to get in touch with us"
+    }
+}

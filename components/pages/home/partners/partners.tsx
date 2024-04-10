@@ -2,10 +2,8 @@
 import Button from '@/components/ui/buttons/defaultButton/button'
 import Heading from '@/components/ui/typography/heading'
 import Container from '@/components/ui/wrappers/container'
-import Image from 'next/image'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 const partners = [
     { image: '/images/home/partner_mock.png', title: 'mock' },
@@ -27,13 +25,13 @@ const Partners: FC = () => {
             <Container>
                 <div className="mb-15 flex flex-col justify-between gap-6 lg:flex-row lg:items-center lg:gap-7">
                     <Heading variant="h2" className="leading-12.7">
-                        {t('our-partners.our')}
+                        {t('homepage:our-partners.our')}
                         <br />
-                        <span className="text-base-1">{t('our-partners.partners')}</span>
+                        <span className="text-base-1">{t('homepage:our-partners.partners')}</span>
                     </Heading>
                     <div className="h-px w-full bg-base-12/30 lg:max-w-125" />
                     <Button size="s" variant="outlined" withIcon>
-                        {t('our-partners.become-a-client')}
+                        {t('homepage:our-partners.become-a-client')}
                     </Button>
                 </div>
                 {/* <Swiper slidesPerView="auto" spaceBetween={100} className="mb-12 !overflow-visible">
