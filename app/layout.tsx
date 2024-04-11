@@ -20,12 +20,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${michroma.className}`}>
-                <div className="grid min-h-screen grid-cols-1">
-                    <Header />
-                    {children}
-                    <Footer />
-                </div>
-                <div id="modals" />
+                {/* <div className="grid min-h-screen grid-cols-1"> */}
+                {/* <Header /> */}
+                {children}
+                {/* <Footer /> */}
+                {/* </div> */}
+                {/* <div id="modals" /> */}
             </body>
         </html>
     )
