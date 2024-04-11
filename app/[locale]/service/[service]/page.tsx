@@ -9,21 +9,31 @@ import OurWorkflow from '@/components/pages/service/workflow/ourWorkflow'
 import StartProject from '@/components/pages/service/startProject'
 import { serviceMock } from './mock'
 import ContactFormSection from '@/components/pages/contacts/contactForm/contactFormSection'
+import TranslationsProvider from '@/components/providers/locales'
+import initTranslations from '@/app/i18n'
 
-export default function Home({ params }: { params: { service: ServiceLink } }) {
-    const data = serviceMock[params.service]
+export default async function Home({
+    params: { locale, service },
+}: {
+    params: { service: ServiceLink; locale: string }
+}) {
+    const namespaces = [`web-development-service`, 'homepage', 'contacts']
+    const data = serviceMock[service]
+    const { resources } = await initTranslations(locale, namespaces)
 
     return (
-        <main className="">
-            <ServiceFirstScreen service={params.service} {...data.firstScreen} />
-            <AboutService {...data.aboutService} />
-            <OurWorkflow {...data.workflow} />
-            <TechStack {...data.techStack} />
-            <StartProject {...data.startProject} />
-            <Projects />
-            <Reviews />
-            <Partners />
-            <ContactFormSection containerSize="m" />
-        </main>
+        <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
+            <main className="">
+                <ServiceFirstScreen />
+                <AboutService />
+                <OurWorkflow />
+                <TechStack {...data.techStack} />
+                <StartProject />
+                <Projects />
+                <Reviews />
+                <Partners />
+                <ContactFormSection containerSize="m" />
+            </main>
+        </TranslationsProvider>
     )
 }

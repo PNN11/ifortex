@@ -1,27 +1,27 @@
 import { Icons } from '@/components/svg'
 
 export const services = [
-    { href: 'web-development', title: 'Web development' },
-    { href: 'mobile-development', title: 'Mobile development' },
-    { href: 'ai-development', title: 'AI development' },
+    { href: 'web-development', title: 'homepage:our-service.services.web-development' },
+    { href: 'mobile-development', title: 'homepage:our-service.services.mobile-development' },
+    { href: 'ai-development', title: 'homepage:our-service.services.ai-development' },
     {
         href: 'software-testing',
-        title: 'Software Testing & QA',
+        title: 'homepage:our-service.services.software-testing',
     },
     {
         href: 'ui-ux-design',
-        title: 'UI/UX design',
+        title: 'homepage:our-service.services.ui-ux-design',
     },
-    { href: 'devops', title: 'DevOps' },
-    { href: 'machine-learning', title: 'Machine learning' },
-    { href: 'web3', title: 'Web 3.0' },
-    { href: 'lowcode-development', title: 'Lowcode development' },
+    { href: 'devops', title: 'homepage:our-service.services.devops' },
+    { href: 'machine-learning', title: 'homepage:our-service.services.machine-learning' },
+    { href: 'web3', title: 'homepage:our-service.services.web3' },
+    { href: 'lowcode-development', title: 'homepage:our-service.services.lowcode-development' },
 ]
 
 export const companyMenu = [
-    { href: 'contact', title: 'Contacts' },
-    { href: 'cases', title: 'Cases' },
-    { href: 'career', title: 'Career' },
+    { href: 'contact', title: 'common:footer.contacts' },
+    { href: 'cases', title: 'common:footer.cases' },
+    { href: 'career', title: 'common:footer.career' },
 ]
 
 export const socials = [

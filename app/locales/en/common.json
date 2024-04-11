@@ -1,3 +1,67 @@
 {
-    "footer": {}
+    "footer": {
+        "subscribe": "Subscribe to newsletters",
+        "input-placeholder": "YOUR EMAIL",
+        "privacy": "Privacy Policy",
+        "cookie": "Cookie Policy",
+        "contacts": "Contacts",
+        "cases": "Cases",
+        "career": "Career"
+    },
+    "header": {
+        "menu": "Menu",
+        "contact-us": "Contact us",
+        "menu-items": {
+            "home": "Home",
+            "cases": "Cases",
+            "service": "Service",
+            "contact": "Contact",
+            "career": "Career"
+        }
+    },
+    "services": {
+        "web-development": "Web development",
+        "mobile-development": "Mobile development",
+        "custom-software-development": "Custom software development",
+        "cloud-development": "Cloud development",
+        "networking": "Networking",
+        "dedicated-team": "Dedicated team",
+        "ui-ux-design": "UI/UX design",
+        "software-testing": "Software testing",
+        "devops": "DevOps",
+        "machine-learning": "Machine learning",
+        "web3": "WEB 3.0",
+        "lowcode-development": "Lowcode development",
+        "business-analysis": "Business analysis",
+        "data-science": "Data science"
+    },
+    "expertise": "Expertise",
+    "service-modal": {
+        "expertices": [
+            {
+                "title": "Fintech",
+                "description": "Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management"
+            },
+            {
+                "title": "E-commerce",
+                "description": "Boost your sales with a custom e-commerce solution. Our team can help you create an online store that's optimized for sales and easy to use"
+            },
+            {
+                "title": "Logistics",
+                "description": "Streamline your logistics operations with custom software solutions. Our team can help you create an efficient and effective supply chain management system, from tracking shipments to managing inventory."
+            },
+            {
+                "title": "Healthcare",
+                "description": "Improve patient outcomes with innovative healthcare solutions. Our team has extensive experience in creating custom web and mobile applications for the healthcare industry, from electronic"
+            },
+            {
+                "title": "Travel",
+                "description": "Transform the travel industry with cutting-edge digital solutions. Our team can help you create custom web and mobile applications for the travel industry, from booking systems to destination guides. Get ready to see your business soar"
+            },
+            {
+                "title": "Edtech",
+                "description": "Empower students and teachers with custom education solutions. Our team can help you create digital learning tools, from online course platforms to educational games. Let us help you make a difference. Empower students and teachers with custom education solutions. Our team can help you create digital learning tools, from online course platforms to educational games. Let us help you make a difference in the world of education"
+            }
+        ]
+    }
 }

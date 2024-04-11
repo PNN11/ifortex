@@ -8,128 +8,48 @@ import Tech6 from '../../../../public/images/service/tech_6.png'
 import { ServicePageContent } from '@/types/servicePage'
 
 const mockData = {
-    firstScreen: {
-        title: (
-            <>
-                Lorem ipsum dolor <span className="text-base-1">sit</span> amet
-            </>
-        ),
-        description:
-            'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum.',
-        actionButton: { title: 'start web project' },
-    },
-    aboutService: {
-        description:
-            'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla.',
-        experience: [
-            { title: 'years on', value: '5' },
-            { title: 'years on', value: '5' },
-            { title: 'years on', value: '5' },
-        ],
-        providedServices: [
-            {
-                title: 'Lorem ipsum dolor',
-                description:
-                    'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. ',
-            },
-            {
-                title: 'Lorem ipsum dolor',
-                description:
-                    'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. ',
-            },
-            {
-                title: 'Lorem ipsum dolor',
-                description:
-                    'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. ',
-            },
-            {
-                title: 'Lorem ipsum dolor',
-                description:
-                    'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. ',
-            },
-        ],
-    },
-    workflow: {
-        description:
-            'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.',
-        stages: [
-            {
-                title: 'title',
-                description:
-                    'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies',
-            },
-            {
-                title: 'title',
-                description:
-                    'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies',
-            },
-            {
-                title: 'title',
-                description:
-                    'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies',
-            },
-            {
-                title: 'title',
-                description:
-                    'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies',
-            },
-            {
-                title: 'title',
-                description:
-                    'Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies',
-            },
-        ],
-    },
     techStack: {
-        description:
-            'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla.',
         items: [
             {
-                name: 'frontend',
-                description:
-                    'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. ',
+                name: 'tech-stack.items.0.name',
+                description: 'tech-stack.items.0.description',
+                listTitle: 'tech-stack.items.0.list-title',
                 technologies: [
-                    { image: Tech1, name: 'tech 1' },
-                    { image: Tech2, name: 'tech 2' },
-                    { image: Tech3, name: 'tech 3' },
-                    { image: Tech4, name: 'tech 4' },
-                    { image: Tech5, name: 'tech 5' },
-                    { image: Tech6, name: 'tech 6' },
+                    { image: Tech1, name: 'tech-stack.items.0.technologies.0.name' },
+                    { image: Tech2, name: 'tech-stack.items.0.technologies.1.name' },
+                    { image: Tech3, name: 'tech-stack.items.0.technologies.2.name' },
+                    { image: Tech4, name: 'tech-stack.items.0.technologies.3.name' },
+                    { image: Tech5, name: 'tech-stack.items.0.technologies.4.name' },
+                    { image: Tech6, name: 'tech-stack.items.0.technologies.5.name' },
                 ],
             },
             {
-                name: 'backend',
-                description:
-                    'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. ',
+                name: 'tech-stack.items.1.name',
+                description: 'tech-stack.items.1.description',
+                listTitle: 'tech-stack.items.1.list-title',
                 technologies: [
-                    { image: Tech1, name: 'tech 1' },
-                    { image: Tech2, name: 'tech 2' },
-                    { image: Tech3, name: 'tech 3' },
-                    { image: Tech4, name: 'tech 4' },
-                    { image: Tech5, name: 'tech 5' },
-                    { image: Tech6, name: 'tech 6' },
+                    { image: Tech1, name: 'tech-stack.items.1.technologies.0.name' },
+                    { image: Tech2, name: 'tech-stack.items.1.technologies.1.name' },
+                    { image: Tech3, name: 'tech-stack.items.1.technologies.2.name' },
+                    { image: Tech4, name: 'tech-stack.items.1.technologies.3.name' },
+                    { image: Tech5, name: 'tech-stack.items.1.technologies.4.name' },
+                    { image: Tech6, name: 'tech-stack.items.1.technologies.5.name' },
                 ],
             },
             {
-                name: 'design',
-                description:
-                    'Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. ',
+                name: 'tech-stack.items.2.name',
+                description: 'tech-stack.items.0.description',
+                listTitle: 'tech-stack.items.2.list-title',
                 technologies: [
-                    { image: Tech1, name: 'tech 1' },
-                    { image: Tech2, name: 'tech 2' },
-                    { image: Tech3, name: 'tech 3' },
-                    { image: Tech4, name: 'tech 4' },
-                    { image: Tech5, name: 'tech 5' },
-                    { image: Tech6, name: 'tech 6' },
+                    { image: Tech1, name: 'tech-stack.items.2.technologies.0.name' },
+                    { image: Tech2, name: 'tech-stack.items.2.technologies.1.name' },
+                    { image: Tech3, name: 'tech-stack.items.2.technologies.2.name' },
+                    { image: Tech4, name: 'tech-stack.items.2.technologies.3.name' },
+                    { image: Tech5, name: 'tech-stack.items.2.technologies.4.name' },
+                    { image: Tech6, name: 'tech-stack.items.2.technologies.5.name' },
                 ],
             },
         ],
-    },
-    startProject: {
-        description: 'Lorem ipsum dolor sit amet consectetur. Rhoncus proin libero pellentesque elit. ',
-        actionButton: {
-            title: 'Start web project',
-        },
     },
 }
 

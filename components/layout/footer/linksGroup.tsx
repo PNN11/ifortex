@@ -2,6 +2,7 @@ import Paragraph from '@/components/ui/typography/paragraph'
 import { WithClassName } from '@/types/common'
 import Link from 'next/link'
 import React, { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 type LinksGroupProps = WithClassName<{
     title: string
@@ -10,9 +11,10 @@ type LinksGroupProps = WithClassName<{
 }>
 
 const LinksGroup: FC<LinksGroupProps> = ({ links, title, className = '', basePath }) => {
+    const { t } = useTranslation()
     return (
         <div className={className}>
-            <Paragraph variant="p2" className="mb-12 leading-none !text-base-7">
+            <Paragraph variant="p2" className="mb-12 leading-none text-base-7">
                 {title}
             </Paragraph>
             <ul className="flex flex-col gap-3">
@@ -20,7 +22,7 @@ const LinksGroup: FC<LinksGroupProps> = ({ links, title, className = '', basePat
                     <li key={title}>
                         <Link href={`${basePath ? basePath + '/' : ''}${href}`}>
                             <Paragraph variant="alt" className="font-medium text-base-19 hover:text-base-5">
-                                {title}
+                                {t(title)}
                             </Paragraph>
                         </Link>
                     </li>

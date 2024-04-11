@@ -8,6 +8,8 @@ import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import i18nConfig from '@/i18nConfig'
 import { dir } from 'i18next'
+import TranslationsProvider from '@/components/providers/locales'
+import initTranslations from '../i18n'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -18,22 +20,26 @@ export function generateStaticParams() {
     return i18nConfig.locales.map(locale => ({ locale }))
 }
 
-export default function RootLayout({
+const namespaces = ['common', 'contacts', 'homepage']
+export default async function RootLayout({
     children,
     params: { locale },
 }: Readonly<{
     children: React.ReactNode
     params: { locale: string }
 }>) {
+    const { resources } = await initTranslations(locale, namespaces)
     return (
         <html lang={locale} dir={dir(locale)}>
             <body className={`${michroma.className}`}>
-                <div className="grid min-h-screen grid-cols-1">
-                    <Header />
-                    {children}
-                    <Footer locale={locale} />
-                </div>
-                <div id="modals" />
+                <TranslationsProvider namespaces={namespaces} locale={locale} resources={resources}>
+                    <div className="grid min-h-screen grid-cols-1">
+                        <Header />
+                        {children}
+                        <Footer />
+                    </div>
+                    <div id="modals" />
+                </TranslationsProvider>
             </body>
         </html>
     )

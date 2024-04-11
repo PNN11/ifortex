@@ -7,6 +7,7 @@ import ServiceMenu from '../service/serviceMenu'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import Heading from '@/components/ui/typography/heading'
 import { cn } from '@/lib/classNames'
+import { useTranslation } from 'react-i18next'
 
 type ModalMenuServiceItemProps = {
     onClick?: () => void
@@ -17,6 +18,7 @@ const ModalMenuServiceItem: FC<ModalMenuServiceItemProps> = ({ onClick, isActive
     const { width } = useWindowSize()
     const pathname = usePathname()
     const [open, setOpen] = useState(false)
+    const { t } = useTranslation()
 
     useEffect(() => {
         if (width >= 1024) setOpen(false)
@@ -43,7 +45,7 @@ const ModalMenuServiceItem: FC<ModalMenuServiceItemProps> = ({ onClick, isActive
                     )}
                     variant="h3"
                 >
-                    Service
+                    {t('common:header.menu-items.service')}
                 </Heading>
             </Button>
             <Accordion open={open}>

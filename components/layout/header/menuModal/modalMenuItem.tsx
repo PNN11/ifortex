@@ -5,9 +5,11 @@ import { usePathname } from 'next/navigation'
 import Button from '@/components/ui/buttons/defaultButton'
 import Heading from '@/components/ui/typography/heading'
 import { cn } from '@/lib/classNames'
+import { useTranslation } from 'react-i18next'
 
 const ModalMenuItem: FC<MenuItemProps> = ({ href, title, isActive = defaultIsActiveFunc }) => {
     const pathname = usePathname()
+    const { t } = useTranslation()
 
     return (
         <Link className={`group w-full`} href={href}>
@@ -25,7 +27,7 @@ const ModalMenuItem: FC<MenuItemProps> = ({ href, title, isActive = defaultIsAct
                     )}
                     variant="h3"
                 >
-                    {title}
+                    {t(title)}
                 </Heading>
             </Button>
         </Link>

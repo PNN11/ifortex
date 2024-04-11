@@ -1,0 +1,113 @@
+{
+    "service": "service",
+    "service-type": "web-development",
+    "first-screen": {
+        "title": "Lorem ipsum dolor sit amet",
+        "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum.",
+        "action-button-title": "start web project"
+    },
+    "about": "about",
+    "about-service": {
+        "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla.",
+        "experience": [
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" }
+        ],
+        "provided-services": [
+            {
+                "title": "Lorem ipsum dolor",
+                "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. "
+            },
+            {
+                "title": "Lorem ipsum dolor",
+                "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. "
+            },
+            {
+                "title": "Lorem ipsum dolor",
+                "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. "
+            },
+            {
+                "title": "Lorem ipsum dolor",
+                "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. "
+            }
+        ]
+    },
+    "our-workflow": {
+        "title": "our workflow",
+        "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+        "stages": [
+            {
+                "title": "title",
+                "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies"
+            },
+            {
+                "title": "title",
+                "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies"
+            },
+            {
+                "title": "title",
+                "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies"
+            },
+            {
+                "title": "title",
+                "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies"
+            },
+            {
+                "title": "title",
+                "description": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies"
+            }
+        ]
+    },
+    "tech-stack": {
+        "title": "tech stack",
+        "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla.",
+        "items": [
+            {
+                "name": "frontend",
+                "list-title": "Design technologies",
+                "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. ",
+                "technologies": [
+                    { "name": "tech 1" },
+                    { "name": "tech 2" },
+                    { "name": "tech 3" },
+                    { "name": "tech 4" },
+                    { "name": "tech 5" },
+                    { "name": "tech 6" }
+                ]
+            },
+            {
+                "name": "backend",
+                "list-title": "Design technologies",
+                "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. ",
+                "technologies": [
+                    { "name": "tech 1" },
+                    { "name": "tech 2" },
+                    { "name": "tech 3" },
+                    { "name": "tech 4" },
+                    { "name": "tech 5" },
+                    { "name": "tech 6" }
+                ]
+            },
+            {
+                "name": "design",
+                "list-title": "Design technologies",
+                "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla. ",
+                "technologies": [
+                    { "name": "tech 1" },
+                    { "name": "tech 2" },
+                    { "name": "tech 3" },
+                    { "name": "tech 4" },
+                    { "name": "tech 5" },
+                    { "name": "tech 6" }
+                ]
+            }
+        ]
+    },
+    "start-project": {
+        "ready": "Ready to",
+        "start": "start",
+        "description": "Lorem ipsum dolor sit amet consectetur. Rhoncus proin libero pellentesque elit. ",
+        "action-button-title": "Start web project"
+    }
+}

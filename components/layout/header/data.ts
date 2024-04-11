@@ -8,14 +8,19 @@ type DropdownComponentProps = {
 
 export type MenuItemType = Pick<MenuItemProps, 'isActive'> & { title: string } & (
         | { href: string; type: 'link' }
-        | { type: 'dropdown'; Component: FC<DropdownComponentProps>; onClick?: DropdownComponentProps['onClick'] }
+        | {
+              type: 'dropdown'
+              Component: FC<DropdownComponentProps>
+              onClick?: DropdownComponentProps['onClick']
+              category: string
+          }
     )
 
 export const menuItems: MenuItemType[] = [
-    { href: '/', title: 'Home', type: 'link', isActive: (path, href) => path === href },
-    { type: 'dropdown', title: 'Service', Component: ServiceDropdown },
-    { href: '/contact', title: 'Contact', type: 'link' },
-    { href: '/cases', title: 'Cases', type: 'link' },
+    { href: '/', title: 'common:header.menu-items.home', type: 'link', isActive: (path, href) => path === href },
+    { type: 'dropdown', title: 'common:header.menu-items.service', Component: ServiceDropdown, category: 'service' },
+    { href: '/contact', title: 'common:header.menu-items.contact', type: 'link' },
+    { href: '/cases', title: 'common:header.menu-items.cases', type: 'link' },
 
-    { href: '/career', title: 'Career', type: 'link' },
+    { href: '/career', title: 'common:header.menu-items.career', type: 'link' },
 ]

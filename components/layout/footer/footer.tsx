@@ -1,3 +1,4 @@
+'use client'
 import { Icons } from '@/components/svg'
 import Input from '@/components/ui/inputs/defaultInput/input'
 import Paragraph from '@/components/ui/typography/paragraph'
@@ -6,10 +7,11 @@ import ContactInfo from './contactInfo'
 import { companyMenu, services } from './data'
 import LinksGroup from './linksGroup'
 import SocialIcons from './socialIcons'
-import initTranslations from '@/app/i18n'
+import { useTranslation } from 'react-i18next'
 
-const Footer: FC<{ locale: string }> = async ({ locale }) => {
-    const { t } = await initTranslations(locale, ['common', 'contacts'])
+const Footer: FC = () => {
+    const { t } = useTranslation()
+
     return (
         <footer className="self-end px-6 pb-16 pt-10 sm:px-7.5 lg:px-11 xl:px-0">
             <div className="grid grid-cols-1 justify-between gap-8 md:grid-cols-[minmax(max-content,36.4%),1fr] lg:grid-cols-[42%,1fr] xl:grid-cols-footer xl:gap-0">
@@ -33,10 +35,15 @@ const Footer: FC<{ locale: string }> = async ({ locale }) => {
                         </div>
                         <div className="w-full xl:w-85 2xl:w-99">
                             <Paragraph variant="p2" className="mb-10 leading-none tracking-footer-link text-base-7">
-                                Subscribe for newsletters
+                                {t('footer.subscribe')}
                             </Paragraph>
                             <form className="mb-9.5">
-                                <Input inputSize="s" withIcon placeholder="YOUR EMAIL" iconClassName="text-base-1" />
+                                <Input
+                                    inputSize="s"
+                                    withIcon
+                                    placeholder={t('footer.input-placeholder')}
+                                    iconClassName="text-base-1"
+                                />
                             </form>
                             <SocialIcons />
                         </div>
@@ -46,10 +53,10 @@ const Footer: FC<{ locale: string }> = async ({ locale }) => {
                             ©️2024 iFORTEX
                         </Paragraph>
                         <Paragraph variant="footer-link" className="text-base-1">
-                            Privacy policy
+                            {t('footer.privacy')}
                         </Paragraph>
                         <Paragraph variant="footer-link" className="text-base-1">
-                            Cookies policy
+                            {t('footer.cookie')}
                         </Paragraph>
                     </div>
                 </div>

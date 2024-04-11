@@ -1,19 +1,18 @@
 import { ModalOverlay } from '@/components/modals/overlay'
-import useClickOutside from '@/hooks/useClickOutside'
-import { FC, useEffect, useRef, useState } from 'react'
-import { menuItems } from '../data'
-import ModalMenuItem from './modalMenuItem'
-import ModalMenuServiceItem from './modalMenuServiceItem'
 import { Icons } from '@/components/svg'
-import Heading from '@/components/ui/typography/heading'
 import Button from '@/components/ui/buttons/defaultButton'
-import Link from 'next/link'
-import ServiceMenu from '../service/serviceMenu'
+import Heading from '@/components/ui/typography/heading'
+import useCallbackAfterRouteChange from '@/hooks/useCallbackAfterRouteChange'
+import useClickOutside from '@/hooks/useClickOutside'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { ScreenWidths } from '@/types/common'
-import { useRouter } from 'next/router'
-import { usePathname } from 'next/navigation'
-import useCallbackAfterRouteChange from '@/hooks/useCallbackAfterRouteChange'
+import Link from 'next/link'
+import { FC, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { menuItems } from '../data'
+import ServiceMenu from '../service/serviceMenu'
+import ModalMenuItem from './modalMenuItem'
+import ModalMenuServiceItem from './modalMenuServiceItem'
 
 type MenuModalProps = {
     isOpen: boolean
@@ -25,13 +24,14 @@ const SUBMENU_ANIMATION_DURATION = 350
 const subMenusMap = new Map<string, FC>([['service', ServiceMenu]])
 
 const modalMenuItems = menuItems.map(item =>
-    item.title === 'Service' ? { ...item, Component: ModalMenuServiceItem } : item
+    item.type === 'dropdown' && item.category === 'service' ? { ...item, Component: ModalMenuServiceItem } : item
 )
 
 const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
     const [activeSubmenu, setActiveSubmenu] = useState<string>('')
     const ref = useRef<HTMLDivElement>(null)
     const submenuRef = useRef<HTMLDivElement>(null)
+    const { t } = useTranslation()
 
     const { width } = useWindowSize()
 
@@ -64,7 +64,7 @@ const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
                 <div className="w-full px-7.5 pb-12 pt-11.25 lg:w-fit lg:border-r lg:border-r-base-2 lg:pl-0 lg:pr-11.5 xl:pr-21 2xl:pr-26">
                     <div className="mb-10 hidden flex-row-reverse items-center justify-end gap-13.5 pl-11.5 lg:flex xl:flex-row xl:justify-start">
                         <Icons.Lines.Hypotenuse className="text-base-1/65" />
-                        <Heading variant="h3">Menu</Heading>
+                        <Heading variant="h3">{t('common:header.menu')}</Heading>
                     </div>
                     <div className="lg:pl-10.5 xl:pl-31.75">
                         <ul className="mb-20 flex flex-col gap-7 md:mb-37 lg:mb-47.75 3xl:mb-18">
@@ -75,11 +75,11 @@ const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
                                     ) : (
                                         <item.Component
                                             onClick={() => {
-                                                activeSubmenu === item.title.toLowerCase()
+                                                activeSubmenu === item.category.toLowerCase()
                                                     ? handleCloseSubmenu()
-                                                    : handleOpenSubmenu(item.title.toLowerCase())
+                                                    : handleOpenSubmenu(item.category.toLowerCase())
                                             }}
-                                            isActiveSubmenu={activeSubmenu === item.title.toLowerCase()}
+                                            isActiveSubmenu={activeSubmenu === item.category.toLowerCase()}
                                         />
                                     )}
                                 </li>
@@ -92,7 +92,7 @@ const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
                                 withIcon
                                 className="w-full"
                             >
-                                Contact us
+                                {t('common:header.contact-us')}
                             </Button>
                         </Link>
                     </div>

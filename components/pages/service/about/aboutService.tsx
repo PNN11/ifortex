@@ -1,16 +1,28 @@
+'use client'
 import { Icons } from '@/components/svg'
 import Heading from '@/components/ui/typography/heading'
 import Paragraph from '@/components/ui/typography/paragraph'
 import Container from '@/components/ui/wrappers/container'
 import SectionWrapper from '@/components/ui/wrappers/sectionWrapper'
 import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 import ExperienceItem from './experienceItem'
 import ProvidedServiceCard from './providedServiceCard'
-import { ServicePageContent } from '@/types/servicePage'
 
-type AboutServiceProps = ServicePageContent['aboutService']
+type AboutServiceProps = {}
 
-const AboutService: FC<AboutServiceProps> = ({ description, experience, providedServices }) => {
+const AboutService: FC<AboutServiceProps> = () => {
+    const { t } = useTranslation()
+
+    const experience = t('about-service.experience', { returnObjects: true }) as {
+        title: string
+        value: string
+    }[]
+
+    const providedServices = t('about-service.provided-services', {
+        returnObjects: true,
+    }) as { title: string; description: string }[]
+
     return (
         <SectionWrapper>
             <Container>
@@ -18,9 +30,9 @@ const AboutService: FC<AboutServiceProps> = ({ description, experience, provided
                     <div className="flex flex-col gap-10 lg:max-w-115.5 lg:pb-10 xl:max-w-130">
                         <div className="h-2.5 w-2.5 bg-grad-1" />
                         <Heading variant="h2">
-                            about <br /> service
+                            {t('about')} <br /> {t('service')}
                         </Heading>
-                        <Paragraph variant="p1">{description}</Paragraph>
+                        <Paragraph variant="p1">{t('about-service.description')}</Paragraph>
                     </div>
                     <div className="relative py-15">
                         <Icons.Lines.ProjectLine className="absolute right-27.5 top-2.5 rotate-x-180 lg:right-0 xl:left-28 xl:right-auto" />
