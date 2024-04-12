@@ -44,6 +44,8 @@ body {
         --color-base-18: 165 165 165;
         --color-base-19: 83 83 83;
         --color-base-20: 65 65 65;
+        --color-base-21: 217 217 217;
+        --color-base-22: 149 149 149;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -140,6 +142,22 @@ body {
 } */
 
 .provided-service-clip {
-    -webkit-clip-path: polygon(27px 0, 100% 0, 100% calc(100% - 27px), calc(100% - 27px) 100%, 0 100%, 0 27px);
-    clip-path: polygon(27px 0, 100% 0, 100% calc(100% - 27px), calc(100% - 27px) 100%, 0 100%, 0 27px);
+    --clip-size: 27px;
+
+    -webkit-clip-path: polygon(
+        var(--clip-size) 0,
+        100% 0,
+        100% calc(100% - var(--clip-size)),
+        calc(100% - var(--clip-size)) 100%,
+        0 100%,
+        0 var(--clip-size)
+    );
+    clip-path: polygon(
+        var(--clip-size) 0,
+        100% 0,
+        100% calc(100% - var(--clip-size)),
+        calc(100% - var(--clip-size)) 100%,
+        0 100%,
+        0 var(--clip-size)
+    );
 }

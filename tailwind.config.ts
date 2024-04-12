@@ -2,6 +2,29 @@ import type { Config } from 'tailwindcss'
 
 import plugin from 'tailwindcss/plugin'
 
+const clip = plugin(({ matchUtilities }) => {
+    matchUtilities({
+        'service-clip': (value: string) => ({
+            '-webkit-clip-path': `polygon(
+                ${value} 0,
+                100% 0,
+                100% calc(100% - ${value}),
+                calc(100% - ${value}) 100%,
+                0 100%,
+                0 ${value}
+            )`,
+            'clip-path': `polygon(
+                ${value} 0,
+                100% 0,
+                100% calc(100% - ${value}),
+                calc(100% - ${value}) 100%,
+                0 100%,
+                0 ${value}
+            )`,
+        }),
+    })
+})
+
 const rotateY = plugin(function ({ addUtilities }) {
     addUtilities({
         '.rotate-y-20': {
@@ -191,6 +214,7 @@ export const config: Config = {
                 86.5: '21.625rem', // 346px
                 88: '22rem', // 352px
                 88.5: '22.125rem', // 354px
+                90: '22.5rem', // 360px
                 91.25: '22.8125rem', // 365px
                 93.25: '23.3125rem', // 373px
                 96.5: '24.125rem', // 386px
@@ -277,6 +301,8 @@ export const config: Config = {
                 'base-18': 'rgb(var(--color-base-18) / <alpha-value>)',
                 'base-19': 'rgb(var(--color-base-19) / <alpha-value>)',
                 'base-20': 'rgb(var(--color-base-20) / <alpha-value>)',
+                'base-21': 'rgb(var(--color-base-21) / <alpha-value>)',
+                'base-22': 'rgb(var(--color-base-22) / <alpha-value>)',
             },
             fontSize: {
                 '2xs': '0.8125rem', // 13px
@@ -365,6 +391,6 @@ export const config: Config = {
             },
         },
     },
-    plugins: [rotateY, rotateX],
+    plugins: [rotateY, rotateX, clip],
 }
 export default config

@@ -17,7 +17,7 @@ export default async function Home({
 }: {
     params: { service: ServiceLink; locale: string }
 }) {
-    const namespaces = [`web-development-service`, 'homepage', 'contacts']
+    const namespaces = [`services/web-development-service`, 'homepage', 'contacts']
     const data = serviceMock[service]
     const { resources } = await initTranslations(locale, namespaces)
 

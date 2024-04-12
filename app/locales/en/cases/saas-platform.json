@@ -1,0 +1,21 @@
+{
+    "first-screen": {
+        "back-to-cases": "Back to cases",
+        "name": "SaaS Platform",
+        "title": "Lorem ipsum dolor sit amet"
+    },
+    "case-info": {
+        "brand": ["Cupid Crush Dating LCC"],
+        "location": ["Montreal, Canada"],
+        "clutch-review": ["Lorem ipsum dolor sit amet"],
+        "client": ["NDA"],
+        "budget": ["NDA"],
+        "industry": ["Online Dating", "Social network"],
+        "environment": ["Flutter"],
+        "release": ["2024"],
+        "problem": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. Egestas eget ultrices habitasse non. In congue mauris pellentesque molestie egestas eleifend lacus. At velit nulla ipsum egestas suscipit tellus magnis arcu. Interdum et imperdiet commodo malesuada.",
+        "solution": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. Egestas eget ultrices habitasse non. In congue mauris pellentesque molestie egestas eleifend lacus. At velit nulla ipsum egestas suscipit tellus magnis arcu. Interdum et imperdiet commodo malesuada.",
+        "delivering": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. Egestas eget ultrices habitasse non. In congue mauris pellentesque molestie egestas eleifend lacus. At velit nulla ipsum egestas suscipit tellus magnis arcu. Interdum et imperdiet commodo malesuada.",
+        "tags": ["crypto", "big data", "web", "mobile app", "ui/ux", "product design", "MVP", "database migration"]
+    }
+}

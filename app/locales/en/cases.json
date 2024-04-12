@@ -2,5 +2,17 @@
     "first-screen": {
         "title": "we standing out your project ideas",
         "description": " Lorem ipsum dolor sit amet consectetur. Nibh amet amet viverra urna eget mattis. Vel auctor sem penatibus sit elit vel convallis. Tortor scelerisque magnis porta viverra sed leo a in. Purus sapien risus netus adipiscing vitae placerat. Blandit risus interdum dui consequat euismod risus sit egestas dictum. A lectus praesent ut."
-    }
+    },
+
+    "brand": "Brand",
+    "location": "Location",
+    "clutch-review": "Clutch review",
+    "client": "Client",
+    "budget": "Budget",
+    "industry": "Industry",
+    "environment": "Environment",
+    "release": "Release",
+    "problem": "Problem",
+    "solution": "Solution",
+    "delivering": "Delivering"
 }

@@ -23,6 +23,7 @@ export const projectsMock: Record<ProjectCategory, Project[]> = {
             title: 'Saas platform',
             tags: ['travel', 'big data', 'web', 'mobile app', 'ui/ux', 'product design', 'MVP', 'database migration'],
             image: '/images/home/saas_platform.png',
+            href: 'saas-platform',
         },
         {
             title: 'Crypto wallet',

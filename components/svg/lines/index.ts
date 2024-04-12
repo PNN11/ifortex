@@ -9,6 +9,8 @@ import VerticalRectangleWithLines from './verticalRectangleWithLines'
 import CareerRectangleWithLines from './careerRectangleWithLines'
 import ExtraLargeRectangleWithLines from './extraLargeRectangleWithLines'
 import ContactsLine from './contactsLine'
+import NdaLines from './ndaLines'
+import CaseRectangleWithLines from './caseRectangleWithLines'
 
 const Lines = {
     Hypotenuse,
@@ -22,6 +24,8 @@ const Lines = {
     CareerRectangleWithLines,
     ExtraLargeRectangleWithLines,
     ContactsLine,
+    NdaLines,
+    CaseRectangleWithLines,
 }
 
 export default Lines
