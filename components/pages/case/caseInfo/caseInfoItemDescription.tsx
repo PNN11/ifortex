@@ -1,12 +1,12 @@
 import { gilroy } from '@/fonts'
 import { cn } from '@/lib/classNames'
-import React, { ComponentProps, FC, ReactNode } from 'react'
+import { ComponentProps, FC } from 'react'
 
-type CaseInfoItemDescriptionProps = ComponentProps<'p'>
+type CaseInfoItemDescriptionProps = ComponentProps<'div'>
 
 const CaseInfoItemDescription: FC<CaseInfoItemDescriptionProps> = ({ children, className = '', ...props }) => {
     return (
-        <p
+        <div
             className={cn(
                 'text-lg font-medium leading-[1.2] tracking-button-l text-white 2xl:text-xl',
                 gilroy.className,
@@ -15,7 +15,7 @@ const CaseInfoItemDescription: FC<CaseInfoItemDescriptionProps> = ({ children, c
             {...props}
         >
             {children}
-        </p>
+        </div>
     )
 }
 

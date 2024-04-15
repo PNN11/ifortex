@@ -1,19 +1,25 @@
 'use client'
-import Container from '@/components/ui/wrappers/container'
-import SectionWrapper from '@/components/ui/wrappers/sectionWrapper'
-import React, { FC } from 'react'
-import { useTranslation } from 'react-i18next'
-import CaseInfoItemTitle from './caseInfoItemTitle'
-import CaseInfoItemDescription from './caseInfoItemDescription'
-import Paragraph from '@/components/ui/typography/paragraph'
-import ProjectTagsList from '../../home/projects/tagsList'
+import ExploreCaseButton from '@/components/pages/home/projects/exploreCaseButton'
+import ProjectTagsList from '@/components/pages/home/projects/tagsList'
 import { Icons } from '@/components/svg'
+import Heading from '@/components/ui/typography/heading'
+import Container from '@/components/ui/wrappers/container'
 import IconWithLinesWrapper from '@/components/ui/wrappers/iconWithLinesWrapper'
+import SectionWrapper from '@/components/ui/wrappers/sectionWrapper'
+import Image from 'next/image'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
+import CaseInfoItemDescription from './caseInfoItemDescription'
+import CaseInfoItemTitle from './caseInfoItemTitle'
 
 const listLabels = ['brand', 'location', 'clutch-review', 'client', 'budget', 'industry', 'environment', 'release']
 const descriptionLabels = ['problem', 'solution', 'delivering']
 
-const CaseInfo: FC = () => {
+type CaseInfoProps = {
+    customerAvatar: string
+}
+
+const CaseInfo: FC<CaseInfoProps> = ({ customerAvatar }) => {
     const { t } = useTranslation()
 
     const listItems = listLabels.map(label => ({
@@ -31,7 +37,7 @@ const CaseInfo: FC = () => {
     return (
         <SectionWrapper variant="s">
             <Container>
-                <div className="mb-8 grid grid-cols-1 justify-between gap-16 lg:mb-15 lg:grid-cols-[max-content_minmax(0,52.375rem)] lg:gap-4">
+                <div className="mb-8 grid grid-cols-1 justify-between gap-16 lg:mb-15 lg:grid-cols-[18.75rem_minmax(0,52.375rem)] lg:gap-4">
                     <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1">
                         {listItems.map(({ description, title }) => (
                             <li key={title}>
@@ -70,8 +76,32 @@ const CaseInfo: FC = () => {
                 <IconWithLinesWrapper
                     Icon={Icons.Lines.CaseRectangleWithLines}
                     iconProps={{ className: 'text-white/65' }}
-                    className="h-4 w-full lg:h-7.5"
+                    className="mb-8 h-4 w-full lg:mb-15 lg:h-7.5"
                 />
+                <div className="grid grid-cols-1 justify-between gap-6 lg:grid-cols-[18.75rem_minmax(0,52.375rem)] lg:gap-4">
+                    <div>
+                        <Image
+                            src={customerAvatar}
+                            width={48}
+                            height={48}
+                            alt={t('case-info.customer-name')}
+                            className="mb-4"
+                        />
+                        <p className="mb-1.5 text-1xl leading-10 text-base-8">{t('case-info.customer-name')}</p>
+                        <p className="text-base-23 text-base leading-5 tracking-alt">
+                            {t('case-info.customer-position')}
+                        </p>
+                    </div>
+                    <div className="flex flex-col justify-between gap-6.5 md:flex-row md:items-end md:gap-1.5">
+                        <div className="xl:max-w-76 md:max-w-69">
+                            <Icons.Lines.ProjectLine className="mb-2.5 xl:mb-4" />
+                            <Heading variant="h4">{t('case-info.same-idea')}</Heading>
+                        </div>
+                        <ExploreCaseButton classes={{ button: 'mr-2 sm:mr-4.5', icon: 'mr-4.5 sm:mr-7' }} className="">
+                            {t('case-info.consultation')}
+                        </ExploreCaseButton>
+                    </div>
+                </div>
             </Container>
         </SectionWrapper>
     )

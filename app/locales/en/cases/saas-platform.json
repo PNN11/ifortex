@@ -16,6 +16,48 @@
         "problem": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. Egestas eget ultrices habitasse non. In congue mauris pellentesque molestie egestas eleifend lacus. At velit nulla ipsum egestas suscipit tellus magnis arcu. Interdum et imperdiet commodo malesuada.",
         "solution": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. Egestas eget ultrices habitasse non. In congue mauris pellentesque molestie egestas eleifend lacus. At velit nulla ipsum egestas suscipit tellus magnis arcu. Interdum et imperdiet commodo malesuada.",
         "delivering": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. Egestas eget ultrices habitasse non. In congue mauris pellentesque molestie egestas eleifend lacus. At velit nulla ipsum egestas suscipit tellus magnis arcu. Interdum et imperdiet commodo malesuada.",
-        "tags": ["crypto", "big data", "web", "mobile app", "ui/ux", "product design", "MVP", "database migration"]
+        "tags": ["crypto", "big data", "web", "mobile app", "ui/ux", "product design", "MVP", "database migration"],
+        "customer-name": "Name Soname",
+        "customer-position": "Company position",
+        "same-idea": "Have the same idea?",
+        "consultation": "Consultation"
+    },
+    "case-outcome": {
+        "project-outcome": "Project Outcome",
+        "project-outcome-description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla.",
+        "challenges": "Challanges",
+        "challenges-description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. ",
+        "outcome-items": [
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" }
+        ],
+        "challenges-items": [
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            }
+        ]
+    },
+    "additional-info": {
+        "title": "Title",
+        "description": "Lorem ipsum dolor sit amet consectetur. Ipsum lacus posuere felis elementum diam eleifend. Eu bibendum purus fringilla etiam hendrerit. Amet a bibendum enim ante est. Vulputate pharetra rhoncus mattis laoreet lectus nec nulla. Donec et cursus magna ullamcorper arcu massa. Proin ultricies at nunc."
+    },
+    "case-contact": {
+        "title": "Let's make your next project together",
+        "contact-us": "Contact us",
+        "more-projects": "More projects"
     }
 }

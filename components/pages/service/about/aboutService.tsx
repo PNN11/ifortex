@@ -8,6 +8,7 @@ import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import ExperienceItem from './experienceItem'
 import ProvidedServiceCard from './providedServiceCard'
+import ExperiencesBlock from './experiencesBlock'
 
 type AboutServiceProps = {}
 
@@ -34,16 +35,7 @@ const AboutService: FC<AboutServiceProps> = () => {
                         </Heading>
                         <Paragraph variant="p1">{t('about-service.description')}</Paragraph>
                     </div>
-                    <div className="relative py-15">
-                        <Icons.Lines.ProjectLine className="absolute right-27.5 top-2.5 rotate-x-180 lg:right-0 xl:left-28 xl:right-auto" />
-                        <Icons.Lines.ProjectLine className="absolute bottom-6 right-0 rotate-x-180 xl:right-22" />
-                        <Icons.Lines.ProjectLine className="absolute bottom-2.5 right-72 xl:left-0 xl:right-auto" />
-                        <div className="hidden-scroll grid grid-cols-[repeat(3,max-content)] gap-4.5 overflow-auto md:justify-center lg:flex lg:flex-wrap xl:flex-nowrap">
-                            {experience.map(({ title, value }, index) => (
-                                <ExperienceItem title={title} value={value} key={`${title}${index}`} />
-                            ))}
-                        </div>
-                    </div>
+                    <ExperiencesBlock items={experience} />
                 </div>
                 <div className="relative mb-9 overflow-hidden lg:mb-12.5">
                     <Heading variant="h2">What we provide</Heading>

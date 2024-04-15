@@ -158,6 +158,7 @@ export const config: Config = {
                 27.25: '6.8125rem', // 109px
                 27.5: '6.875rem', // 110px
                 28.75: '7.1875rem', // 115px
+                29: '7.25rem', // 116px
                 30: '7.5rem', // 120px
                 30.25: '7.5625rem', // 121px
                 30.75: '7.6875rem', // 123px
@@ -201,9 +202,11 @@ export const config: Config = {
                 65: '16.25rem', // 260px
                 65.5: '16.375rem', // 262px
                 68.5: '17.125rem', // 274px
+                69: '17.25rem', // 276px
                 70: '17.5rem', // 280px
                 72: '18rem', // 288px
                 75: '18.75rem', // 300px
+                76: '19rem', // 304px
                 76.5: '19.125rem', // 306px
                 78.375: '19.5938rem', // 313.5px
                 79: '19.75rem', // 316px
@@ -223,6 +226,7 @@ export const config: Config = {
                 100: '25rem', // 400px
                 100.5: '25.125rem', // 402px
                 102.5: '25.625rem', // 410px
+                102.75: '25.6875rem', // 411px
                 103: '25.75rem', // 412px
                 104: '26rem', // 416px
                 105.5: '26.375rem', // 422px
@@ -247,6 +251,8 @@ export const config: Config = {
                 153.75: '38.4375rem', // 615px
                 155: '38.75rem', // 620px
                 156.25: '39.0625rem', // 625px
+                156.75: '39.1875rem', // 627px
+                157: '39.25rem', // 628px
                 158: '39.5rem', // 632px
                 160: '40rem', // 640px
                 162: '40.5rem', // 648px
@@ -303,6 +309,7 @@ export const config: Config = {
                 'base-20': 'rgb(var(--color-base-20) / <alpha-value>)',
                 'base-21': 'rgb(var(--color-base-21) / <alpha-value>)',
                 'base-22': 'rgb(var(--color-base-22) / <alpha-value>)',
+                'base-23': 'rgb(var(--color-base-23) / <alpha-value>)',
             },
             fontSize: {
                 '2xs': '0.8125rem', // 13px

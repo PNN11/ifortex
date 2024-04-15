@@ -46,6 +46,7 @@ body {
         --color-base-20: 65 65 65;
         --color-base-21: 217 217 217;
         --color-base-22: 149 149 149;
+        --color-base-23: 187 187 187;
     }
 
     @media (prefers-color-scheme: dark) {
