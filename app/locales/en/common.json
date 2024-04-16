@@ -63,5 +63,8 @@
                 "description": "Empower students and teachers with custom education solutions. Our team can help you create digital learning tools, from online course platforms to educational games. Let us help you make a difference. Empower students and teachers with custom education solutions. Our team can help you create digital learning tools, from online course platforms to educational games. Let us help you make a difference in the world of education"
             }
         ]
+    },
+    "not-found": {
+        "title": "Page not found"
     }
 }

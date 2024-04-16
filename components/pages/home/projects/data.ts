@@ -34,6 +34,7 @@ export const projectsMock: Record<ProjectCategory, Project[]> = {
             title: 'Dating app',
             tags: ['crypto', 'product design', 'MVP', 'CTO service', 'ai tech', 'ui/ux'],
             image: '/images/home/dating_app.png',
+            href: 'dating-app',
         },
         {
             title: 'Saas platform',

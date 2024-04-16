@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next'
 
 export type ServiceLink = (typeof services)[number]['href']
 
-const services = [
+export const services = [
     { href: 'web-development', title: 'common:services.web-development' },
     { href: 'mobile-development', title: 'common:services.mobile-development' },
     { href: 'custom-software-development', title: 'common:services.custom-software-development' },

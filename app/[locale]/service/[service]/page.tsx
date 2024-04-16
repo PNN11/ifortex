@@ -1,16 +1,16 @@
+import initTranslations from '@/app/i18n'
 import { ServiceLink } from '@/components/layout/header/service/serviceMenu'
+import ContactFormSection from '@/components/pages/contacts/contactForm/contactFormSection'
 import Partners from '@/components/pages/home/partners'
 import Projects from '@/components/pages/home/projects'
 import Reviews from '@/components/pages/home/reviews'
 import AboutService from '@/components/pages/service/about/aboutService'
 import ServiceFirstScreen from '@/components/pages/service/firstScreen/serviceFirstScreen'
+import StartProject from '@/components/pages/service/startProject'
 import TechStack from '@/components/pages/service/techStack'
 import OurWorkflow from '@/components/pages/service/workflow/ourWorkflow'
-import StartProject from '@/components/pages/service/startProject'
-import { serviceMock } from './mock'
-import ContactFormSection from '@/components/pages/contacts/contactForm/contactFormSection'
 import TranslationsProvider from '@/components/providers/locales'
-import initTranslations from '@/app/i18n'
+import { serviceMock } from './mock'
 
 export default async function Home({
     params: { locale, service },

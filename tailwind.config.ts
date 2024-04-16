@@ -90,6 +90,7 @@ export const config: Config = {
                 'grad-2': 'linear-gradient(0deg, rgba(28, 237, 204, 0.13) 0%, rgba(52, 52, 52, 0) 100%)',
                 'work-with-us-line':
                     'linear-gradient(0deg, #131313 -0.13%, rgba(92, 217, 197, 0.66) 20.53%, rgba(92, 217, 197, 0.66) 85.91%, #131313 100%)',
+                'not-found-line': 'linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(153, 153, 153, 0) 100%)',
             },
             spacing: {
                 0.75: '0.1875rem', // 3px
@@ -105,6 +106,7 @@ export const config: Config = {
                 5.25: '1.3125rem', // 21px
                 5.5: '1.375rem', // 22px
                 5.75: '1.4375rem', // 23px
+                6.25: '1.5625rem', // 25px
                 6.5: '1.625rem', // 26px
                 6.625: '1.6563rem', // 26.5px
                 6.75: '1.6875rem', // 27px
