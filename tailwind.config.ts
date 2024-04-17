@@ -22,6 +22,60 @@ const clip = plugin(({ matchUtilities }) => {
                 0 ${value}
             )`,
         }),
+        'clip-lb-rt': (value: string) => ({
+            '-webkit-clip-path': `polygon(
+                0 0,
+                calc(100% - ${value}) 0,
+                100% ${value},
+                100% 100%,
+                ${value} 100%,
+                0 calc(100% - ${value})
+            )`,
+            'clip-path': `polygon(
+                0 0,
+                calc(100% - ${value}) 0,
+                100% ${value},
+                100% 100%,
+                ${value} 100%,
+                0 calc(100% - ${value})
+            )`,
+        }),
+        'clip-rt': (value: string) => ({
+            '-webkit-clip-path': `polygon(
+                0 0,
+                calc(100% - ${value}) 0,
+                100% ${value},
+                100% 100%,
+                0 100%,
+                0 100%
+            )`,
+            'clip-path': `polygon(
+                0 0,
+                calc(100% - ${value}) 0,
+                100% ${value},
+                100% 100%,
+                0 100%,
+                0 100%
+            )`,
+        }),
+        'clip-lb': (value: string) => ({
+            '-webkit-clip-path': `polygon(
+                0 0,
+                100% 0,
+                100% 100%,
+                100% 100%,
+                ${value} 100%,
+                0 calc(100% - ${value})
+            )`,
+            'clip-path': `polygon(
+                0 0,
+                100% 0,
+                100% 100%,
+                100% 100%,
+                ${value} 100%,
+                0 calc(100% - ${value})
+            )`,
+        }),
     })
 })
 
@@ -90,7 +144,7 @@ export const config: Config = {
                 'grad-2': 'linear-gradient(0deg, rgba(28, 237, 204, 0.13) 0%, rgba(52, 52, 52, 0) 100%)',
                 'work-with-us-line':
                     'linear-gradient(0deg, #131313 -0.13%, rgba(92, 217, 197, 0.66) 20.53%, rgba(92, 217, 197, 0.66) 85.91%, #131313 100%)',
-                'not-found-line': 'linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(153, 153, 153, 0) 100%)',
+                'not-found-line': 'linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(153, 153, 153, 0) 100%)',
             },
             spacing: {
                 0.75: '0.1875rem', // 3px
@@ -211,8 +265,10 @@ export const config: Config = {
                 76: '19rem', // 304px
                 76.5: '19.125rem', // 306px
                 78.375: '19.5938rem', // 313.5px
+                78.5: '19.625rem', // 314px
                 79: '19.75rem', // 316px
                 80: '20rem', // 320px
+                82: '20.5rem', // 328px
                 83.5: '20.875rem', // 334px
                 84.5: '21.125rem', // 338px
                 85: '21.25rem', // 340px
@@ -221,12 +277,14 @@ export const config: Config = {
                 88.5: '22.125rem', // 354px
                 90: '22.5rem', // 360px
                 91.25: '22.8125rem', // 365px
+                93: '23.25rem', // 372px
                 93.25: '23.3125rem', // 373px
                 96.5: '24.125rem', // 386px
                 98.25: '24.5625rem', // 393px
                 99: '24.75rem', // 396px
                 100: '25rem', // 400px
                 100.5: '25.125rem', // 402px
+                102: '25.5rem', // 408px
                 102.5: '25.625rem', // 410px
                 102.75: '25.6875rem', // 411px
                 103: '25.75rem', // 412px
@@ -267,6 +325,7 @@ export const config: Config = {
                 183.75: '45.9375rem', // 735px
                 184: '46rem', // 736px
                 187.5: '46.875rem', // 750px
+                201: '50.25rem', // 804px
                 203.5: '50.875rem', // 814px
                 205.25: '51.3125rem', // 821px
                 209.5: '52.375rem', // 838px
@@ -382,7 +441,7 @@ export const config: Config = {
                 },
                 fadeUpServiceLines: {
                     '0%': { opacity: '0', transform: 'translateY(10rem)' },
-                    '100%': { opacity: '1', transform: 'translateY(-50%)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
                 },
                 marquee: {
                     from: {

@@ -16,6 +16,7 @@ import MapPin from './mapPin'
 import UserSearch from './userSearch'
 import DocumentLayoutLeft from './documentLayoutLeft'
 import BelarusMap from './belarusMap'
+import NotFoundIcon from './notFound'
 
 export const Icons = {
     IFortexLogo,
@@ -36,4 +37,5 @@ export const Icons = {
     UserSearch,
     DocumentLayoutLeft,
     BelarusMap,
+    NotFoundIcon,
 }

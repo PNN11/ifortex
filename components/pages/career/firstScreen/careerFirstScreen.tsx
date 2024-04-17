@@ -26,8 +26,8 @@ const CareerFirstScreen: FC = () => {
                         height={397}
                         alt="background"
                         quality={100}
-                        className="3xl:right-[calc(100% - 33.6875rem)] absolute right-1/2 top-1/2 max-w-137.5
-                         -translate-y-1/2 animate-fade-up-service-lines lg:right-[80%] xl:right-[72%] 2xl:right-[70%]"
+                        className="3xl:right-[calc(100% - 33.6875rem)] absolute right-1/2 top-[calc(50%-12.375rem)] max-w-137.5
+                          animate-fade-up-service-lines lg:right-[80%] xl:right-[72%] 2xl:right-[70%]"
                     />
                     <Heading variant="h1" className="text-center">
                         {t('first-screen.build-career')} <br /> {t('first-screen.with')} iFORTEX
@@ -38,8 +38,8 @@ const CareerFirstScreen: FC = () => {
                         height={397}
                         alt="background"
                         quality={100}
-                        className="3xl:left-[calc(100% - 33.6875rem)] absolute left-1/2 top-1/2 max-w-137.5
-                         -translate-y-1/2 animate-fade-up-service-lines lg:left-[80%] xl:left-[72%] 2xl:left-[70%]"
+                        className="3xl:left-[calc(100% - 33.6875rem)] absolute left-1/2 top-[calc(50%-12.375rem)] max-w-137.5
+                          animate-fade-up-service-lines lg:left-[80%] xl:left-[72%] 2xl:left-[70%]"
                     />
                 </div>
             </Container>

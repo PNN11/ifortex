@@ -65,6 +65,8 @@
         ]
     },
     "not-found": {
-        "title": "Page not found"
+        "title": "Page not found",
+        "description": "Our team is available to answer any questions and provide a quote for your project. We look forward to helping you bring your digital vision to life",
+        "back-home": "Back home"
     }
 }

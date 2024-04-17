@@ -10,10 +10,14 @@ import { technologies } from './data'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { useTranslation } from 'react-i18next'
+import { useWindowSize } from '@/hooks/useWindowSize'
+import { ScreenWidths } from '@/types/common'
 
 const AboutUs: FC = () => {
     const bgRef = useRef<HTMLImageElement>(null)
+    const iconsRef = useRef<HTMLImageElement>(null)
     const { t } = useTranslation()
+    const { width } = useWindowSize()
 
     useGSAP(() => {
         gsap.to(bgRef.current, {
@@ -21,6 +25,26 @@ const AboutUs: FC = () => {
             translateX: '15%',
         })
     })
+
+    useGSAP(
+        () => {
+            if (width < ScreenWidths.M) return
+            gsap.fromTo(
+                iconsRef.current,
+                { filter: 'grayscale(1)' },
+                {
+                    filter: 'grayscale(0)',
+                    scrollTrigger: {
+                        trigger: iconsRef.current,
+                        scrub: 3,
+                        start: '0 75%',
+                        end: '100% 75%',
+                    },
+                }
+            )
+        },
+        { dependencies: [width], revertOnUpdate: true }
+    )
 
     return (
         <section
@@ -79,7 +103,7 @@ const AboutUs: FC = () => {
                 </div>
             </HorizontalLine>
             <Container className="hidden-scroll overflow-auto">
-                <div className="flex min-w-165 justify-between py-5.5 lg:px-15">
+                <div ref={iconsRef} className="flex min-w-165 justify-between py-5.5 lg:px-15">
                     {technologies.map(({ group, list }) => (
                         <div key={group} className="">
                             <Paragraph variant="alt" className="mb-7.75 font-medium">

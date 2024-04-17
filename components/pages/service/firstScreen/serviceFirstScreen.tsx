@@ -31,7 +31,7 @@ const ServiceFirstScreen: FC<ServiceFirstScreenProps> = () => {
                         width={539}
                         height={396}
                         alt=""
-                        className="absolute left-0 top-0 max-w-max animate-fade-up-service-lines lg:left-auto lg:right-[-10.625rem] lg:top-1/2 lg:-translate-y-1/2 xl:left-0"
+                        className="absolute left-0 top-0 max-w-max animate-fade-up-service-lines lg:left-auto lg:right-[-10.625rem] lg:top-[calc(50%-12.375rem)] xl:left-0"
                     />
                     <div className="mr-auto lg:max-w-[45.625rem] xl:ml-auto xl:mr-0">
                         <Image
