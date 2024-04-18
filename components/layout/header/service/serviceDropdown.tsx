@@ -5,14 +5,20 @@ import React, { FC } from 'react'
 import ServiceModal from './servicesModal'
 import { useModal } from '@/hooks/useModal'
 import { useTranslation } from 'react-i18next'
+import { useModalsStore } from '@/store/modalState'
 
 const ServiceDropdown: FC = () => {
     const pathname = usePathname()
-    const [isOpen, open, close] = useModal()
     const { t } = useTranslation()
+    const isOpen = useModalsStore(s => s.modalsState.service)
+    const openModal = useModalsStore(s => s.openModal)
+    const closeModal = useModalsStore(s => s.closeModal)
 
     return (
-        <div className="flex cursor-pointer items-center gap-1.5" onClick={() => (isOpen ? close() : open())}>
+        <div
+            className="flex cursor-pointer items-center gap-1.5"
+            onClick={() => (isOpen ? closeModal('service') : openModal('service'))}
+        >
             <span
                 className={`${pathname.includes('service') ? 'text-base-1' : 'text-base-7'} text-2xl font-light leading-none hover:text-base-2`}
             >

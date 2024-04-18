@@ -3,14 +3,21 @@ import useCallbackAfterRouteChange from '@/hooks/useCallbackAfterRouteChange'
 import useClickOutside from '@/hooks/useClickOutside'
 import { FC, useRef } from 'react'
 import ServiceMenu from './serviceMenu'
+import { useModalsStore } from '@/store/modalState'
 
 type ServicesModalProps = {
     isOpen: boolean
     onClose: () => void
 }
 
-const ServicesModal: FC<ServicesModalProps> = ({ isOpen, onClose }) => {
+const ServicesModal: FC<ServicesModalProps> = ({}) => {
     const ref = useRef<HTMLDivElement>(null)
+    const isOpen = useModalsStore(s => s.modalsState.service)
+    const closeModal = useModalsStore(s => s.closeModal)
+
+    const onClose = () => {
+        closeModal('service')
+    }
 
     useCallbackAfterRouteChange(onClose)
 

@@ -13,6 +13,7 @@ import { menuItems } from '../data'
 import ServiceMenu from '../service/serviceMenu'
 import ModalMenuItem from './modalMenuItem'
 import ModalMenuServiceItem from './modalMenuServiceItem'
+import { useModalsStore } from '@/store/modalState'
 
 type MenuModalProps = {
     isOpen: boolean
@@ -27,11 +28,18 @@ const modalMenuItems = menuItems.map(item =>
     item.type === 'dropdown' && item.category === 'service' ? { ...item, Component: ModalMenuServiceItem } : item
 )
 
-const MenuModal: FC<MenuModalProps> = ({ isOpen, onClose }) => {
+const MenuModal: FC<MenuModalProps> = ({}) => {
     const [activeSubmenu, setActiveSubmenu] = useState<string>('')
     const ref = useRef<HTMLDivElement>(null)
     const submenuRef = useRef<HTMLDivElement>(null)
     const { t } = useTranslation()
+
+    const isOpen = useModalsStore(s => s.modalsState.menu)
+    const closeModal = useModalsStore(s => s.closeModal)
+
+    const onClose = () => {
+        closeModal('menu')
+    }
 
     const { width } = useWindowSize()
 

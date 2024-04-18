@@ -2,7 +2,7 @@
 import Aos from 'aos'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import React, { FC, ReactNode, useEffect } from 'react'
+import { FC, ReactNode, useEffect } from 'react'
 
 const Template: FC<{ children: ReactNode }> = ({ children }) => {
     useEffect(() => {
@@ -10,6 +10,7 @@ const Template: FC<{ children: ReactNode }> = ({ children }) => {
 
         gsap.registerPlugin(ScrollTrigger)
     }, [])
+
     return <div>{children}</div>
 }
 
