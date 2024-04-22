@@ -11,25 +11,31 @@ import { useTranslation } from 'react-i18next'
 export type ServiceLink = (typeof services)[number]['href']
 
 export const services = [
-    { href: 'web-development', title: 'common:services.web-development' },
-    { href: 'mobile-development', title: 'common:services.mobile-development' },
-    { href: 'custom-software-development', title: 'common:services.custom-software-development' },
-    { href: 'cloud-development', title: 'common:services.cloud-development' },
-    { href: 'networking', title: 'common:services.networking' },
-    { href: 'dedicated-team', title: 'common:services.dedicated-team' },
+    { href: 'web-development', title: 'common:services.web-development', orderClass: '2xl:order-1' },
+    { href: 'mobile-development', title: 'common:services.mobile-development', orderClass: '2xl:order-4 3xl:order-5' },
+    {
+        href: 'custom-software-development',
+        title: 'common:services.custom-software-development',
+        orderClass: '2xl:order-7 3xl:order-9',
+    },
+    { href: 'cloud-development', title: 'common:services.cloud-development', orderClass: '2xl:order-10 3xl:order-2' },
+    { href: 'networking', title: 'common:services.networking', orderClass: '2xl:order-2 3xl:order-6' },
+    { href: 'dedicated-team', title: 'common:services.dedicated-team', orderClass: '2xl:order-5 3xl:order-10' },
 
     {
         href: 'ui-ux-design',
         title: 'common:services.ui-ux-design',
+        orderClass: '2xl:order-8 3xl:order-3',
     },
     {
         href: 'software-testing',
         title: 'common:services.software-testing',
+        orderClass: '2xl:order-11 3xl:order-7',
     },
-    { href: 'business-analysis', title: 'common:services.business-analysis' },
-    { href: 'devops', title: 'common:services.devops' },
-    { href: 'machine-learning', title: 'common:services.machine-learning' },
-    { href: 'data-science', title: 'common:services.data-science' },
+    { href: 'business-analysis', title: 'common:services.business-analysis', orderClass: '2xl:order-3 3xl:order-11' },
+    { href: 'devops', title: 'common:services.devops', orderClass: '2xl:order-6 3xl:order-4' },
+    { href: 'machine-learning', title: 'common:services.machine-learning', orderClass: '2xl:order-9 3xl:order-8' },
+    { href: 'data-science', title: 'common:services.data-science', orderClass: '2xl:order-12' },
 ] as const
 
 const ServiceMenu: FC = () => {
@@ -48,11 +54,11 @@ const ServiceMenu: FC = () => {
                 <Image src="/images/home/review_line.svg" width={468} height={29} alt="line" quality={100} />
             </div>
             <ul
-                className={`${gilroy.className} menu-accordion mb-22 mt-5.5 flex max-h-96 flex-col gap-x-4.5 gap-y-5 overflow-auto lg:mt-0 lg:max-h-full
-                 lg:flex-wrap 2xl:max-h-60 2xl:gap-x-4 3xl:max-h-48`}
+                className={`${gilroy.className} menu-accordion mb-22 mt-5.5 grid max-h-96 grid-cols-1 flex-col gap-x-4.5 gap-y-5 overflow-auto lg:mt-0 lg:max-h-full 
+                  2xl:grid-cols-3 2xl:gap-x-4 3xl:grid-cols-4`}
             >
-                {services.map(({ href, title }, index) => (
-                    <li key={href} className="flex max-w-100 items-center gap-12 2xl:gap-9 3xl:gap-12">
+                {services.map(({ href, title, orderClass }, index) => (
+                    <li key={href} className={`flex items-center gap-12 2xl:gap-9 3xl:gap-12 ${orderClass}`}>
                         <Paragraph variant="alt" className="w-7.5 text-base-4">
                             {formatNumber(index + 1, { minimumIntegerDigits: 2 })}
                         </Paragraph>
@@ -73,7 +79,7 @@ const ServiceMenu: FC = () => {
                 {expertise.map(({ description, title }) => (
                     <li key={title} className="grid w-100 grid-flow-col gap-4">
                         <Icons.Lines.ExpertiseVector className="text-base-4" />
-                        <div className="flex max-h-26 flex-col gap-4.5 overflow-hidden">
+                        <div className="flex  flex-col gap-4.5 overflow-hidden">
                             <Heading className="text-white" variant="h4">
                                 {title}
                             </Heading>
