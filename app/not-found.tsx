@@ -23,8 +23,8 @@ const NotFound = () => {
                 </MarginWrapper>
 
                 <div
-                    className="sm:clip-rt-[5.0625rem] clip-rt-[2.875rem] relative z-[2] h-[6.625rem] w-full translate-y-0.75 border-l border-r
-                     border-t border-base-2 bg-base-3 pl-6.5 pr-3 pt-8.5 sm:pl-7.5 sm:pr-10 md:h-[5.375rem] md:w-[35rem] md:border-r-0
+                    className="relative z-[2] h-[6.625rem] w-full translate-y-0.75 border-l border-r border-t border-base-2
+                     bg-base-3 pl-6.5 pr-3 pt-8.5 clip-rt-[2.875rem] sm:pl-7.5 sm:pr-10 sm:clip-rt-[5.0625rem] md:h-[5.375rem] md:w-[35rem] md:border-r-0
                         md:pl-9.5 md:pt-11 lg:w-[38.5rem] lg:pl-12.5 xl:w-[53.9375rem] 2xl:pl-20"
                 >
                     <div className="absolute right-[-3.5625rem] top-10.25 z-[2] h-px w-30 rotate-45 bg-base-2 sm:-right-5.5 md:-right-5.25" />
@@ -34,8 +34,8 @@ const NotFound = () => {
                     </Heading>
                 </div>
                 <div
-                    className="md:clip-lb-rt-[1.75rem] clip-lb-[1.75rem] relative overflow-hidden border border-base-2 bg-grad-2 pb-45 pl-6.5 pr-6 pt-7.5 sm:pb-47.5 sm:pl-7.5
-                     sm:pr-7.25 md:pl-9.5 md:pr-10.5 md:pt-15.75 lg:pb-60 lg:pl-12.5 xl:pb-15 2xl:pb-22 2xl:pl-20"
+                    className="relative overflow-hidden border border-base-2 bg-grad-2 pb-45 pl-6.5 pr-6 pt-7.5 clip-lb-[1.75rem] sm:pb-47.5 sm:pl-7.5 sm:pr-7.25
+                     md:pl-9.5 md:pr-10.5 md:pt-15.75 md:clip-lb-rt-[1.75rem] lg:pb-60 lg:pl-12.5 xl:pb-15 2xl:pb-22 2xl:pl-20"
                 >
                     <div className="absolute right-[-0.4375rem] top-3.25 hidden h-px w-[2.475rem] rotate-45 bg-base-2 md:block" />
                     <div className="absolute bottom-3.25 left-[-0.4375rem] h-px w-[2.475rem] rotate-45 bg-base-2" />

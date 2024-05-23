@@ -3,6 +3,12 @@ import localFont from 'next/font/local'
 
 export const inter = Inter({ subsets: ['latin'] })
 export const michroma = Michroma({ weight: ['400'], subsets: ['latin'] })
+// export const michroma = localFont({
+//     src: '../public/fonts/michroma/Michroma.ttf',
+//     style: 'normal',
+//     weight: '400',
+//     preload: true,
+// })
 
 export const gilroy = localFont({
     src: [
