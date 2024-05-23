@@ -34,9 +34,9 @@ export default async function RootLayout({
             <body className={`${michroma.className}`}>
                 <TranslationsProvider namespaces={namespaces} locale={locale} resources={resources}>
                     <div className="grid min-h-screen grid-cols-1">
-                        <Header />
+                        {/* <Header /> */}
                         {children}
-                        <Footer />
+                        {/* <Footer /> */}
                     </div>
                     <div id="modals" />
                 </TranslationsProvider>
