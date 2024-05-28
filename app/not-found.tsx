@@ -5,6 +5,7 @@ import Paragraph from '@/components/ui/typography/paragraph'
 import Container from '@/components/ui/wrappers/container'
 import MarginWrapper from '@/components/ui/wrappers/marginWrapper'
 import SectionWrapper from '@/components/ui/wrappers/sectionWrapper'
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 
 const NotFound = () => {
@@ -48,10 +49,13 @@ const NotFound = () => {
                         <Paragraph variant="p1" className="max-w-102 xl:max-w-78.5 2xl:max-w-82 3xl:max-w-93">
                             {t('common:not-found.description')}
                         </Paragraph>
-                        <div className="flex flex-row-reverse items-center justify-between lg:flex-col lg:items-end">
+                        <Link
+                            href="/"
+                            className="flex flex-row-reverse items-center justify-between lg:flex-col lg:items-end"
+                        >
                             <Icons.Arrows.ArrowUpRight className="h-29 w-29 text-base-5 lg:translate-x-7.5 lg:translate-y-1.5" />
                             <Heading variant="h2">{t('common:not-found.back-home')}</Heading>
-                        </div>
+                        </Link>
                     </div>
                     <Icons.NotFoundIcon
                         className="absolute bottom-4.75 left-13.5 sm:bottom-8.5 md:bottom-10 lg:bottom-14.5 
