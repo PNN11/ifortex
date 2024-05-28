@@ -19,12 +19,16 @@ const AboutUs: FC = () => {
     const { t } = useTranslation()
     const { width } = useWindowSize()
 
-    useGSAP(() => {
-        gsap.to(bgRef.current, {
-            scrollTrigger: { trigger: bgRef.current, scrub: 1, start: '0 85%', end: '100% 0%' },
-            translateX: '15%',
-        })
-    })
+    useGSAP(
+        () => {
+            if (!width) return
+            gsap.to(bgRef.current, {
+                scrollTrigger: { trigger: bgRef.current, scrub: 1, start: '0 85%', end: '100% 0%' },
+                translateX: '15%',
+            })
+        },
+        { dependencies: [width], revertOnUpdate: true }
+    )
 
     useGSAP(
         () => {
