@@ -1,3 +1,4 @@
+import ConditionalLink from '@/components/ui/conditionalLink'
 import Paragraph from '@/components/ui/typography/paragraph'
 import { WithClassName } from '@/types/common'
 import Link from 'next/link'
@@ -20,11 +21,11 @@ const LinksGroup: FC<LinksGroupProps> = ({ links, title, className = '', basePat
             <ul className="flex flex-col gap-3">
                 {links.map(({ href, title }) => (
                     <li key={title}>
-                        <Link href={`${basePath ? basePath + '/' : ''}${href}`}>
+                        <ConditionalLink condition={false} href={`${basePath ? basePath + '/' : ''}${href}`}>
                             <Paragraph variant="alt" className="font-medium text-base-19 hover:text-base-5">
                                 {t(title)}
                             </Paragraph>
-                        </Link>
+                        </ConditionalLink>
                     </li>
                 ))}
             </ul>

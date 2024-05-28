@@ -18,9 +18,9 @@ const Expertise: FC = () => {
     return (
         <section className="overflow-hidden py-21.5">
             <Container>
-                <div className="relative mb-26 md:mb-16.5">
-                    <Heading variant="h2">{t('expertise.title')}</Heading>
-                    <div className="absolute top-17.5 w-117 md:left-72 md:top-3.5 lg:left-80 xl:left-88">
+                <Heading className="relative mb-26 w-fit md:mb-16.5" variant="h2">
+                    {t('expertise.title')}{' '}
+                    <div className="absolute top-17.5 w-117 md:left-[calc(100%+0.5rem)] md:top-3.5">
                         <Image
                             src="/images/home/expertise_vector.svg"
                             width={468}
@@ -29,7 +29,8 @@ const Expertise: FC = () => {
                             quality={100}
                         />
                     </div>
-                </div>
+                </Heading>
+
                 <Swiper
                     slidesPerView="auto"
                     spaceBetween={32}
@@ -57,13 +58,13 @@ const Expertise: FC = () => {
                     ))}
                 </Swiper>
 
-                <ExpertiseInfo
+                {/* <ExpertiseInfo
                     description={t(expertiseDescription[activeItem].description)}
                     listItems={[
                         t('expertise.our-team-has-extensive'),
                         ...expertiseDescription[activeItem].technologies,
                     ]}
-                />
+                /> */}
                 <div className="flex justify-end pt-5.25">
                     <Image src="/images/home/expertise_vector.svg" width={468} height={29} alt="vector" quality={100} />
                 </div>

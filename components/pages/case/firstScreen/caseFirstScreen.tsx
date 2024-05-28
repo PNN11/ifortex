@@ -19,14 +19,14 @@ const CaseFirstScreen: FC<CaseFirstScreenProps> = ({ image }) => {
         <section className="border-b border-b-base-2 py-10 sm:py-12 md:py-17 lg:py-13 2xl:py-19.5 3xl:py-21">
             <Container>
                 <div className="mb-12 flex flex-col-reverse justify-between gap-4 md:flex-row md:items-center md:gap-25 2xl:mb-16">
-                    <div className="flex items-center gap-6 text-base-5">
+                    <div className="grid grid-flow-col items-center gap-6 text-base-5">
                         <div className="h-8 w-8 rounded-full bg-base-6" />
                         <p className="text-xl uppercase leading-none tracking-button-m">{t('first-screen.name')}</p>
                     </div>
                     <Link href="/cases" className="flex items-center gap-6 text-base-5">
                         <Icons.Arrows.ArrowRight className="h-8 w-8 text-base-6" />
                         <p className="whitespace-nowrap text-xl uppercase leading-none tracking-button-m">
-                            {t('first-screen.back-to-cases')}
+                            {t('cases:back-to-cases')}
                         </p>
                     </Link>
                 </div>

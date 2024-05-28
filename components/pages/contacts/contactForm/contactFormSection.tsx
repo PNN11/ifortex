@@ -22,9 +22,9 @@ const ContactFormSection: FC<ContactFormSectionProps> = ({ containerSize = 'l' }
                 <div className="relative grid grid-cols-1 gap-4.5 lg:grid-cols-2 xl:gap-5">
                     <div className="relative pb-42 md:max-w-79 lg:max-w-145.5 lg:pb-0">
                         <Heading variant="h1" tag="h3" className="mb-11.5">
-                            {t('contacts:title')}
+                            {t('contacts:form.title')}
                         </Heading>
-                        <Paragraph variant="p1">{t('contacts:description')}</Paragraph>
+                        <Paragraph variant="p1">{t('contacts:form.description')}</Paragraph>
                         <Image
                             src="/images/contact/contact_us_bg.svg"
                             alt="bg"

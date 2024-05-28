@@ -5,7 +5,7 @@ import Paragraph from '@/components/ui/typography/paragraph'
 import Container from '@/components/ui/wrappers/container'
 import Link from 'next/link'
 import { FC, useState } from 'react'
-import { ProjectCategory, projectCategories, projectsMock } from './data'
+import { ProjectCategory, projectCategories, projectsList } from './data'
 import ProjectCard from './projectCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useWindowSize } from '@/hooks/useWindowSize'
@@ -27,9 +27,13 @@ const ProjectCategoryItem: FC<{
 
 const Projects: FC = () => {
     const [activeCategory, setActiveCategory] = useState<ProjectCategory>(projectCategories[0].value)
-    const [projects] = useState(projectsMock[activeCategory])
     const { width } = useWindowSize()
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
+
+    const projects =
+        activeCategory === 'all'
+            ? projectsList[i18n.language]
+            : projectsList[i18n.language].filter(project => project.category === activeCategory)
 
     return (
         <section className="py-21.5">
@@ -67,12 +71,12 @@ const Projects: FC = () => {
                     ))}
                 </Swiper>
                 <ul className="grid gap-x-11.5 gap-y-8 lg:grid-cols-2 xl:gap-y-16">
-                    {projects.map(({ image, tags, title, href }) => (
-                        <li key={`${title}${tags.join(' ')}`}>
-                            <ProjectCard image={image} tags={tags} title={title} href={href} />
+                    {projects.map(project => (
+                        <li key={`${project.title}${project.category}`}>
+                            <ProjectCard {...project} />
                         </li>
                     ))}
-                    <li className="lg:col-start-2">
+                    <li className="self-end lg:col-start-2">
                         <Link href="/cases" className="block">
                             <Button
                                 size={width >= ScreenWidths.XL ? 'm' : 's'}

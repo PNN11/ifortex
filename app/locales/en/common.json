@@ -6,7 +6,9 @@
         "cookie": "Cookie Policy",
         "contacts": "Contacts",
         "cases": "Cases",
-        "career": "Career"
+        "career": "Career",
+        "company": "Company",
+        "service": "Service"
     },
     "header": {
         "menu": "Menu",

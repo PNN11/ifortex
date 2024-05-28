@@ -1,10 +1,114 @@
 {
     "title": "Главная",
     "first_section": {
-        "start_project": "Начать проект",
-        "with": "С",
-        "your_expert_in": "вашими экспертами в",
-        "quality": "качественных",
-        "software_solutions": "программных решениях"
+        "start_project": "Начни свой проект",
+        "with": "вместе с",
+        "your_expert_in": "командой экспертов в",
+        "quality": "качественной",
+        "software_solutions": "разработке софта"
+    },
+    "our-service": {
+        "explore-our-service": "Explore our service:",
+        "full-cycle": "full-cycle web development",
+        "mobile": "mobile development",
+        "saas": "saas solutions",
+        "start-project": "Start project",
+        "services": {
+            "web-development": "Веб разработка",
+            "mobile-development": "Мобильная разработка",
+            "ai-development": "AI разработка",
+            "software-testing": "Тестирование и QA",
+            "ui-ux-design": "UI/UX дизайн",
+            "devops": "DevOps",
+            "machine-learning": "Машинное обучение",
+            "web3": "WEB 3.0",
+            "lowcode-development": "Lowcode разработка"
+        }
+    },
+    "about-us": {
+        "title": "О нас",
+        "description": "В Ifortex понимают, насколько сложной задачей может быть создание собственного продукта или приложения. Именно поэтому мы используем индивидуальный подход для каждого клиента. Наша цель — с помощью нашей технической экспертизы помочь вам добиться любых поставленных целей. Будь то начинающий стартап или приложение для зрелого бизнеса, веб или десктоп — вы можете сосредоточиться на своих идеях, а реализацию возьмёт на себя Ifortex.",
+        "tech-stack-title": "Технологии",
+        "tech-stack-description": "Компания Ifortex начиналась с двух сплочённых back-end команд. Неудивительно, что за годы существования мы смогли значительно приумножить нашу back-end экспертизу, привлечь талантливых специалистов и отточить их мастерство на множестве коммерческих проектов. Однако Ifortex — это не только back-end. Мы обладаем экспертизой и специалистами в множестве технологий и фреймворков. Ниже представлен список технологий, с которым наши специалисты работали на своих проектах."
+    },
+    "expertise": {
+        "title": "Экспертиза",
+        "expertises": {
+            "websites": "веб сайты",
+            "fintech": "финтех",
+            "apps": "приложения",
+            "e-commerce": "электронная коммерция",
+            "hospitability": "проживание",
+            "edtech": "образование",
+            "medicine": "медицина"
+        },
+        "description": {
+            "websites": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "fintech": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "apps": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "e-commerce": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "hospitability": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "edtech": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
+            "medicine": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry."
+        },
+        "our-team-has-extensive": "Our team has extensive"
+    },
+    "consultation": {
+        "get": "получить",
+        "free": "бесплатную",
+        "consultation": "консультацию",
+        "description": "",
+        "input-placeholder": "YOUR EMAIL"
+    },
+    "projects": {
+        "title": "Проекты",
+        "description": "В Ifortex понимают, насколько сложной задачей может быть создание собственного продукта или приложения. Именно поэтому мы используем индивидуальный подход для каждого клиента. Наша цель — с помощью нашей технической экспертизы помочь вам добиться любых поставленных целей. Будь то начинающий стартап или приложение для зрелого бизнеса, веб или десктоп — вы можете сосредоточиться на своих идеях, а реализацию возьмёт на себя Ifortex.",
+        "categories": {
+            "all": "все",
+            "ai-tech": "ai tech",
+            "web": "веб",
+            "apps": "приложения",
+            "fintech-development": "финтех",
+            "logistics-software": "логистика",
+            "healthcare": "медицина",
+            "e-commerce-projects": "электронная коммерция",
+            "travel": "путешествия",
+            "edtech-platforms": "образование",
+            "real-estate": "недвижимость",
+            "saas-platform-developing": "saas platform developing"
+        },
+        "more-projects": "Больше проектов",
+        "explore-case": "Перейти к кейсу"
+    },
+    "team": {
+        "explore-careers": "Explore careers",
+        "meet-the-team": "Meet the team",
+        "of-the-bests": "of the bests",
+        "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi."
+    },
+    "reviews": {
+        "title": "Reviews",
+        "items": [
+            {
+                "text": "Lorem ipsum dolor sit amet consectetur. Sed qwer turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi.",
+                "name": "Name Soname",
+                "position": "Company position"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet consectetur. Sed qwer turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi.",
+                "name": "Soname",
+                "position": "position"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet consectetur. Sed qwer turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi.",
+                "name": "Name",
+                "position": "Company"
+            }
+        ]
+    },
+    "our-partners": {
+        "our": "Our",
+        "partners": "partners",
+        "become-a-client": "Become a client"
     }
 }

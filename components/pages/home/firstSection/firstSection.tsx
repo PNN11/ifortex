@@ -19,24 +19,24 @@ const FirstSection: FC = () => {
     useEffect(() => {
         const threshold = window.innerHeight * 0.5
         const firstSection = document.getElementById('first-section')
-        const ourService = document.getElementById('our-service')
+        // const ourService = document.getElementById('our-service')
         const aboutUs = document.getElementById('about-us')
 
         const firstSectionScrollPosition = firstSection?.getBoundingClientRect().top ?? 0 + window.scrollY
-        const ourServiceScrollPosition = ourService?.getBoundingClientRect().top ?? 0 + window.scrollY
+        // const ourServiceScrollPosition = ourService?.getBoundingClientRect().top ?? 0 + window.scrollY
         const aboutUsScrollPosition = aboutUs?.getBoundingClientRect().top ?? 0 + window.scrollY
 
         const handler = () => {
             const scroll = window.scrollY
 
-            if (scroll >= firstSectionScrollPosition && scroll < ourServiceScrollPosition - threshold) {
+            if (scroll >= firstSectionScrollPosition && scroll < aboutUsScrollPosition - threshold) {
                 debouncedSetTopPosition(firstSectionScrollPosition)
                 return
             }
-            if (scroll >= ourServiceScrollPosition - threshold && scroll < aboutUsScrollPosition - threshold) {
-                debouncedSetTopPosition(ourServiceScrollPosition)
-                return
-            }
+            // if (scroll >= ourServiceScrollPosition - threshold && scroll < aboutUsScrollPosition - threshold) {
+            //     debouncedSetTopPosition(ourServiceScrollPosition)
+            //     return
+            // }
             if (scroll >= aboutUsScrollPosition - threshold) {
                 debouncedSetTopPosition(aboutUsScrollPosition)
             }
@@ -82,16 +82,16 @@ const FirstSection: FC = () => {
             />
             <Heading
                 variant="h1"
-                className="relative z-10 flex flex-col-reverse gap-8 px-6 pb-15 sm:pl-7.5 sm:pr-7.5 md:block md:pr-4.75 lg:pb-32.75 lg:pl-11
-                 xl:pl-0 xl:pr-11 xl:text-right 2xl:pb-18.75 2xl:pr-46.75 3xl:pr-18.75"
+                className="relative z-10 flex flex-col-reverse gap-8 px-6 pb-15 sm:pl-7.5 sm:pr-7.5 md:block md:pr-4.75 md:!leading-[2.1] lg:pb-32.75
+                 lg:pl-11 xl:pl-0 xl:pr-11 xl:text-right 2xl:pb-18.75 2xl:pr-46.75 3xl:pr-18.75"
                 style={{ wordSpacing: '1.25rem' }}
             >
-                <HomePageAnimatedButton className="mb-2">{t('first_section.start_project')}</HomePageAnimatedButton>{' '}
+                <HomePageAnimatedButton className="!mb-0">{t('first_section.start_project')}</HomePageAnimatedButton>{' '}
                 <span>
                     <span className="hidden md:inline">{t('first_section.with')}</span>{' '}
                     <br className="hidden lg:block" /> {t('first_section.your_expert_in')}{' '}
                     <span className="md:hidden">{t('first_section.quality')}</span>
-                    <HomePageQualityButton className="hidden md:my-6 md:inline-block lg:mt-0">
+                    <HomePageQualityButton className="hidden md:inline-block">
                         {t('first_section.quality')}
                     </HomePageQualityButton>{' '}
                     <br className="hidden lg:block" />

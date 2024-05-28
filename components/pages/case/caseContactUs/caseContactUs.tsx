@@ -19,7 +19,7 @@ type CaseContactUsProps = {
 const CaseContactUs: FC<CaseContactUsProps> = ({ nextProject }) => {
     const { t } = useTranslation()
 
-    const title = t('case-contact.title')
+    const title = t('cases:case-contact.title')
 
     return (
         <section className="overflow-hidden py-10 md:py-15 2xl:py-20">
@@ -44,14 +44,14 @@ const CaseContactUs: FC<CaseContactUsProps> = ({ nextProject }) => {
                                 className="absolute bottom-6.75 left-5.25 text-base uppercase leading-[1.15] text-base-8 sm:bottom-7.75
                                    sm:left-6 sm:text-lg md:bottom-13.5 md:left-11 md:text-6xl lg:bottom-12.5 lg:text-6.5xl 2xl:bottom-11.25 2xl:text-8xl"
                             >
-                                {t('case-contact.contact-us')}
+                                {t('cases:case-contact.contact-us')}
                             </p>
                         </div>
                         <Icons.Lines.ProjectLine className="w-26.75 rotate-y-180 sm:w-30.75 md:w-auto" />
                     </div>
                 </div>
                 <div className="mb-8 grid grid-cols-1 items-center gap-5.25 overflow-hidden sm:grid-cols-[25.6875rem_calc(100%-25.6875rem)] md:mb-15 xl:mb-12 3xl:mb-15">
-                    <Heading variant="h4">{t('case-contact.more-projects')}</Heading>
+                    <Heading variant="h4">{t('cases:case-contact.more-projects')}</Heading>
 
                     <Icons.Lines.CaseRectangleWithLines className="hidden text-white/65 sm:block" />
                 </div>
@@ -66,7 +66,7 @@ const CaseContactUs: FC<CaseContactUsProps> = ({ nextProject }) => {
 
                     <div className="contents flex-col justify-between lg:flex">
                         <div>
-                            <ProjectTagsList classes={{ wrapper: 'mb-6.25' }} tags={nextProject.tags} />
+                            {/* <ProjectTagsList classes={{ wrapper: 'mb-6.25' }} tags={nextProject.tags} /> */}
                             <Heading variant="h3" className="relative mb-3 pb-15.5 lg:pb-3.5 xl:pb-10">
                                 {nextProject.title}
                                 <Icons.Lines.ProjectLine className="absolute left-96.5 rotate-y-180" />
@@ -82,7 +82,7 @@ const CaseContactUs: FC<CaseContactUsProps> = ({ nextProject }) => {
                                     classes={{ icon: 'hidden sm:block', button: 'md:w-61.25 text-start' }}
                                     className="w-full justify-between sm:w-fit sm:justify-start"
                                 >
-                                    {t('case-contact.next-case')}
+                                    {t('cases:case-contact.next-case')}
                                 </ExploreCaseButton>
                             </ConditionalLink>
                             <Icons.Lines.ProjectLine className="absolute left-0 top-11 lg:hidden" />

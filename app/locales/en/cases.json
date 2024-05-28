@@ -14,5 +14,14 @@
     "release": "Release",
     "problem": "Problem",
     "solution": "Solution",
-    "delivering": "Delivering"
+    "delivering": "Delivering",
+    "same-idea": "Have the same idea?",
+    "consultation": "Consultation",
+    "case-contact": {
+        "title": "Let's make your next project together",
+        "contact-us": "Contact us",
+        "more-projects": "More projects",
+        "next-case": "Next case"
+    },
+    "back-to-cases": "Back to cases"
 }

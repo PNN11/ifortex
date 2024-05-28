@@ -8,6 +8,7 @@ import MenuItem from './menuItem'
 import MenuModal from './menuModal'
 import { useModalsStore } from '@/store/modalState'
 import { cn } from '@/lib/classNames'
+import LanguageChanger from '@/components/ui/languageChanger'
 
 const Header: FC = () => {
     const modalsState = useModalsStore(s => s.modalsState)
@@ -38,6 +39,7 @@ const Header: FC = () => {
                             )}
                         </li>
                     ))}
+                    {/* <LanguageChanger /> */}
                 </ul>
                 <button type="button" onClick={() => (isOpen ? closeModal('menu') : openModal('menu'))}>
                     {isOpen ? <Icons.Cross className="text-base-1" /> : <Icons.Burger className="text-base-1" />}

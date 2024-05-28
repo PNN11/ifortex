@@ -1,0 +1,71 @@
+{
+    "first-screen": {
+        "back-to-cases": "Назад к кейсам",
+        "name": "MPX",
+        "title": "Бот для торговли на бирже"
+    },
+    "case-info": {
+        "brand": ["MPX"],
+        "location": [],
+        "clutch-review": [],
+        "client": ["Инвестиционная компания"],
+        "budget": ["NDA"],
+        "industry": ["Финтех"],
+        "environment": [
+            "C#",
+            ".Net 7",
+            "ASP.Net Core",
+            "Entity Framework Core",
+            "PostgreSQL",
+            "Parquet",
+            "SignalR",
+            "FIX",
+            "Coinbase",
+            "Polygon",
+            "FXCM",
+            "Kraken",
+            "Tradier",
+            "Saxo"
+        ],
+        "release": [],
+        "problem": "Австрийский заказчик из финтех. Продукт – бот для торговли на бирже с минимальным шансом ошибочных действий. Основной челлендж проекта – в обработке огромных объёмов информации. Бот анализирует данные из множества различных источников для того, чтобы принять верное решение о проведении той или иной операции на бирже. Основной сложностью было уместить как можно больше операций с данными в как можно меньший отрезок времени, использовав для этого наименьшее количество памяти.",
+        "solution": "На данный момент успешно реализована первая фаза проекта(2023-2024) . Для её успешной реализации нашей командой были придуманы и реализованы алгоритмы, позволяющие в разы сократить объёмы затраченной памяти, улучшив производительность системы на 700 процентов. Заказчик высоко оценил достигнутый нашей командой результат, пайплан проекта расписан до 2025 года.",
+        "delivering": "",
+        "tags": ["crypto", "big data", "web", "mobile app", "ui/ux", "product design", "MVP", "database migration"],
+        "customer-name": "NDA",
+        "customer-position": "NDA"
+    },
+    "case-outcome": {
+        "project-outcome": "Project Outcome",
+        "project-outcome-description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla.",
+        "challenges": "Challanges",
+        "challenges-description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. ",
+        "outcome-items": [
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" }
+        ],
+        "challenges-items": [
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            }
+        ]
+    },
+    "additional-info": {
+        "title": "Title",
+        "description": "Lorem ipsum dolor sit amet consectetur. Ipsum lacus posuere felis elementum diam eleifend. Eu bibendum purus fringilla etiam hendrerit. Amet a bibendum enim ante est. Vulputate pharetra rhoncus mattis laoreet lectus nec nulla. Donec et cursus magna ullamcorper arcu massa. Proin ultricies at nunc."
+    }
+}

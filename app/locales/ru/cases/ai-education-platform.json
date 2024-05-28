@@ -1,0 +1,76 @@
+{
+    "first-screen": {
+        "back-to-cases": "Назад к кейсам",
+        "name": "Обучающая платформа",
+        "title": "Обучающая платформа нового поколения для студентов с использованием ИИ"
+    },
+    "case-info": {
+        "brand": ["NDA"],
+        "location": [],
+        "clutch-review": [],
+        "client": ["Компания, специализирующаяся на образовательных услугах"],
+        "budget": ["NDA"],
+        "industry": ["Образование"],
+        "environment": [
+            "C#",
+            ".Net 7",
+            "ASP.Net Core",
+            "Azure portal",
+            "AWS Cloud Computing Services",
+            "MS SQL Server",
+            "Stripe",
+            "SMTP",
+            "Python",
+            "Azure",
+            "OpenAI",
+            "PyTorch",
+            "FastAPI",
+            "scikit-learn",
+            "nginx",
+            "React",
+            "TypeScript",
+            "Redux",
+            "Redux-Saga"
+        ],
+        "release": [],
+        "problem": "Заказчик обратился к нам с задачей разработать платформу, помогающую студентам готовиться к экзаменам. Основной фишкой данной платформы должен стать ИИ помощник, который будет составлять план занятий, проверять знания студентов с помощью текстов, а также составлять краткое содержание загруженного материала, выделяя главные моменты. ",
+        "solution": "Используя .net Core и React как основные технологии, мы разработали Web-портал, отвечающий всем поставленным требованиям заказчика. Студент мог загрузить всю необходимую литературу и указать дату экзамена, после чего получал пошаговый план изучения на каждый день, 3 вида тестов на каждую главу изученного материала, и возможность получить краткую выжимку из объёмных частей учебника или любого другого текстового учебного материала. В зависимости от выбранного плана, студент мог пользоваться как помощником на основе Chat-GPT, так и на основе собственной модели внутренней разработки. Кроме этого, были реализованы интеграция с платежной системой, возможность оставлять заметки в учебных материалах, возможность вести конспекты и многое другое. ",
+        "delivering": "",
+        "tags": ["crypto", "big data", "web", "mobile app", "ui/ux", "product design", "MVP", "database migration"],
+        "customer-name": "NDA",
+        "customer-position": "NDA"
+    },
+    "case-outcome": {
+        "project-outcome": "Project Outcome",
+        "project-outcome-description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla.",
+        "challenges": "Challanges",
+        "challenges-description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. ",
+        "outcome-items": [
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" }
+        ],
+        "challenges-items": [
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            }
+        ]
+    },
+    "additional-info": {
+        "title": "Title",
+        "description": "Lorem ipsum dolor sit amet consectetur. Ipsum lacus posuere felis elementum diam eleifend. Eu bibendum purus fringilla etiam hendrerit. Amet a bibendum enim ante est. Vulputate pharetra rhoncus mattis laoreet lectus nec nulla. Donec et cursus magna ullamcorper arcu massa. Proin ultricies at nunc."
+    }
+}

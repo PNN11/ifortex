@@ -2,13 +2,14 @@ import { Inter, Michroma } from 'next/font/google'
 import localFont from 'next/font/local'
 
 export const inter = Inter({ subsets: ['latin'] })
-export const michroma = Michroma({ weight: ['400'], subsets: ['latin'] })
-// export const michroma = localFont({
-//     src: '../public/fonts/michroma/Michroma.ttf',
-//     style: 'normal',
-//     weight: '400',
-//     preload: true,
-// })
+// export const michroma = Michroma({ weight: ['400'], subsets: ['latin'] })
+export const michroma = localFont({
+    src: '../public/fonts/michroma/Michroma.ttf',
+    style: 'normal',
+    weight: '400',
+    preload: true,
+    declarations: [{ prop: 'ascent-override', value: '100%' }],
+})
 
 export const gilroy = localFont({
     src: [

@@ -1,0 +1,56 @@
+{
+    "first-screen": {
+        "back-to-cases": "Назад к кейсам",
+        "name": "Портал телемедицины",
+        "title": "Портал телемедицины для клиники, специализирующейся на мужском здоровье"
+    },
+    "case-info": {
+        "brand": ["NDA"],
+        "location": [],
+        "clutch-review": [],
+        "client": ["Частная клиника"],
+        "budget": ["NDA"],
+        "industry": ["Медицина"],
+        "environment": ["C#", "ASP.Net Core", "MS SQL Server", "Stripe", "React", "Redux", "Redux-Saga", "Xamarin"],
+        "release": [],
+        "problem": "Крупная клиника, специализирующаяся на мужском здоровье, обратилась к нам с задачей создания портала телемедицины. Главная проблема для заказчика заключалась в том, что многие мужчины не стремятся своевременно посещать врача лично для решения деликатных вопросов, связанных с мужским здоровьем. Важно было учитывать желание большинства пациентов сохранять конфиденциальность и получать консультации удаленно, не посещая клинику. Особенностью проекта была необходимость обеспечения детальной диагностики на расстоянии. Клиент должен иметь возможность сдать анализы в ближайшей партнерской лаборатории, результаты которых автоматически поступают в базу данных портала. Затем, клиент должен пройти опрос, касающийся его симптомов и состояния. Алгоритм анализирует ответы, после чего предварительно ставит диагноз. Это существенно экономит время лечащего врача и снижает вероятность выставления ошибочного диагноза. После этого клиент получит консультацию через видеозвонок и может получить электронный рецепт на лекарства с возможностью их заказа с доставкой на дом.",
+        "solution": "Используя Asp.net Core в качестве основной технологии, мы разработали веб-портал, который обеспечивает полный цикл обработки информации о пациенте. Через API мы получаем данные о анализах из лабораторий, которые оперативно доставляются лечащему врачу. Пациенты имеют возможность получать необходимые консультации в режиме видеозвонка с доктором, а также заказывать все необходимые медикаменты непосредственно через сайт. Реализована интеграция с платёжной системой, генерация рецептов в формате PDF, функционал обмена сообщениями. Кроме веб-портала, мы разработали мобильное приложение на Xamarin с ограниченным функционалом. Оно позволяет пользователям просматривать результаты анализов, последние назначения от лечащего врача, а также получать уведомления о доставке заказанных препаратов.",
+        "delivering": "",
+        "tags": ["crypto", "big data", "web", "mobile app", "ui/ux", "product design", "MVP", "database migration"],
+        "customer-name": "NDA",
+        "customer-position": "NDA"
+    },
+    "case-outcome": {
+        "project-outcome": "Project Outcome",
+        "project-outcome-description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla.",
+        "challenges": "Challanges",
+        "challenges-description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. ",
+        "outcome-items": [
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" }
+        ],
+        "challenges-items": [
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            }
+        ]
+    },
+    "additional-info": {
+        "title": "Title",
+        "description": "Lorem ipsum dolor sit amet consectetur. Ipsum lacus posuere felis elementum diam eleifend. Eu bibendum purus fringilla etiam hendrerit. Amet a bibendum enim ante est. Vulputate pharetra rhoncus mattis laoreet lectus nec nulla. Donec et cursus magna ullamcorper arcu massa. Proin ultricies at nunc."
+    }
+}

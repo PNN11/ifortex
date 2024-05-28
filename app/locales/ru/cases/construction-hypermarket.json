@@ -1,0 +1,67 @@
+{
+    "first-screen": {
+        "name": "Строительный гипермаркет",
+        "title": "Строительный гипермаркет в Канаде"
+    },
+    "case-info": {
+        "brand": ["NDA"],
+        "location": [],
+        "clutch-review": [],
+        "client": ["Крупный ретейлер строительных материалов в Канаде  "],
+        "budget": ["NDA"],
+        "industry": ["Электронная коммерция"],
+        "environment": [
+            "PHP",
+            "Symfony",
+            "MySQL",
+            "Redis",
+            "React",
+            "Redux",
+            "Axios",
+            "TypeScript",
+            "styled-components",
+            "BitBucket",
+            "Jira"
+        ],
+        "release": [],
+        "problem": "Данный заказчик поставил задачу разработать платформу для продажи стройматериалов в Канаде. Сложность заключается в большом количестве наименований товара, многочисленных складах, гибкой ценовой политике, а также значительной кастомизации под специфические реалии заказчика.",
+        "solution": "Успешно реализованное решение позволяет управлять складом, содержащим 17 000 наименований товаров, 15 оптовыми магазинами и оказывать 3 500 клиентами-юридическим лицам, с индивидуальной ценовой политикой по каждому товару.",
+        "delivering": "",
+        "tags": ["crypto", "big data", "web", "mobile app", "ui/ux", "product design", "MVP", "database migration"],
+        "customer-name": "NDA",
+        "customer-position": "NDA"
+    },
+    "case-outcome": {
+        "project-outcome": "Project Outcome",
+        "project-outcome-description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla.",
+        "challenges": "Challanges",
+        "challenges-description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. ",
+        "outcome-items": [
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" },
+            { "title": "years on", "value": "5" }
+        ],
+        "challenges-items": [
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            },
+            {
+                "title": "Challang title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Amet quam interdum posuere commodo id imperdiet dictumst commodo cursus. "
+            }
+        ]
+    },
+    "additional-info": {
+        "title": "Title",
+        "description": "Lorem ipsum dolor sit amet consectetur. Ipsum lacus posuere felis elementum diam eleifend. Eu bibendum purus fringilla etiam hendrerit. Amet a bibendum enim ante est. Vulputate pharetra rhoncus mattis laoreet lectus nec nulla. Donec et cursus magna ullamcorper arcu massa. Proin ultricies at nunc."
+    }
+}

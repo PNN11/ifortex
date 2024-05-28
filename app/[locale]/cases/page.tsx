@@ -15,8 +15,8 @@ export default async function Home({ params: { locale } }: { params: { locale: s
             <main className="">
                 <CasesFirstScreen />
                 <Projects />
-                <Reviews />
-                <Partners />
+                {/* <Reviews />
+                <Partners /> */}
             </main>
         </TranslationsProvider>
     )

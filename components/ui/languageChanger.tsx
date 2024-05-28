@@ -33,9 +33,9 @@ export default function LanguageChanger() {
     }
 
     return (
-        <select onChange={handleChange} value={currentLocale}>
-            <option value="en">English</option>
-            <option value="ru">Русский</option>
+        <select className="" onChange={handleChange} value={currentLocale}>
+            <option value="en">En</option>
+            <option value="ru">Ру</option>
         </select>
     )
 }

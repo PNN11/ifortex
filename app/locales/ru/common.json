@@ -6,13 +6,15 @@
         "cookie": "Политика использования файлов cookie",
         "contacts": "Контакты",
         "cases": "Кейсы",
-        "career": "Карьера"
+        "career": "Карьера",
+        "company": "Компания",
+        "service": "Сервисы"
     },
     "header": {
         "menu": "Меню",
         "contact-us": "Свяжитесь с нами",
         "menu-items": {
-            "home": "Главная",
+            "home": "О нас",
             "cases": "Кейсы",
             "service": "Услуги",
             "contact": "Контакты",

@@ -3,4 +3,5 @@ export type Project = {
     title: string
     image: string
     href?: string
+    category: string
 }
