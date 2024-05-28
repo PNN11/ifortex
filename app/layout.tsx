@@ -25,7 +25,7 @@ export default async function RootLayout({
     children: React.ReactNode
     params: { locale: string }
 }>) {
-    const locale = cookies().get('NEXT_LOCALE')?.value ?? 'en'
+    const locale = cookies().get('NEXT_LOCALE')?.value ?? 'ru'
 
     const { resources } = await initTranslations(locale, namespaces)
 
@@ -34,9 +34,9 @@ export default async function RootLayout({
             <body className={`${michroma.className}`}>
                 <TranslationsProvider namespaces={namespaces} locale={locale} resources={resources}>
                     <div className="grid min-h-screen grid-cols-1">
-                        <Header />
+                        {/* <Header /> */}
                         {children}
-                        <Footer />
+                        {/* <Footer /> */}
                     </div>
                     <div id="modals" />
                 </TranslationsProvider>
