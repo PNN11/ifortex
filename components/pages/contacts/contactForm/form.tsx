@@ -29,7 +29,7 @@ const ContactForm: FC = () => {
 
         formData.forEach((value, key) => (data[key as keyof SubmitFormValues] = value as string))
 
-        sendContactForm(data)
+        sendContactForm({ ...data, date: new Date().toISOString() })
             .then(data => {
                 if (data._id) form.reset()
             })
