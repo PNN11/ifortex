@@ -11,6 +11,7 @@ type InputProps = ComponentProps<'input'> & {
     Icon?: FC<ComponentProps<'svg'>>
     iconClassName?: string
     onIconClick?: () => void
+    iconButtonType?: 'button' | 'submit' | 'reset'
 }
 
 const Input: FC<InputProps> = ({
@@ -21,6 +22,7 @@ const Input: FC<InputProps> = ({
     Icon = Icons.Arrows.ArrowUpRight,
     iconClassName = '',
     onIconClick,
+    iconButtonType = 'button',
     ...props
 }) => {
     return (
@@ -43,18 +45,19 @@ const Input: FC<InputProps> = ({
                 {...props}
             />
             {withIcon && (
-                <Icon
-                    onClick={onIconClick}
-                    className={cn(
-                        {
-                            'right-5.25 h-15 w-15': inputSize === 'l',
-                            'right-2.375 h-7 w-7': inputSize === 'm' || inputSize === 's',
-                            'cursor-pointer': !!onIconClick,
-                        },
-                        'absolute top-1/2 -translate-y-1/2 text-white',
-                        iconClassName
-                    )}
-                />
+                <button type={iconButtonType} onClick={onIconClick}>
+                    <Icon
+                        className={cn(
+                            {
+                                'right-5.25 h-15 w-15': inputSize === 'l',
+                                'right-2.375 h-7 w-7': inputSize === 'm' || inputSize === 's',
+                                'cursor-pointer': !!onIconClick,
+                            },
+                            'absolute top-1/2 z-10 -translate-y-1/2 text-white',
+                            iconClassName
+                        )}
+                    />
+                </button>
             )}
         </div>
     )

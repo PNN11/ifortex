@@ -2,15 +2,29 @@
 import { Icons } from '@/components/svg'
 import Input from '@/components/ui/inputs/defaultInput/input'
 import Paragraph from '@/components/ui/typography/paragraph'
-import { FC } from 'react'
+import { subscribeToEmailNewsletter } from '@/server/actions/subscribe'
+import { FC, FormEventHandler } from 'react'
+import { useTranslation } from 'react-i18next'
 import ContactInfo from './contactInfo'
 import { companyMenu, services } from './data'
 import LinksGroup from './linksGroup'
 import SocialIcons from './socialIcons'
-import { useTranslation } from 'react-i18next'
 
 const Footer: FC = () => {
     const { t } = useTranslation()
+
+    const onSubmit: FormEventHandler<HTMLFormElement> = e => {
+        e.preventDefault()
+        const form = e.target as HTMLFormElement
+        const formData = new FormData(form)
+        const email = formData.get('email') as string
+
+        subscribeToEmailNewsletter(email)
+            .then(data => {
+                if (data._id) form.reset()
+            })
+            .catch(console.error)
+    }
 
     return (
         <footer className="self-end px-6 pb-16 pt-10 sm:px-7.5 lg:px-11 xl:px-0">
@@ -37,12 +51,16 @@ const Footer: FC = () => {
                             <Paragraph variant="p2" className="mb-10 leading-none tracking-footer-link text-base-7">
                                 {t('footer.subscribe')}
                             </Paragraph>
-                            <form className="mb-9.5">
+                            <form onSubmit={onSubmit} className="mb-9.5">
                                 <Input
                                     inputSize="s"
                                     withIcon
                                     placeholder={t('footer.input-placeholder')}
                                     iconClassName="text-base-1"
+                                    iconButtonType="submit"
+                                    type="email"
+                                    name="email"
+                                    required
                                 />
                             </form>
                             <SocialIcons />
