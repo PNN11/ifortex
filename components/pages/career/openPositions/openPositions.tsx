@@ -39,7 +39,7 @@ const OpenPositions: FC<OpenPositionsProps> = ({ positions }) => {
             <Container size="l">
                 <div className="mb-17.5 flex flex-wrap items-center gap-x-13.5 gap-y-4 lg:mb-20.5 2xl:mb-19.25">
                     <Heading variant="h2" className="text-base-1">
-                        {positions?.found}
+                        {positions?.found ?? 0}
                     </Heading>
                     <Icons.Lines.Hypotenuse className="text-base-1/65" />
                     <Heading variant="h2" className="relative">
