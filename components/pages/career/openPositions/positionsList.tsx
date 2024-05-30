@@ -8,40 +8,44 @@ import CategoryTag from './categoryBadge'
 import { Position } from './openPositions.types'
 import PositionListItem from './positionListItem'
 import { useTranslation } from 'react-i18next'
+import { VacanciesResponse, Vacancy } from '@/types/vacancy'
 
 type PositionsListProps = {
-    positions: Position[]
+    positions: VacanciesResponse | null
 }
 
-const getPositionsByCategory = (positions: Position[], category: string) =>
-    category === 'all' ? positions : positions.filter(position => position.category === category)
+const categories = ['all', 'frontend', '.net', 'java', 'machine learning', 'python', 'nodejs']
+
+const getPositionsByCategory = (positions: Vacancy[], category: string) =>
+    category === 'all' ? positions : positions.filter(position => position.name.toLowerCase().includes(category))
 
 const PositionsList: FC<PositionsListProps> = ({ positions }) => {
     const [activeCategory, setActiveCategory] = useState('all')
     const { t } = useTranslation()
 
-    const categories = Array.from(new Set(['all', ...positions.map(item => item.category)]))
-
     return (
         <>
-            {positions?.length ? (
+            {positions && positions?.found ? (
                 <div>
-                    <ul className="hidden-scroll mb-11 flex overflow-auto sm:mb-13.75 md:mb-16.5 lg:mb-19.25">
-                        {categories.map(category => (
-                            <li key={category}>
-                                <button onClick={() => setActiveCategory(category)} type="button">
-                                    <CategoryTag
-                                        category={category}
-                                        amount={getPositionsByCategory(positions, category).length}
-                                        isActive={category === activeCategory}
-                                    />
-                                </button>
-                            </li>
-                        ))}
+                    <ul className="hidden-scroll mb-11 flex flex-nowrap gap-y-1 overflow-auto sm:mb-13.75 md:mb-16.5 lg:mb-19.25 lg:flex-wrap">
+                        {categories.map(category => {
+                            const vacanciesCount = getPositionsByCategory(positions?.items, category).length
+                            return vacanciesCount ? (
+                                <li key={category}>
+                                    <button onClick={() => setActiveCategory(category)} type="button">
+                                        <CategoryTag
+                                            category={category}
+                                            amount={vacanciesCount}
+                                            isActive={category === activeCategory}
+                                        />
+                                    </button>
+                                </li>
+                            ) : null
+                        })}
                     </ul>
                     <ul>
-                        {getPositionsByCategory(positions, activeCategory).map(position => (
-                            <li key={position.title}>
+                        {getPositionsByCategory(positions?.items, activeCategory).map(position => (
+                            <li key={position.id}>
                                 <PositionListItem position={position} />
                             </li>
                         ))}

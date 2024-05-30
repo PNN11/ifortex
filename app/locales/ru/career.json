@@ -8,7 +8,7 @@
         "no-open-positions": "No open positions yet",
         "stay-with-us": "Stay with us",
         "on-socials": "on socials",
-        "remote": "remote",
+        "remote": "удалённая",
         "positions": [
             { "title": "Frontend developer", "location": "remote", "grade": "junior+" },
             {

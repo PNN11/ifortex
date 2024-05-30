@@ -20,7 +20,12 @@ const CategoryTag: FC<CategoryTagProps> = ({ amount, category, isActive }) => {
             <p className={cn('mr-4.25 w-6.5 text-xl uppercase leading-8.25 tracking-alt', gilroy.className)}>
                 {formatNumber(amount, { minimumIntegerDigits: 2 })}
             </p>
-            <p className={cn('mr-6 text-xl uppercase leading-none tracking-button-m', michroma.className)}>
+            <p
+                className={cn(
+                    'mr-6 whitespace-nowrap text-xl uppercase leading-none tracking-button-m',
+                    michroma.className
+                )}
+            >
                 {category}
             </p>
             <Icons.Plus className={cn('', { 'rotate-45': isActive })} />

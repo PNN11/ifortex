@@ -4,14 +4,45 @@ import { Icons } from '@/components/svg'
 import { cn } from '@/lib/classNames'
 import { gilroy } from '@/fonts'
 import { useTranslation } from 'react-i18next'
+import { Vacancy } from '@/types/vacancy'
+import Link from 'next/link'
 
 type PositionListItemProps = {
-    position: Position
+    position: Vacancy
 }
 
+const grades: Record<string, string> = {
+    noExperience: 'trainee',
+    between1And3: 'middle',
+    between3And6: 'senior',
+    moreThan6: 'senior',
+}
+
+const schedulesRu: Record<string, string> = {
+    fullDay: 'Полный день',
+    shift: 'Сменный график',
+    flexible: 'Гибкий график',
+    remote: 'Удаленная работа',
+    flyInFlyOut: 'Вахтовый метод',
+}
+
+const schedulesEn: Record<string, string> = {
+    fullDay: 'Full day',
+    shift: 'Shift',
+    flexible: 'Flexible',
+    remote: 'Remote',
+    flyInFlyOut: 'Fly-in-fly-out',
+}
+
+const schedules: Record<string, Record<string, string>> = { ru: schedulesRu, en: schedulesEn }
+
 const PositionListItem: FC<PositionListItemProps> = ({ position }) => {
-    const { category, grade, location, title, employment } = position
-    const { t } = useTranslation()
+    const { alternate_url, experience, name, schedule } = position
+
+    const { t, i18n } = useTranslation()
+
+    const workSchedule = schedules[i18n.language][schedule.id]
+
     return (
         <div
             className={cn(
@@ -19,26 +50,28 @@ const PositionListItem: FC<PositionListItemProps> = ({ position }) => {
                 gilroy.className
             )}
         >
-            <div className="items center flex flex-col justify-between gap-3 xl:flex-row">
-                <p className="text-base-6 xl:w-100 2xl:w-134">{title}</p>
-                <div className="hidden w-135.5 items-center gap-7.75 text-base-4 md:flex xl:w-152 xl:gap-16">
+            <div className="flex flex-col justify-between gap-3 xl:flex-row xl:flex-wrap xl:items-center">
+                <p className="text-base-6 xl:w-100 2xl:w-134">{name}</p>
+                <div className="hidden  items-center gap-7.75 text-base-4 md:flex xl:gap-16">
                     <div className="flex items-center gap-6 text-base-4">
                         <Icons.MapPin />
-                        <p>{t(location)}</p>
+                        <p>{t('career:open-positions.remote')}</p>
                     </div>
                     <div className="flex items-center gap-6 text-base-4">
                         <Icons.UserSearch />
-                        <p>{t(grade)}</p>
+                        <p>{grades[experience.id]}</p>
                     </div>
-                    {employment && (
+                    {schedule && (
                         <div className="flex items-center gap-6 text-base-4">
                             <Icons.DocumentLayoutLeft />
-                            <p>{t(employment)}</p>
+                            <p>{workSchedule}</p>
                         </div>
                     )}
                 </div>
             </div>
-            <Icons.Arrows.ArrowUpRight className="text-base-6" />
+            <Link href={alternate_url} target="_blank" rel="noreferrer">
+                <Icons.Arrows.ArrowUpRight className="text-base-6" />
+            </Link>
         </div>
     )
 }
