@@ -8,3 +8,5 @@ export enum ScreenWidths {
     '2XL' = 1900,
     '3XL' = 2560,
 }
+
+export type TitleWithDescription = { title: string; description: string }

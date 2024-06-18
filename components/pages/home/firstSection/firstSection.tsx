@@ -19,24 +19,24 @@ const FirstSection: FC = () => {
     useEffect(() => {
         const threshold = window.innerHeight * 0.5
         const firstSection = document.getElementById('first-section')
-        // const ourService = document.getElementById('our-service')
+        const ourService = document.getElementById('our-service')
         const aboutUs = document.getElementById('about-us')
 
         const firstSectionScrollPosition = firstSection?.getBoundingClientRect().top ?? 0 + window.scrollY
-        // const ourServiceScrollPosition = ourService?.getBoundingClientRect().top ?? 0 + window.scrollY
+        const ourServiceScrollPosition = ourService?.getBoundingClientRect().top ?? 0 + window.scrollY
         const aboutUsScrollPosition = aboutUs?.getBoundingClientRect().top ?? 0 + window.scrollY
 
         const handler = () => {
             const scroll = window.scrollY
 
-            if (scroll >= firstSectionScrollPosition && scroll < aboutUsScrollPosition - threshold) {
+            if (scroll >= firstSectionScrollPosition && scroll < ourServiceScrollPosition - threshold) {
                 debouncedSetTopPosition(firstSectionScrollPosition)
                 return
             }
-            // if (scroll >= ourServiceScrollPosition - threshold && scroll < aboutUsScrollPosition - threshold) {
-            //     debouncedSetTopPosition(ourServiceScrollPosition)
-            //     return
-            // }
+            if (scroll >= ourServiceScrollPosition - threshold && scroll < aboutUsScrollPosition - threshold) {
+                debouncedSetTopPosition(ourServiceScrollPosition)
+                return
+            }
             if (scroll >= aboutUsScrollPosition - threshold) {
                 debouncedSetTopPosition(aboutUsScrollPosition)
             }
@@ -87,14 +87,14 @@ const FirstSection: FC = () => {
                 style={{ wordSpacing: '1.25rem' }}
             >
                 <HomePageAnimatedButton className="!mb-0">{t('first_section.start_project')}</HomePageAnimatedButton>{' '}
+                <br className="hidden md:block" />
                 <span>
-                    <span className="hidden md:inline">{t('first_section.with')}</span>{' '}
-                    <br className="hidden lg:block" /> {t('first_section.your_expert_in')}{' '}
-                    <span className="md:hidden">{t('first_section.quality')}</span>
+                    <span className="md:hidden">{t('first_section.start_project')} </span>
+                    <span className="">{t('first_section.with')}</span> {t('first_section.your_expert_in')}{' '}
+                    <br className="hidden xl:block" /> <span className="md:hidden">{t('first_section.quality')}</span>
                     <HomePageQualityButton className="hidden md:inline-block">
                         {t('first_section.quality')}
                     </HomePageQualityButton>{' '}
-                    <br className="hidden lg:block" />
                     {t('first_section.software_solutions')}
                 </span>
             </Heading>

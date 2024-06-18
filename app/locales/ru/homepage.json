@@ -1,18 +1,20 @@
 {
     "title": "Главная",
     "first_section": {
-        "start_project": "Начни свой проект",
+        "start_project": "Начните проект",
         "with": "вместе с",
-        "your_expert_in": "командой экспертов в",
-        "quality": "качественной",
-        "software_solutions": "разработке софта"
+        "your_expert_in": "экспертами в",
+        "quality": "it-аутсорс и аутстаф",
+        "software_solutions": "услугах"
     },
     "our-service": {
-        "explore-our-service": "Explore our service:",
+        "explore-our-service": "Сервис",
         "full-cycle": "full-cycle web development",
         "mobile": "mobile development",
         "saas": "saas solutions",
-        "start-project": "Start project",
+        "start-project": "Начать проект",
+        "outsourcing": "Аутсорс проектов под ключ",
+        "outstaffing": "Аутстафинг высокоуровневых специалистов",
         "services": {
             "web-development": "Веб разработка",
             "mobile-development": "Мобильная разработка",
@@ -20,36 +22,75 @@
             "software-testing": "Тестирование и QA",
             "ui-ux-design": "UI/UX дизайн",
             "devops": "DevOps",
-            "machine-learning": "Машинное обучение",
+            "machine-learning": "ML Engineering / Computer Vision",
             "web3": "WEB 3.0",
-            "lowcode-development": "Lowcode разработка"
+            "lowcode-development": "Lowcode разработка",
+            "backend-development": "Back-end разработка",
+            "frontend-development": "Front-end разработка",
+            "ba": "Бизнес-анализ",
+            "qa": "AQA/QA",
+            "third-party-services": "Интеграция сторонних сервисов"
         }
     },
     "about-us": {
         "title": "О нас",
-        "description": "В Ifortex понимают, насколько сложной задачей может быть создание собственного продукта или приложения. Именно поэтому мы используем индивидуальный подход для каждого клиента. Наша цель — с помощью нашей технической экспертизы помочь вам добиться любых поставленных целей. Будь то начинающий стартап или приложение для зрелого бизнеса, веб или десктоп — вы можете сосредоточиться на своих идеях, а реализацию возьмёт на себя Ifortex.",
+        "description": "Более 5 лет команда Ifortex предоставляет высококачественные услуги IT-аутсорсинга и аутстаффинга. Начав под брендом группы компаний, Ifortex вскоре переросла в самостоятельного высококлассного поставщика IT-услуг",
         "tech-stack-title": "Технологии",
-        "tech-stack-description": "Компания Ifortex начиналась с двух сплочённых back-end команд. Неудивительно, что за годы существования мы смогли значительно приумножить нашу back-end экспертизу, привлечь талантливых специалистов и отточить их мастерство на множестве коммерческих проектов. Однако Ifortex — это не только back-end. Мы обладаем экспертизой и специалистами в множестве технологий и фреймворков. Ниже представлен список технологий, с которым наши специалисты работали на своих проектах."
+        "tech-stack-description": "Накопленный компанией Ifortex опыт позволяет нам успешно реализовывать проекты с использованием технологий, которые наилучшим образом соответствуют поставленным задачам. Уже на стадии подготовки наши аналитики подбирают оптимальный технический стек для вашего проекта, а инженеры реализуют его наилучшим образом, максимально оптимизируя время и бюджет",
+        "mission": {
+            "title": "Миссия",
+            "description": "В iFortex мы решаем технические задачи вашего бизнеса, пока Вы занимаетесь его развитием. Сосредоточьтесь на главном, а Ifortex возьмет на себя техническую реализацию ваших самых смелых идей"
+        },
+        "experience": {
+            "title": "Опыт компании",
+            "description": "Мы одни из немногих компаний, кто может предложить реализацию проектов под ключ. От финтеха до спорта и развлечений – успешно реализовали более 40 проектов в различных доменах, и это количество только растет. Тем не менее, если вам нужно усилить уже имеющуюся команду, Ifortex с радостью предложит вам наших специалистов по модели аутстаф"
+        },
+        "advantages": {
+            "title": "Преимущества IFORTEX",
+            "items": [
+                {
+                    "title": "Аутсорс",
+                    "description": "Возможность реализации проектов под ключ"
+                },
+                {
+                    "title": "Аутстаф",
+                    "description": "Возможность предоставления отдельных специалистов"
+                },
+                {
+                    "title": "Дружелюбные рейты",
+                    "description": "Специалисты высокого уровня по самым дружелюбным рейтам"
+                }
+            ],
+            "stats": [
+                { "value": "5+", "text": "Лет на IT рынке" },
+                { "value": "40+", "text": "реализованных проектов" },
+                { "value": "90%", "text": "специалисты Middle и Senior" },
+                { "value": "", "text": "резидент парка высоких технологий" }
+            ]
+        },
+        "contact": {
+            "title": "Свяжитесь с нами",
+            "description": "Свяжитесь с нами и позвольте Ifortex помочь вашему бизнесу реализовать даже самые амбициозные технические идеи",
+            "actionButton": "консультация"
+        }
     },
     "expertise": {
-        "title": "Экспертиза",
+        "title": "Портфолио",
         "expertises": {
-            "websites": "веб сайты",
-            "fintech": "финтех",
-            "apps": "приложения",
-            "e-commerce": "электронная коммерция",
-            "hospitability": "проживание",
+            "fintech": "Финансовые технологии",
+            "medicine": "Здравоохранение и медицина",
             "edtech": "образование",
-            "medicine": "медицина"
+            "e-commerce": "электронная коммерция",
+            "energetics": "Производство и энергетика",
+            "sport": "Спорт и развлечения"
         },
         "description": {
-            "websites": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
-            "fintech": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
-            "apps": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
-            "e-commerce": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
-            "hospitability": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
-            "edtech": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry.",
-            "medicine": "Transform the financial world with innovative digital solutions. Our team has extensive experience in creating custom web and mobile applications for FinTech companies, from payments to wealth management. Let us help you revolutionize the financial industry."
+            "fintech": "Финансовые технологии (финтех) — это область, где мы разрабатываем инновационные решения для улучшения финансовых услуг. Наши проекты включают создание платформ для онлайн-банкинга, системы электронных платежей и криптовалютные биржи. Мы также работаем над алгоритмами для автоматической торговли и финансового анализа, помогая компаниям улучшать безопасность и эффективность своих операций.",
+            "medicine": "В сфере здравоохранения и медицины мы разрабатываем технологические решения, которые улучшают качество и доступность медицинских услуг. Наши проекты включают создание телемедицинских платформ, платформ для управления медицинскими приборами, а также мобильных приложений для мониторинга здоровья и спортивных тренировок. Кроме этого, мы работаем над разработкой алгоритмов для диагностики заболеваний с использованием машинного обучения и компьютерного зрения.",
+            "edtech": "В области образования мы создаем современные образовательные платформы и инструменты, которые делают обучение более доступным и эффективным. Также мы создаём инновационные платформы с использованием искусственного интеллекта для кардинально нового эффективного подхода к образованию.",
+            "e-commerce": "В сфере электронной коммерции мы разрабатываем решения, которые помогают бизнесам эффективно продавать свои товары и услуги онлайн. Наши проекты включают создание интернет-магазинов, платформ для электронной торговли и в дополнение к этому мы разрабатываем продукты для анализа покупательского поведения и оптимизации маркетинговых стратегий.",
+            "energetics": "В области производства и энергетики мы разрабатываем технологические решения, которые помогают оптимизировать производственные процессы и улучшать управление энергоресурсами, зачастую с помощью машинного обучения и компьютерного зрения. Проекты в этом домене включают создание систем управления производством, мониторинга и анализа данных, а также разработку алгоритмов для повышения энергоэффективности.",
+            "sport": "В сфере спорта и развлечений мы создаем инновационные решения, которые делают спорт и развлечения ещё более доступными и увлекательными. Системы для донатов стримерам, сервисы по продаже билетов, различного рода системы для управления гольф и боулинг- клубами – всё это имногое другое реализовала Ifortex для наших клиентов."
         },
         "our-team-has-extensive": "Our team has extensive"
     },
@@ -57,7 +98,7 @@
         "get": "получить",
         "free": "бесплатную",
         "consultation": "консультацию",
-        "description": "",
+        "description": "Всё ещё сомневаетесь? Свяжитесь с нами и мы проконсультируем вас по любым аспектам вашего проекта",
         "input-placeholder": "YOUR EMAIL"
     },
     "projects": {
@@ -81,10 +122,10 @@
         "explore-case": "Перейти к кейсу"
     },
     "team": {
-        "explore-careers": "Explore careers",
-        "meet-the-team": "Meet the team",
-        "of-the-bests": "of the bests",
-        "description": "Lorem ipsum dolor sit amet consectetur. Sed tempus turpis nec sapien. Diam aliquam lectus nulla ultricies sagittis nullam praesent id ut. Arcu dignissim libero ridiculus fermentum amet nulla pellentesque faucibus elementum. Mi et sed nibh fringilla nunc lacus pretium scelerisque. Pellentesque ipsum volutpat gravida pretium viverra diam volutpat. Feugiat sed facilisis lacus eget tempus morbi."
+        "explore-careers": "Карьера в IFORTEX",
+        "meet-the-team": "Встречайте команду",
+        "of-the-bests": "лучших",
+        "description": "Присоединяйтесь к команде профессионалов Ifortex и растите вместе с нами. Работа в молодом и динамичном коллективе, где твои идеи будут услышаны, а твои навыки оценены по-достоинству. Конкурентная заработная плата, соцпакет и комфортные условия работы – всё это и многое другое ждёт вас после трудоустройства."
     },
     "reviews": {
         "title": "Reviews",

@@ -16,7 +16,7 @@ const Homepage = () => {
                 <div className="mb-20 w-full 2xl:grid 2xl:grid-cols-[1fr_8.0625rem] 3xl:grid-cols-[1fr_11.3125rem]">
                     <div className="relative w-full overflow-hidden">
                         <FirstSection />
-                        {/* <OurService /> */}
+                        <OurService />
                         <AboutUs />
                     </div>
                     <aside className="hidden w-32.25 flex-col 2xl:flex 3xl:w-45.25">
@@ -32,9 +32,10 @@ const Homepage = () => {
             <Expertise />
             <Consultation />
             <Projects />
-            {/* <Team />
-            <Reviews />
-            <Partners /> */}
+            <Team />
+            <Consultation title="homepage:about-us.contact.title" />
+            {/* <Reviews /> */}
+            {/* <Partners /> */}
         </main>
     )
 }

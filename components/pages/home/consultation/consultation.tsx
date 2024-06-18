@@ -7,7 +7,11 @@ import { ScreenWidths } from '@/types/common'
 import { FC, FormEventHandler } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const Consultation: FC = () => {
+type ConsultationProps = {
+    title?: string
+}
+
+const Consultation: FC<ConsultationProps> = ({ title }) => {
     const { width } = useWindowSize()
     const { t } = useTranslation()
 
@@ -28,10 +32,14 @@ const Consultation: FC = () => {
         <ConsultationWrapper
             description={t('consultation.description')}
             title={
-                <>
-                    {t('consultation.get')} <span className="text-base-1">{t('consultation.free')}</span>{' '}
-                    {t('consultation.consultation')}
-                </>
+                title ? (
+                    t(title)
+                ) : (
+                    <>
+                        {t('consultation.get')} <span className="text-base-1">{t('consultation.free')}</span>{' '}
+                        {t('consultation.consultation')}
+                    </>
+                )
             }
         >
             <form onSubmit={onSubmit} className="max-w-158">

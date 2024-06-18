@@ -17,6 +17,7 @@ import UserSearch from './userSearch'
 import DocumentLayoutLeft from './documentLayoutLeft'
 import BelarusMap from './belarusMap'
 import NotFoundIcon from './notFound'
+import HiTechPark from './hitechPark'
 
 export const Icons = {
     IFortexLogo,
@@ -38,4 +39,5 @@ export const Icons = {
     DocumentLayoutLeft,
     BelarusMap,
     NotFoundIcon,
+    HiTechPark,
 }

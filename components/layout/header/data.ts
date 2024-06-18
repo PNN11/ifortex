@@ -18,9 +18,8 @@ export type MenuItemType = Pick<MenuItemProps, 'isActive'> & { title: string } &
 
 export const menuItems: MenuItemType[] = [
     { href: '/', title: 'common:header.menu-items.home', type: 'link', isActive: (path, href) => path === href },
-    // { type: 'dropdown', title: 'common:header.menu-items.service', Component: ServiceDropdown, category: 'service' },
-    { href: '/contact', title: 'common:header.menu-items.contact', type: 'link' },
+    { type: 'dropdown', title: 'common:header.menu-items.service', Component: ServiceDropdown, category: 'service' },
     { href: '/cases', title: 'common:header.menu-items.cases', type: 'link' },
-
-    // { href: '/career', title: 'common:header.menu-items.career', type: 'link' },
+    { href: '/career', title: 'common:header.menu-items.career', type: 'link' },
+    { href: '/contact', title: 'common:header.menu-items.contact', type: 'link' },
 ]

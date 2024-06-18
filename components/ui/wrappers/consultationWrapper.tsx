@@ -11,13 +11,13 @@ type ConsultationWrapperProps = {
     children: ReactNode
     title: string | JSX.Element
     description: string
-    classes?: { bg?: string; icon?: string }
+    classes?: { bg?: string; icon?: string; wrapper?: string }
 }
 
 const ConsultationWrapper: FC<ConsultationWrapperProps> = ({ children, description, title, classes }) => {
     return (
         <section className="overflow-hidden">
-            <Container className="relative pt-21.5">
+            <Container className={cn('relative pt-21.5', classes?.wrapper)}>
                 <Icons.Lines.LargeRectangleWithLines
                     className={cn(
                         'absolute left-237.5 top-24 hidden text-base-15/65 lg:block xl:left-250 2xl:left-0 2xl:top-26 2xl:-translate-x-full',
@@ -26,7 +26,7 @@ const ConsultationWrapper: FC<ConsultationWrapperProps> = ({ children, descripti
                     width="820"
                     viewBox="0 0 820 30"
                 />
-                <Heading tag="h4" variant="h1" className="mb-5.25 break-words">
+                <Heading tag="h4" variant="h2" className="mb-5.25 break-words">
                     {title}
                 </Heading>
                 <Paragraph variant="p1" className="mb-16">
