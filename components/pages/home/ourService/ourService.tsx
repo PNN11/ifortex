@@ -53,29 +53,35 @@ const OurService: FC = () => {
             />
             <Container className="py-10 sm:py-12.5 md:py-15 lg:py-25 xl:py-30 2xl:py-40">
                 <div className="relative grid grid-cols-1 justify-between gap-25.75 xl:grid-cols-[1fr_max-content]">
-                    <div className="relative flex flex-col items-start gap-8.25 py-9 sm:gap-11 lg:gap-25.25">
+                    <div className="relative z-[2] flex flex-col items-start gap-8.25 py-9 sm:gap-11 lg:gap-25.25">
                         <h5 className={`text-4xl font-light text-white ${gilroy.className}`}>
                             {t('our-service.explore-our-service')}
                         </h5>
                         <div>
-                            <div className="mb-9 grid w-full grid-cols-1 items-center justify-between gap-4 md:grid-cols-[1fr_max-content]">
-                                <Heading variant="h2">{t('our-service.outsourcing')}</Heading>
-                                <ArrowUpRight className="text-base-5 md:h-29 md:w-29" />
-                            </div>
-                            <div className="grid w-full grid-cols-1 items-center justify-between gap-4 border-t border-t-base-4 pt-9 md:grid-cols-[1fr_max-content]">
-                                <Heading variant="h2">{t('our-service.outstaffing')}</Heading>
-                                <ArrowUpRight className="text-base-5 md:h-29 md:w-29" />
-                            </div>
+                            <Link href={'/contact'}>
+                                <div className="mb-9 grid w-full grid-cols-1 items-center justify-between gap-4 md:grid-cols-[1fr_max-content]">
+                                    <Heading variant="h2">{t('our-service.outsourcing')}</Heading>
+                                    <ArrowUpRight className="text-base-5 md:h-29 md:w-29" />
+                                </div>
+                            </Link>
+                            <Link href={'/contact'}>
+                                <div className="grid w-full grid-cols-1 items-center justify-between gap-4 border-t border-t-base-4 pt-9 md:grid-cols-[1fr_max-content]">
+                                    <Heading variant="h2">{t('our-service.outstaffing')}</Heading>
+                                    <ArrowUpRight className="text-base-5 md:h-29 md:w-29" />
+                                </div>
+                            </Link>
                         </div>
 
-                        <Button
-                            size={`${width >= ScreenWidths.M ? 'm' : 's'}`}
-                            variant="outlined"
-                            withIcon
-                            className="w-full lg:w-auto"
-                        >
-                            {t('our-service.start-project')}
-                        </Button>
+                        <Link href="/contact">
+                            <Button
+                                size={`${width >= ScreenWidths.M ? 'm' : 's'}`}
+                                variant="outlined"
+                                withIcon
+                                className="w-full lg:w-auto"
+                            >
+                                {t('our-service.start-project')}
+                            </Button>
+                        </Link>
                     </div>
                     <ul className="relative z-[2] flex min-w-60 flex-row flex-wrap items-end gap-6 gap-x-10.5 lg:flex-col lg:flex-nowrap lg:justify-between lg:gap-y-10.5">
                         {ourServices.map(({ href, title }) => (
