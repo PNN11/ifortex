@@ -60,7 +60,7 @@ const Expertise: FC = () => {
                 }))}
                 Component={ExpertiseSlide}
                 keyForComponent={({ title }, i) => `${title}${i}`}
-                classes={{ itemsContainer: 'gap-8', wrapper: 'gap-8' }}
+                classes={{ itemsContainer: 'gap-8', wrapper: 'gap-8 mb-12' }}
                 slideAnimationDuration={8}
             />
 
