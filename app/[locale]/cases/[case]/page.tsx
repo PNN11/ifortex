@@ -7,6 +7,11 @@ import CaseOutcome from '@/components/pages/case/caseOutcome'
 import AdditionalCaseInfo from '@/components/pages/case/additionalCaseInfo'
 import CaseContactUs from '@/components/pages/case/caseContactUs'
 import { projectsList } from '@/components/pages/home/projects/data'
+import CaseTitleWithDescription from '@/components/pages/case/titleWithDescription/CaseTitleWithDescription'
+import CaseImage from '@/components/pages/case/firstScreen/caseImage'
+import CaseStages from '@/components/pages/case/stages/CaseStages'
+import CaseSteps from '@/components/pages/case/steps/CaseSteps'
+import CaseTechnologies from '@/components/pages/case/technologies/CaseTechnologies'
 
 export default async function Home({ params }: { params: { locale: string; case: string } }) {
     const namespaces = [`cases/${params.case}`, 'cases']
@@ -25,8 +30,8 @@ export default async function Home({ params }: { params: { locale: string; case:
             <main className="">
                 <CaseFirstScreen {...data?.firstScreen} />
                 <CaseInfo {...data?.caseInfo} />
-                {/* <CaseOutcome {...data?.caseOutcome} /> */}
-                {/* <AdditionalCaseInfo /> */}
+                <CaseOutcome {...data?.caseOutcome} />
+                <AdditionalCaseInfo />
                 <CaseContactUs nextProject={nextProject} />
             </main>
         </TranslationsProvider>

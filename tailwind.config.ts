@@ -145,6 +145,8 @@ export const config: Config = {
                 'work-with-us-line':
                     'linear-gradient(0deg, #131313 -0.13%, rgba(92, 217, 197, 0.66) 20.53%, rgba(92, 217, 197, 0.66) 85.91%, #131313 100%)',
                 'not-found-line': 'linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(153, 153, 153, 0) 100%)',
+                'tech-case-card':
+                    'linear-gradient(0deg, rgba(239, 239, 239, 0.44) 0%, rgba(239, 239, 239, 0.268497) 37.5%, rgba(239, 239, 239, 0.1892) 62.5%, rgba(239, 239, 239, 0.0352) 100%)',
             },
             spacing: {
                 0.75: '0.1875rem', // 3px
@@ -328,8 +330,10 @@ export const config: Config = {
                 201: '50.25rem', // 804px
                 203.5: '50.875rem', // 814px
                 205.25: '51.3125rem', // 821px
+                207.5: '51.875rem', // 830px
                 209.5: '52.375rem', // 838px
                 210.5: '52.625rem', // 842px
+                211: '52.75rem', // 844px
                 226.5: '56.625rem', // 906px
                 227.75: '56.9375rem', // 911px
                 231: '57.75rem', // 924px
@@ -408,6 +412,7 @@ export const config: Config = {
                 'review-sm': '1.875rem minmax(1rem,52.6875rem) 1.875rem',
                 review: '5rem minmax(1rem,52.6875rem) 5rem',
                 footer: 'max-content minmax(max-content,1fr)',
+                'case-technologies': 'repeat(auto-fill, minmax(12rem, 1fr))',
             },
             lineHeight: {
                 6.75: '1.6875rem', //  27px

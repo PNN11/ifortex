@@ -1,6 +1,9 @@
 export const saasPlatformData = {
     firstScreen: {
         image: '',
+        title: 'qwrw',
+        description: 'werwe',
+        category: 'web-development',
     },
     caseInfo: {
         customerAvatar: '/images/cases/customer_avatar.png',
