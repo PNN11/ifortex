@@ -8,6 +8,8 @@ import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import CaseImage from './caseImage'
 
+
+
 type CaseFirstScreenProps = {
     image: string
     category: string

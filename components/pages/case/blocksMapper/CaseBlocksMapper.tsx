@@ -10,6 +10,7 @@ import CaseSteps from '../steps/CaseSteps'
 import caseContactUs from '../caseContactUs'
 import CaseTechnologies from '../technologies'
 import { Project } from '../../home/projects/types'
+import CaseHighlightCards from '../highlightCards/CaseHighlightCards'
 
 const blocksMap = {
     firstScreen: CaseFirstScreen,
@@ -22,6 +23,7 @@ const blocksMap = {
     caseSteps: CaseSteps,
     contact: caseContactUs,
     caseTechnologies: CaseTechnologies,
+    caseHighlightCards: CaseHighlightCards,
 }
 
 type CaseBlocksMap = typeof blocksMap
@@ -43,6 +45,7 @@ type CaseStagesBlock = BaseCaseBlock<'caseStages'>
 type CaseStepsBlock = BaseCaseBlock<'caseSteps'>
 type CaseContactUsBlock = BaseCaseBlock<'contact'>
 type CaseTechnologiesBlock = BaseCaseBlock<'caseTechnologies'>
+type CaseHighlightCardsBlock = BaseCaseBlock<'caseHighlightCards'>
 type CaseCard = Project
 
 type CaseBlock =
@@ -56,6 +59,7 @@ type CaseBlock =
     | CaseStepsBlock
     | CaseContactUsBlock
     | CaseTechnologiesBlock
+    | CaseHighlightCardsBlock
 
 export type CaseBlocksConfig = CaseBlock[]
 

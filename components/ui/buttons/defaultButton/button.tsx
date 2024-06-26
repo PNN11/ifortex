@@ -62,7 +62,8 @@ const Button: FC<ButtonProps> = ({
                     'pr-3.5': withIcon && size === 'sm',
                     'pr-4.75': withIcon && size === 'md',
                 },
-                { 'rounded-21.5': rounded && (size === 'l' || size === 'm'), 'rounded-22.75': rounded && size === 's' }
+                { 'rounded-21.5': rounded && (size === 'l' || size === 'm'), 'rounded-22.75': rounded && size === 's' },
+                
             )}
             {...props}
         >
