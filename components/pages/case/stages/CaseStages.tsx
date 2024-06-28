@@ -10,7 +10,7 @@ import ExploreCaseButton from '../../home/projects/exploreCaseButton'
 import StageItem from './stageItem'
 
 type CaseStagesProps = {
-    title: string
+    title?: string
     description: string
     stages: { title: string; description: string }[]
 }
@@ -24,7 +24,7 @@ const CaseStages: FC<CaseStagesProps> = ({ description, stages, title }) => {
                 <div className="grid grid-cols-1 gap-14.5 xl:grid-cols-2">
                     <div>
                         <Heading className="mb-12 lg:mb-22" variant="h2">
-                            {title}
+                            {title ?? t('cases:stages.title')}
                         </Heading>
                         <Paragraph variant="p2" className="">
                             {description}

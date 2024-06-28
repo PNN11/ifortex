@@ -5,26 +5,27 @@ import Container from '@/components/ui/wrappers/container'
 import SectionWrapper from '@/components/ui/wrappers/sectionWrapper'
 import Link from 'next/link'
 import { FC } from 'react'
+import { TOurService } from '@/components/pages/home/ourService/ourService'
 
 type CaseServicesListProps = {
     title: string
     description: string
-    servicesList: { title: string; url: string }[]
+    servicesList: { title: string; url: TOurService }[]
 }
 
 const CaseServicesList: FC<CaseServicesListProps> = ({ description, servicesList, title }) => {
     return (
         <SectionWrapper>
             <Container>
-                <Heading className="mb-10" variant="h2">
+                <Heading className="mb-10 text-center" variant="h2">
                     {title}
                 </Heading>
-                <Paragraph className="max-w-211 mx-auto mb-10" variant="p1">
+                <Paragraph className="mx-auto mb-10 max-w-211 text-center" variant="p1">
                     {description}
                 </Paragraph>
                 <ul className="flex flex-wrap items-center justify-center gap-3">
                     {servicesList.map(({ title, url }) => (
-                        <Link href={`service/${url}`} key={title}>
+                        <Link href={`/service/${url}`} key={title}>
                             <Tab size="l">{title}</Tab>
                         </Link>
                     ))}

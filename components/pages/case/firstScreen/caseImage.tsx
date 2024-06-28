@@ -6,7 +6,7 @@ import { FC } from 'react'
 
 type CaseImageProps = {
     image: string
-    alt: string
+    alt?: string
     width?: number
     height?: number
     capture?: string
@@ -16,7 +16,7 @@ type CaseImageProps = {
 
 const CaseImage: FC<CaseImageProps> = ({
     image,
-    alt,
+    alt = '',
     height = 360,
     width = 1260,
     capture,

@@ -16,7 +16,7 @@ const StepCard: FC<StepCardProps> = ({ description, number, title }) => {
         <div className="group relative cursor-pointer">
             <div className="absolute bottom-0 right-0 h-0.75 w-0.75 bg-base-4 group-hover:bg-base-2" />
             <div
-                className="provided-service-clip bg-provided-service-gradient pb-17.5 pl-6 pr-6 pt-7
+                className="provided-service-clip h-full bg-provided-service-gradient pb-17.5 pl-6 pr-6 pt-7
             transition-all duration-300 group-hover:bg-grad-2 md:pb-13.5 md:pl-8.5 md:pr-7 md:pt-8.5 xl:pb-8.5"
             >
                 <Heading variant="h4" className="mb-5 text-base-4">

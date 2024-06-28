@@ -19,7 +19,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ image, tags, title, href }) => {
             condition={!!href}
             className="group flex cursor-pointer flex-col gap-3"
         >
-            {/* <ProjectTagsList tags={tags} /> */}
+            <ProjectTagsList tags={tags} />
             <div className="relative pb-10 pt-3.5">
                 <Heading variant="h3">{title}</Heading>
                 <Icons.Lines.ProjectLine className="absolute right-0 top-15 rotate-y-180 lg:left-0 lg:right-auto lg:top-17.5 xl:left-auto xl:right-0 xl:top-15" />

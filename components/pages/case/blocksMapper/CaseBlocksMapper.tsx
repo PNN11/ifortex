@@ -7,10 +7,10 @@ import CaseTitleWithDescription from '../titleWithDescription'
 import CaseImage from '../firstScreen/caseImage'
 import CaseStages from '../stages/CaseStages'
 import CaseSteps from '../steps/CaseSteps'
-import caseContactUs from '../caseContactUs'
 import CaseTechnologies from '../technologies'
 import { Project } from '../../home/projects/types'
 import CaseHighlightCards from '../highlightCards/CaseHighlightCards'
+import CaseContactUs from '../caseContactUs'
 
 const blocksMap = {
     firstScreen: CaseFirstScreen,
@@ -21,7 +21,7 @@ const blocksMap = {
     caseImage: CaseImage,
     caseStages: CaseStages,
     caseSteps: CaseSteps,
-    contact: caseContactUs,
+    // contact: caseContactUs,
     caseTechnologies: CaseTechnologies,
     caseHighlightCards: CaseHighlightCards,
 }
@@ -43,7 +43,7 @@ type CaseTitleWithDescriptionBlock = BaseCaseBlock<'caseTitleWithDescription'>
 type CaseImageBlock = BaseCaseBlock<'caseImage'>
 type CaseStagesBlock = BaseCaseBlock<'caseStages'>
 type CaseStepsBlock = BaseCaseBlock<'caseSteps'>
-type CaseContactUsBlock = BaseCaseBlock<'contact'>
+// type CaseContactUsBlock = BaseCaseBlock<'contact'>
 type CaseTechnologiesBlock = BaseCaseBlock<'caseTechnologies'>
 type CaseHighlightCardsBlock = BaseCaseBlock<'caseHighlightCards'>
 type CaseCard = Project
@@ -57,7 +57,7 @@ type CaseBlock =
     | CaseImageBlock
     | CaseStagesBlock
     | CaseStepsBlock
-    | CaseContactUsBlock
+    // | CaseContactUsBlock
     | CaseTechnologiesBlock
     | CaseHighlightCardsBlock
 
@@ -79,10 +79,10 @@ const CaseBlocksMapper: FC<CaseBlocksMapperProps> = ({ config, nextProject }) =>
             {config.map(({ block, props }, i) => {
                 const Component = blocksMap[block]
                 if (!Component) return null
-                if (block === 'contact')
-                    return <Component key={`${block}${i}`} {...(props as any)} nextProject={nextProject} />
+
                 return <Component key={`${block}${i}`} {...(props as any)} />
             })}
+            <CaseContactUs nextProject={nextProject} />
         </main>
     )
 }

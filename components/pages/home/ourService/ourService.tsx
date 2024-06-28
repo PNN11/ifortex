@@ -17,6 +17,8 @@ import { useTranslation } from 'react-i18next'
 import ArrowUpRight from '@/components/svg/arrows/arrowUpRight'
 import Link from 'next/link'
 
+export type TOurService = (typeof ourServices)[number]['href'] | 'outstaffing' | 'outsourcing' | 'web-development'
+
 const ourServices = [
     { title: 'our-service.services.backend-development', href: 'backend-development' },
     { title: 'our-service.services.frontend-development', href: 'frontend-development' },
@@ -33,7 +35,7 @@ const ourServices = [
     // 'our-service.services.software-testing',
     // 'our-service.services.web3',
     // 'our-service.services.lowcode-development',
-]
+] as const
 
 const OurService: FC = () => {
     const { width } = useWindowSize()

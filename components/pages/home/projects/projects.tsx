@@ -5,12 +5,13 @@ import Paragraph from '@/components/ui/typography/paragraph'
 import Container from '@/components/ui/wrappers/container'
 import Link from 'next/link'
 import { FC, useState } from 'react'
-import { ProjectCategory, projectCategories, projectsList } from './data'
+import { ProjectCategory, projectCategories } from './data'
 import ProjectCard from './projectCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { ScreenWidths } from '@/types/common'
 import { useTranslation } from 'react-i18next'
+import { allCasesData } from '@/app/[locale]/cases/[case]/data'
 
 const ProjectCategoryItem: FC<{
     isActive: boolean
@@ -32,8 +33,8 @@ const Projects: FC = () => {
 
     const projects =
         activeCategory === 'all'
-            ? projectsList[i18n.language]
-            : projectsList[i18n.language].filter(project => project.category === activeCategory)
+            ? allCasesData[i18n.language].map(item => item.card)
+            : allCasesData[i18n.language].map(item => item.card).filter(project => project.category === activeCategory)
 
     return (
         <section className="py-21.5">

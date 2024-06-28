@@ -5,18 +5,22 @@
     },
 
     "brand": "Бренд",
-    "location": "Расположение",
+    "location": "Локация",
     "clutch-review": "Clutch review",
     "client": "Клиент",
     "budget": "Бюджет",
     "industry": "Индустрия",
-    "environment": "Среда разработки",
+    "environment": "Платформа",
     "release": "Релиз",
+    "projectType": "Тип проекта",
+    "team": "Команда",
+    "projectServices": "Услуги на проекте",
+
     "problem": "Проблема",
     "solution": "Решение",
     "delivering": "Доставка решения",
-    "same-idea": "У вас похожая идея?",
-    "consultation": "Консультация",
+    "same-idea": "Есть идея проекта?",
+    "consultation": "Связаться с нами",
     "case-contact": {
         "title": "Давайте сделаем ваш проект вместе",
         "contact-us": "Свяжитесь с нами",
@@ -25,6 +29,7 @@
     },
     "back-to-cases": "Назад к кейсам",
     "stages": {
+        "title": "Этапы разработки",
         "contact-us": {
             "title": "Свяжитесь с нами",
             "description": "Сначала мы постараемся понять потребности клиентов и предложить правильное решение",

@@ -29,8 +29,8 @@ const CaseTechnologies: FC<CaseTechnologiesProps> = ({ description, title, items
                     {items.map(({ image, title }) => (
                         <div
                             key={title}
-                            className="bg-tech-case-card relative w-[calc(50%-0.375rem)] max-w-50
-                             border border-base-4 px-3.5 pb-2.5 pt-6 service-clip-[1.75rem] md:w-auto"
+                            className="relative w-[calc(50%-0.375rem)] max-w-50 border
+                             border-base-4 bg-tech-case-card px-3.5 pb-2.5 pt-6 service-clip-[1.75rem] md:w-auto"
                         >
                             {/* <Image
                                 src="/images/service/experience_border.svg"
@@ -43,8 +43,16 @@ const CaseTechnologies: FC<CaseTechnologiesProps> = ({ description, title, items
                             <div className="absolute -left-2.5 top-2 h-px w-14 -rotate-45 bg-base-4" />
                             <div className="absolute -right-2.5 bottom-2 h-px w-14 -rotate-45 bg-base-4" />
                             <div className="absolute bottom-0 right-0 h-0.75 w-0.75 bg-base-2" />
-                            <Image className="mb-3" src={image} width={169} height={55} alt={title} />
-                            <Paragraph variant="p1">{title}</Paragraph>
+                            <Image
+                                className="mb-3 h-13.75 object-contain"
+                                src={image}
+                                width={169}
+                                height={55}
+                                alt={title}
+                            />
+                            <Paragraph className="text-center" variant="p1">
+                                {title}
+                            </Paragraph>
                         </div>
                     ))}
                 </div>

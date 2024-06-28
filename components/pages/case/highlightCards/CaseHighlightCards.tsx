@@ -28,7 +28,7 @@ const CaseHighlightCards: FC<CaseHighlightCardsProps> = ({ cards, description, t
                     alt="bg"
                     width={622}
                     height={345}
-                    className="md:left-95 absolute hidden md:-top-5 md:block lg:left-80 lg:top-0 xl:left-auto xl:right-0"
+                    className="absolute hidden md:-top-5 md:left-95 md:block lg:left-80 lg:top-0 xl:left-auto xl:right-0"
                 />
                 <div className="mb-6 max-w-155 md:mb-28 2xl:mb-20">
                     <div className={cn('mb-10 h-2.5 w-2.5 bg-grad-1')} />
@@ -42,7 +42,7 @@ const CaseHighlightCards: FC<CaseHighlightCardsProps> = ({ cards, description, t
                 <div className="hidden-scroll grid gap-4.5 overflow-x-auto md:grid-flow-col">
                     {cards.map(({ description, title, actionButton }) => (
                         <div
-                            className="border border-base-2 bg-grad-2 px-4 pb-6 pt-3 sm:px-5.5 md:w-90 md:px-7 lg:w-102.5"
+                            className="flex flex-col justify-between border border-base-2 bg-grad-2 px-4 pb-6 pt-3 sm:px-5.5 md:w-90 md:px-7 lg:w-102.5"
                             key={title}
                         >
                             <div>

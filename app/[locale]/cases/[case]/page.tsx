@@ -20,9 +20,7 @@ export default async function Home({ params }: { params: { locale: string; case:
 
     return (
         <TranslationsProvider locale={params.locale} namespaces={namespaces} resources={resources}>
-            <main className="">
-                <CaseBlocksMapper config={data.config} nextProject={nextProject.card} />
-            </main>
+            <CaseBlocksMapper config={data.config} nextProject={nextProject.card} />
         </TranslationsProvider>
     )
 }

@@ -11,35 +11,50 @@ import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import CaseInfoItemDescription from './caseInfoItemDescription'
 import CaseInfoItemTitle from './caseInfoItemTitle'
+import Paragraph from '@/components/ui/typography/paragraph'
+import Link from 'next/link'
 
-const listLabels = ['brand', 'location', 'clutch-review', 'client', 'budget', 'industry', 'environment', 'release']
-const descriptionLabels = ['problem', 'solution', 'delivering']
+type ListLabels =
+    | 'brand'
+    | 'location'
+    | 'client'
+    | 'budget'
+    | 'industry'
+    | 'environment'
+    | 'release'
+    | 'projectType'
+    | 'team'
+    | 'projectServices'
+
+type DescriptionLabels = 'problem' | 'solution' | 'delivering'
 
 type CaseInfoProps = {
-    customerAvatar: string
+    customer?: { avatar?: string; name: string; position: string }
+    listItems: Partial<Record<ListLabels, string[]>>
+    descriptionItems: Partial<Record<DescriptionLabels, string>>
+    tags: string[]
+    contact: { title?: string; description: string }
 }
 
-const CaseInfo: FC<CaseInfoProps> = ({ customerAvatar = '/images/cases/customer_avatar.png' }) => {
+const CaseInfo: FC<CaseInfoProps> = ({ customer, listItems, descriptionItems, tags, contact }) => {
     const { t } = useTranslation()
 
-    const listItems = listLabels.map(label => ({
-        title: t(`cases:${label}`),
-        description: t(`case-info.${label}`, { returnObjects: true }) as string[],
+    const _listItems = Object.entries(listItems).map(([key, value]) => ({
+        title: t(`cases:${key}`),
+        description: value,
     }))
 
-    const descriptionItems = descriptionLabels.map(label => ({
-        title: t(`cases:${label}`),
-        description: t(`case-info.${label}`),
+    const _descriptionItems = Object.entries(descriptionItems).map(([key, value]) => ({
+        title: t(`cases:${key}`),
+        description: value,
     }))
-
-    const tags = t('case-info.tags', { returnObjects: true }) as string[]
 
     return (
         <SectionWrapper variant="s">
             <Container>
                 <div className="mb-8 grid grid-cols-1 justify-between gap-16 lg:mb-15 lg:grid-cols-[18.75rem_minmax(0,52.375rem)] lg:gap-4">
                     <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1">
-                        {listItems.map(({ description, title }) =>
+                        {_listItems.map(({ description, title }) =>
                             description.length ? (
                                 <li key={title}>
                                     <CaseInfoItemTitle className="mb-3">{title}</CaseInfoItemTitle>
@@ -65,7 +80,7 @@ const CaseInfo: FC<CaseInfoProps> = ({ customerAvatar = '/images/cases/customer_
                     </ul>
                     <div className="max-w-209.5">
                         <ul className="mb-12 space-y-12 md:mb-16.5 md:space-y-16.5">
-                            {descriptionItems.map(({ title, description }) =>
+                            {_descriptionItems.map(({ title, description }) =>
                                 description.length ? (
                                     <li key={title}>
                                         <CaseInfoItemTitle className="mb-5.5 lg:mb-8.25">{title}</CaseInfoItemTitle>
@@ -74,7 +89,7 @@ const CaseInfo: FC<CaseInfoProps> = ({ customerAvatar = '/images/cases/customer_
                                 ) : null
                             )}
                         </ul>
-                        {/* <ProjectTagsList tags={tags} /> */}
+                        <ProjectTagsList tags={tags} />
                     </div>
                 </div>
                 <IconWithLinesWrapper
@@ -84,26 +99,36 @@ const CaseInfo: FC<CaseInfoProps> = ({ customerAvatar = '/images/cases/customer_
                 />
                 <div className="grid grid-cols-1 justify-between gap-6 lg:grid-cols-[18.75rem_minmax(0,52.375rem)] lg:gap-4">
                     <div>
-                        <Image
-                            src={customerAvatar}
-                            width={48}
-                            height={48}
-                            alt={t('case-info.customer-name')}
-                            className="mb-4"
-                        />
-                        <p className="mb-1.5 text-1xl leading-10 text-base-8">{t('case-info.customer-name')}</p>
-                        <p className="text-base leading-5 tracking-alt text-base-23">
-                            {t('case-info.customer-position')}
-                        </p>
+                        {customer && (
+                            <>
+                                <Image
+                                    src={customer.avatar ?? '/images/cases/customer_avatar.png'}
+                                    width={48}
+                                    height={48}
+                                    alt={customer.name}
+                                    className="mb-4"
+                                />
+                                <p className="mb-1.5 text-1xl leading-10 text-base-8">{customer.name}</p>
+                                <p className="text-base leading-5 tracking-alt text-base-23">{customer.position}</p>
+                            </>
+                        )}
                     </div>
-                    <div className="flex flex-col justify-between gap-6.5 md:flex-row md:items-end md:gap-1.5">
-                        <div className="md:max-w-69 xl:max-w-76">
-                            <Icons.Lines.ProjectLine className="mb-2.5 xl:mb-4" />
-                            <Heading variant="h4">{t('cases:same-idea')}</Heading>
+                    <div>
+                        <div className="mb-6 flex flex-col justify-between gap-6.5 md:flex-row md:items-end md:gap-1.5">
+                            <div className="md:max-w-69 xl:max-w-82">
+                                <Icons.Lines.ProjectLine className="mb-2.5 xl:mb-4" />
+                                <Heading variant="h4">{contact.title ?? t('cases:same-idea')}</Heading>
+                            </div>
+                            <Link href="/contact">
+                                <ExploreCaseButton
+                                    classes={{ button: 'mr-2 sm:mr-4.5', icon: 'mr-4.5 sm:mr-7' }}
+                                    className=""
+                                >
+                                    {t('cases:consultation')}
+                                </ExploreCaseButton>
+                            </Link>
                         </div>
-                        <ExploreCaseButton classes={{ button: 'mr-2 sm:mr-4.5', icon: 'mr-4.5 sm:mr-7' }} className="">
-                            {t('cases:consultation')}
-                        </ExploreCaseButton>
+                        <Paragraph variant="p1">{contact.description}</Paragraph>
                     </div>
                 </div>
             </Container>
