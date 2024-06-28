@@ -39,7 +39,7 @@ const CaseContactUs: FC<CaseContactUsProps> = ({ nextProject }) => {
                                  sm:top-3 sm:h-16.5 sm:w-16.5 md:right-7.25 md:top-5.25 md:h-29 md:w-29"
                             />
                             <p
-                                className="absolute bottom-6.75 left-5.25 text-base uppercase leading-[1.15] text-base-8 sm:bottom-7.75
+                                className="absolute bottom-6.75 left-5.25 text-base uppercase !leading-[1.15] text-base-8 sm:bottom-7.75
                                    sm:left-6 sm:text-lg md:bottom-13.5 md:left-11 md:text-6xl lg:bottom-12.5 lg:text-6.5xl 2xl:bottom-11.25 2xl:text-8xl"
                             >
                                 {t('cases:case-contact.contact-us')}
